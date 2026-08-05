@@ -1,0 +1,13 @@
+---
+import { navigation } from "../data/navigation";
+
+const year = new Date().getFullYear();
+---
+<footer>
+  <img src="/brand/FisioSalute_logo-1.png" alt="FisioSalute di Erika Voltan" width="190" height="111" />
+  <p>Fisioterapia e riabilitazione<br />su appuntamento.</p>
+  <nav aria-label="Navigazione a piè di pagina">
+    {navigation.map(({ label, href }) => <a href={href}>{label}</a>)}
+  </nav>
+  <small>© {year} FisioSalute di Erika Voltan. Tutti i diritti riservati.</small>
+</footer>

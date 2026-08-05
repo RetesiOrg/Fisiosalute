@@ -1,0 +1,18 @@
+---
+import { navigation } from "../data/navigation";
+---
+<header class="site-header">
+  <a class="brand" href="/#inizio" aria-label="FisioSalute, torna alla pagina iniziale">
+    <img src="/brand/FisioSalute_logo-1.png" alt="FisioSalute di Erika Voltan" width="190" height="111" />
+  </a>
+  <nav aria-label="Navigazione principale">
+    {navigation.map(({ label, href }) => <a href={href}>{label}</a>)}
+  </nav>
+  <a class="button button-small" href="/#contatti">Prenota una visita</a>
+  <details class="mobile-menu">
+    <summary><span>Menu</span><i aria-hidden="true"></i></summary>
+    <nav aria-label="Navigazione mobile">
+      {navigation.map(({ label, href }) => <a href={href}>{label}</a>)}
+    </nav>
+  </details>
+</header>

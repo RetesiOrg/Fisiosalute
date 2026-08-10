@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const profiles = [
+  {
+    id: "silvia-simonini",
+    name: "Silvia Simonini",
+    role: "Fisioterapista",
+    image: "/images/silvia-simonini.webp",
+    imageWidth: 900,
+    imageHeight: 1100,
+    intro: "La Dott.ssa Silvia Simonini si è laureata in Fisioterapia nel 2023 presso l’Università degli Studi di Milano-Bicocca.",
+    paragraphs: [
+      "Nel corso degli studi ha maturato una significativa esperienza pratica presso strutture pubbliche e private, tra cui l’Ospedale Papa Giovanni XXIII di Bergamo e le cliniche dei gruppi Humanitas e Habilita.",
+      "Ha continuato a perfezionarsi nella riabilitazione sportiva, nella gestione della lombalgia, nelle patologie neurologiche secondo il metodo Bobath, nella ginnastica posturale e nell’utilizzo del Pilates Reformer.",
+      "Dal gennaio 2024 fa parte dello staff di FisioSalute, dove collabora in stretta sinergia con la Dott.ssa Erika Voltan.",
+    ],
+    skills: ["Riabilitazione sportiva", "Bendaggio e kinesiotaping", "Metodo Bobath", "Pilates Reformer"],
+  },
+  {
+    id: "alessandra-cao",
+    name: "Alessandra Cao",
+    role: "Fisioterapista e massoterapista MCB",
+    image: "/images/alessandra-cao.webp",
+    imageWidth: 900,
+    imageHeight: 1100,
+    intro: "La Dott.ssa Alessandra Cao si è laureata in Fisioterapia nel 2024 presso l’Università degli Studi di Milano.",
+    paragraphs: [
+      "Durante gli studi ha svolto tirocini presso l’Ospedale San Paolo, il Centro specialistico ortopedico-traumatologico Gaetano Pini e gli Istituti Clinici Scientifici Maugeri di Milano.",
+      "Queste esperienze le hanno permesso di consolidare competenze riabilitative in ambito ortopedico e neurologico, con trattamenti personalizzati orientati al recupero della funzionalità.",
+      "Nel 2021 ha conseguito il titolo di massoterapista MCB presso Ecolife Milano.",
+    ],
+    skills: ["Patologie muscolo-scheletriche", "Riabilitazione pre e post chirurgica", "Massoterapia", "Riabilitazione neurologica e posturale"],
+  },
+];
+---
+
+<BaseLayout title="Staff | FisioSalute di Erika Voltan" description="Conosci lo staff di FisioSalute: fisioterapiste con competenze complementari per percorsi riabilitativi personalizzati a Sondrio.">
+  <main>
+    <Header />
+    <section class="staff-hero">
+      <div class="staff-hero-copy">
+        <p class="eyebrow light">FisioSalute · Sondrio</p>
+        <h1>Persone che si prendono cura del tuo movimento.</h1>
+        <p>Un team di professioniste con competenze complementari, unito dallo stesso modo di lavorare: ascolto, chiarezza e percorsi costruiti davvero intorno alla persona.</p>
+        <a class="button button-sand" href="/#contatti">Fissa un appuntamento</a>
+      </div>
+      <div class="staff-hero-image">
+        <span aria-hidden="true">Il team</span>
+        <img src="/images/staff-team.webp" alt="Lo staff di fisioterapiste di FisioSalute" width="500" height="600" fetchpriority="high" />
+      </div>
+    </section>
+
+    <section class="staff-intro" aria-labelledby="staff-title">
+      <div>
+        <p class="eyebrow">Il nostro staff</p>
+        <h2 id="staff-title">Professionalità diverse,<br />una visione condivisa.</h2>
+      </div>
+      <p>Ogni professionista porta formazione, esperienza e sensibilità specifiche. Il confronto continuo permette di scegliere l’approccio più adatto e accompagnare ogni persona con attenzione, dal primo incontro al ritorno alle attività quotidiane.</p>
+    </section>
+
+    <section class="staff-profiles" aria-label="Profili professionali">
+      {profiles.map((profile, index) => (
+        <article class:list={["staff-profile", { reverse: index % 2 === 1 }]} id={profile.id}>
+          <div class="staff-profile-image">
+            <img src={profile.image} alt={`${profile.name}, ${profile.role}`} width={profile.imageWidth} height={profile.imageHeight} decoding="async" />
+            <span>0{index + 1}</span>
+          </div>
+          <div class="staff-profile-copy">
+            <p class="eyebrow">{profile.role}</p>
+            <h2>{profile.name}</h2>
+            <p class="staff-lead">{profile.intro}</p>
+            {profile.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            <ul aria-label={`Competenze di ${profile.name}`}>
+              {profile.skills.map((skill) => <li>{skill}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="staff-cta">
+      <div>
+        <p class="eyebrow light">Inizia da qui</p>
+        <h2>Troviamo insieme il percorso più adatto a te.</h2>
+      </div>
+      <div>
+        <p>Raccontaci brevemente la tua esigenza: ti aiuteremo a individuare la professionista e il percorso più indicati.</p>
+        <a class="button button-sand" href="/#contatti">Contatta FisioSalute</a>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</BaseLayout>

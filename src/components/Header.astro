@@ -1,7 +1,7 @@
 ---
 import { navigation } from "../data/navigation";
 ---
-<header class="site-header">
+<header class="site-header logo-expandable">
   <a class="brand" href="/#inizio" aria-label="FisioSalute, torna alla pagina iniziale">
     <img src="/brand/FisioSalute_logo-1.png" alt="FisioSalute di Erika Voltan" width="190" height="111" />
   </a>
@@ -16,3 +16,9 @@ import { navigation } from "../data/navigation";
     </nav>
   </details>
 </header>
+<script>
+  const header = document.querySelector(".logo-expandable");
+  const updateHeader = () => header?.classList.toggle("is-compact", window.scrollY > 0);
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+</script>

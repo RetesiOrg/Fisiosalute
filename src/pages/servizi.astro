@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const areas = [
+  { n:"01", title:"Fisioterapia e riabilitazione", lead:"Il cuore di FisioSalute.", items:["Valutazione fisioterapica", "Terapia manuale", "Riabilitazione muscoloscheletrica", "Recupero pre e post chirurgico", "Riabilitazione neurologica", "Riabilitazione vestibolare", "Linfedema e drenaggio linfatico", "Pavimento pelvico", "Articolazione temporo-mandibolare", "Esercizio terapeutico", "Trattamenti domiciliari"] },
+  { n:"02", title:"Medicina specialistica", lead:"Competenze mediche coordinate con il percorso fisioterapico.", items:["Visite fisiatriche", "Visite ortopediche", "Terapie infiltrative"] },
+  { n:"03", title:"Terapie fisiche", lead:"Tecnologie utilizzate quando appropriate al percorso clinico.", items:["Laserterapia", "Tecarterapia"] },
+  { n:"04", title:"Nutrizione", lead:"Un supporto integrato agli obiettivi di salute.", items:["Visite dietistiche", "Percorsi nutrizionali personalizzati"] },
+];
+---
+<BaseLayout title="Servizi | FisioSalute Sondrio" description="Fisioterapia, riabilitazione, ortopedia, fisiatria, terapie fisiche e nutrizione nel poliambulatorio FisioSalute di Sondrio."><main><Header /><section class="page-hero"><p class="eyebrow light">La cura intorno alla persona</p><h1>I servizi di FisioSalute.</h1><p>Quattro aree che dialogano tra loro, con la fisioterapia al centro e un unico obiettivo: accompagnarti in modo chiaro e coordinato.</p></section><section class="service-areas">{areas.map(area => <article><span>{area.n}</span><div><p class="eyebrow">Area</p><h2>{area.title}</h2><p class="area-lead">{area.lead}</p><ul>{area.items.map(item => <li>{item}</li>)}</ul><a class="text-link" href="/#contatti">Richiedi informazioni <span>→</span></a></div></article>)}</section><section class="staff-cta"><div><p class="eyebrow light">Hai un dubbio?</p><h2>Non devi scegliere da solo.</h2></div><div><p>Raccontaci il problema: ti aiuteremo a capire quale valutazione o professionista può essere il punto di partenza più utile.</p><a class="button button-sand" href="/#contatti">Contatta FisioSalute</a></div></section><Footer /></main></BaseLayout>

@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const info = [
+  ["Disdette", "La modifica o cancellazione è gratuita se comunicata almeno 24 ore prima. Oltre questo termine o in caso di assenza è previsto il pagamento integrale della seduta."],
+  ["Arrivo", "Ti chiediamo di presentarti con almeno 5 minuti di anticipo e di attendere in sala d’attesa fino alla chiamata del professionista."],
+  ["Prima visita", "Porta referti, esami, prescrizioni e lettere di dimissione pertinenti: aiutano il professionista a pianificare correttamente il percorso."],
+  ["Pagamenti", "Sono accettati contanti nei limiti di legge, bonifico, POS, carte di credito o debito e carte prepagate."],
+  ["Abbigliamento", "Presentati con abbigliamento comodo e adatto al trattamento. Il fisioterapista potrà darti indicazioni più specifiche."],
+  ["Minori", "Alla prima valutazione è necessaria la presenza del genitore o tutore. Fino a 16 anni è richiesta anche alle sedute, salvo diverso accordo scritto."],
+];
+---
+<BaseLayout title="Informazioni per il paziente | FisioSalute" description="Orari, prenotazioni, disdette, pagamenti e indicazioni utili per accedere alle prestazioni di FisioSalute."><main><Header /><section class="page-hero"><p class="eyebrow light">Prima dell’appuntamento</p><h1>Informazioni per il paziente.</h1><p>Indicazioni pratiche per accedere ai servizi con semplicità e iniziare il percorso nelle migliori condizioni.</p></section><section class="patient-info-grid">{info.map(([title,copy],i) => <article><span>0{i+1}</span><h2>{title}</h2><p>{copy}</p></article>)}</section><section class="patient-details"><div><p class="eyebrow">Orari</p><h2>Quando siamo aperti.</h2><p><strong>Lunedì–venerdì</strong><br />8:00–20:30</p><p><strong>Sabato</strong><br />8:00–13:00, previo appuntamento</p></div><div><p class="eyebrow">Contatti</p><h2>Prenotazioni e assistenza.</h2><p><a href="tel:+393494011847">349 4011847</a><br /><a href="mailto:info@fisiosalute.it">info@fisiosalute.it</a></p><p>Per le richieste fisioterapiche urgenti, ove possibile, FisioSalute garantisce l’accesso entro 24 ore.</p></div><div><p class="eyebrow">Segnalazioni</p><h2>La tua opinione conta.</h2><p>Osservazioni, suggerimenti e reclami possono essere inviati a <a href="mailto:info@fisiosalute.it">info@fisiosalute.it</a>. La Direzione si impegna a rispondere entro 15 giorni.</p></div></section><Footer /></main></BaseLayout>

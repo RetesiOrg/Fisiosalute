@@ -7,9 +7,10 @@ const year = new Date().getFullYear();
   <a class="footer-brand" href="/#inizio" aria-label="FisioSalute, torna alla pagina iniziale">
     <img src="/brand/FisioSalute_logo-1.png" alt="FisioSalute di Erika Voltan" width="499" height="291" />
   </a>
-  <p>Fisioterapia e riabilitazione<br />su appuntamento.</p>
+  <p><strong>FisioSalute di Erika Voltan S.r.l.</strong><br />Poliambulatorio multidisciplinare<br />Via Brigata Alpina Orobica 41/C · Sondrio<br /><a href="tel:+393494011847">349 4011847</a> · <a href="mailto:info@fisiosalute.it">info@fisiosalute.it</a><br />Lun–ven 8:00–20:30 · Sab 8:00–13:00</p>
   <nav aria-label="Navigazione a piè di pagina">
     {navigation.map(({ label, href }) => <a href={href}>{label}</a>)}
   </nav>
-  <small>© {year} FisioSalute di Erika Voltan. Tutti i diritti riservati.</small>
+  <div class="footer-documents"><a href="/informazioni-paziente">Informazioni per il paziente</a><a href="/carta-dei-servizi">Carta dei servizi</a></div>
+  <small>© {year} FisioSalute di Erika Voltan S.r.l. · P.IVA/C.F. 01107050146 · REA SO-83328 · PEC fisiosalutesrl@pec.it</small>
 </footer>

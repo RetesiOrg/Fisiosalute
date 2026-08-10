@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const specialties = [
+  ["Fisiatria", "Per l’inquadramento dei disturbi muscoloscheletrici e la definizione del progetto riabilitativo."],
+  ["Ortopedia", "Per patologie articolari, indicazioni infiltrative e percorsi prima o dopo un intervento."],
+  ["Terapie infiltrative", "Prestazioni eseguite dallo specialista quando indicate nel percorso clinico."],
+  ["Nutrizione", "Visite dietistiche e percorsi nutrizionali personalizzati a supporto degli obiettivi di salute."],
+];
+---
+<BaseLayout title="Equipe medica | FisioSalute Sondrio" description="L'équipe medica multidisciplinare che collabora con i fisioterapisti di FisioSalute a Sondrio."><main><Header /><section class="page-hero medical-hero"><p class="eyebrow light">Competenze che lavorano insieme</p><h1>L’équipe medica.</h1><p>Gli specialisti affiancano il lavoro fisioterapico quando una valutazione medica può rendere la presa in carico più completa.</p></section><section class="section medical-intro"><div><p class="eyebrow">Il modello FisioSalute</p><h2>Un unico staff<br />intorno al paziente.</h2></div><p>Fisioterapisti e medici condividono obiettivi e progressi nel rispetto dei rispettivi ruoli professionali. Così ogni passaggio del percorso resta comprensibile e coordinato.</p></section><section class="specialty-grid">{specialties.map(([title,copy],i) => <article><span>0{i+1}</span><h2>{title}</h2><p>{copy}</p><a href="/#contatti">Informazioni e disponibilità →</a></article>)}</section><section class="staff-cta"><div><p class="eyebrow light">Profili in aggiornamento</p><h2>Conosci lo specialista più adatto.</h2></div><div><p>I profili individuali verranno completati con fotografie, formazione e giorni di presenza. Nel frattempo puoi contattarci per disponibilità e prenotazioni.</p><a class="button button-sand" href="/#contatti">Richiedi informazioni</a></div></section><Footer /></main></BaseLayout>

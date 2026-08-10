@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const specializations = [
+  {
+    number: "01",
+    title: "Terapia manuale ortopedica",
+    copy: "Ha conseguito il titolo internazionale di Orthopaedic Manipulative Physical Therapist completando il Master in Riabilitazione dei Disordini Muscoloscheletrici dell’Università di Genova.",
+  },
+  {
+    number: "02",
+    title: "Linfedema e patologie correlate",
+    copy: "Ha concluso nel 2020 un percorso specifico nella riabilitazione del linfedema, con tirocinio presso l’IRCCS Ospedale Policlinico San Martino di Genova.",
+  },
+  {
+    number: "03",
+    title: "Riabilitazione oncologica",
+    copy: "Un percorso rivolto al recupero di forza, mobilità e autonomia quotidiana, con attenzione agli effetti fisici dei trattamenti oncologici.",
+  },
+  {
+    number: "04",
+    title: "Pavimento pelvico femminile",
+    copy: "Formazione dedicata alla rieducazione del pavimento pelvico nelle diverse fasi della vita della donna, con particolare attenzione a gravidanza e post parto.",
+  },
+  {
+    number: "05",
+    title: "Articolazione temporo-mandibolare",
+    copy: "Dal 2017 approfondisce i disturbi cranio-mandibolari collaborando con dentisti e odontotecnici per dolore facciale, difficoltà di movimento e disfunzioni masticatorie.",
+  },
+];
+---
+
+<BaseLayout title="Erika Voltan, fisioterapista | FisioSalute" description="Conosci Erika Voltan, fisioterapista a Sondrio: percorso professionale, formazione universitaria e specializzazioni riabilitative.">
+  <main>
+    <Header />
+    <section class="erika-hero">
+      <div class="erika-hero-copy">
+        <p class="eyebrow light">Fisioterapista · OMPT</p>
+        <h1>Erika Voltan.</h1>
+        <p class="erika-hero-lead">Competenza, ascolto e movimento per aiutare ogni persona a tornare protagonista del proprio benessere.</p>
+        <div class="erika-hero-actions">
+          <a class="button button-sand" href="/#contatti">Fissa un appuntamento</a>
+          <a class="text-link light" href="#percorso">Scopri il percorso <span>↓</span></a>
+        </div>
+      </div>
+      <div class="erika-hero-image">
+        <img src="/images/erika-voltan-portrait.webp" alt="Erika Voltan, fisioterapista e fondatrice di FisioSalute" width="1000" height="1250" fetchpriority="high" />
+        <div><strong>Dal 2016</strong><span>esperienza in fisioterapia</span></div>
+      </div>
+    </section>
+
+    <section class="erika-story" id="percorso">
+      <div class="erika-story-image">
+        <img src="/images/erika-formazione.webp" alt="Erika Voltan durante una seduta di riabilitazione in studio" width="1200" height="880" decoding="async" />
+      </div>
+      <div class="erika-story-copy">
+        <p class="eyebrow">Il percorso professionale</p>
+        <h2>Dalla formazione allo studio FisioSalute.</h2>
+        <p class="erika-story-lead">Laureata in Fisioterapia nel 2016 presso l’Università degli Studi di Milano, Facoltà di Medicina e Chirurgia.</p>
+        <p>Durante gli studi ha svolto tirocini presso l’Istituto Ortopedico Galeazzi, l’Ospedale San Paolo e l’Istituto Ortopedico Gaetano Pini, dove ha effettuato anche l’internato per l’elaborato finale.</p>
+        <p>Dopo la laurea ha lavorato nei Centri Meditech di Sondrio e Tirano, consolidando esperienza clinica e confronto quotidiano con persone dalle esigenze diverse.</p>
+        <p>Nel 2022 ha aperto FisioSalute: uno spazio in cui unire valutazione, terapia manuale, esercizio e educazione, con percorsi chiari e realmente sostenibili.</p>
+      </div>
+    </section>
+
+    <section class="erika-education" aria-labelledby="formazione-title">
+      <div class="erika-education-heading">
+        <p class="eyebrow light">Studi e formazione</p>
+        <h2 id="formazione-title">Conoscenze solide,<br />aggiornamento continuo.</h2>
+      </div>
+      <div class="erika-education-list">
+        <article>
+          <span>2016</span>
+          <div><h3>Laurea in Fisioterapia</h3><p>Università degli Studi di Milano, Facoltà di Medicina e Chirurgia.</p></div>
+        </article>
+        <article>
+          <span>Master</span>
+          <div><h3>Riabilitazione dei disordini muscoloscheletrici</h3><p>Università degli Studi di Genova, Campus universitario di Savona. Tesi sulla riabilitazione vestibolare.</p></div>
+        </article>
+        <article>
+          <span>Master</span>
+          <div><h3>Diagnosi e trattamento del linfedema</h3><p>Università degli Studi di Genova e Ospedale Policlinico San Martino.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="erika-specializations" aria-labelledby="specializzazioni-title">
+      <div class="erika-specializations-heading">
+        <p class="eyebrow">Aree di competenza</p>
+        <h2 id="specializzazioni-title">Specializzazioni.</h2>
+        <p>Competenze specifiche che permettono di osservare la persona nella sua interezza e scegliere strumenti realmente utili al percorso.</p>
+      </div>
+      <div class="erika-specializations-list">
+        {specializations.map(({ number, title, copy }) => (
+          <article>
+            <span>{number}</span>
+            <div><h3>{title}</h3><p>{copy}</p></div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="erika-quote">
+      <blockquote>“Per raggiungere i migliori risultati occorre un lavoro costante, capace di potenziare il corpo e sviluppare la mente.”</blockquote>
+      <cite>J.H. Pilates · Return to Life through Contrology</cite>
+    </section>
+
+    <section class="staff-cta">
+      <div><p class="eyebrow light">Conosciamoci</p><h2>Il primo passo è capire di cosa hai bisogno.</h2></div>
+      <div><p>Racconta brevemente la tua esigenza e concorda una prima valutazione con Erika.</p><a class="button button-sand" href="/#contatti">Contatta Erika</a></div>
+    </section>
+    <Footer />
+  </main>
+</BaseLayout>

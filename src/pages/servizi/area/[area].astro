@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { serviceAreas } from "../../../data/services";
+export function getStaticPaths() { return serviceAreas.map((area) => ({ params: { area: area.slug }, props: { area } })); }
+const { area } = Astro.props;
+---
+<BaseLayout title={`${area.title} | FisioSalute`} description={area.lead}><main><Header />
+  <section class="area-hero"><div><a href="/servizi">← Tutti i servizi</a><p class="eyebrow light">Area {area.number}</p><h1>{area.title}</h1><p>{area.lead}</p></div><span aria-hidden="true">{area.number}</span></section>
+  <section class="area-services"><header><p class="eyebrow">Prestazioni</p><h2>Servizi dell’area</h2><p>Seleziona un servizio per approfondire il percorso e vedere i professionisti associati.</p></header><div>{area.services.map((service, index) => <a href={`/servizi/${service.slug}`}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{service.title}</h3><p>{service.summary}</p><strong>Scopri il servizio →</strong></div></a>)}</div></section>
+  <section class="staff-cta"><div><p class="eyebrow light">Orientamento</p><h2>Partiamo dalla tua esigenza.</h2></div><div><p>Contattaci per capire quale servizio dell’area è più indicato.</p><a class="button button-sand" href="/#contatti">Richiedi informazioni</a></div></section><Footer />
+</main></BaseLayout>

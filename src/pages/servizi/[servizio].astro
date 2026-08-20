@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { allServices } from "../../data/services";
+export function getStaticPaths() { return allServices.map((service) => ({ params: { servizio: service.slug }, props: { service } })); }
+const { service } = Astro.props;
+---
+<BaseLayout title={`${service.title} | FisioSalute`} description={service.summary}><main><Header />
+  <section class="service-detail-hero"><div class="breadcrumbs"><a href="/servizi">Servizi</a><span>/</span><a href={`/servizi/area/${service.area.slug}`}>{service.area.title}</a></div><p class="eyebrow light">{service.area.shortTitle}</p><h1>{service.title}</h1><p>{service.summary}</p></section>
+  <article class="service-detail"><div class="service-detail-main"><p class="eyebrow">Il servizio</p>{service.paragraphs?.length ? service.paragraphs.map((paragraph) => <p>{paragraph}</p>) : <><p>Il percorso viene definito a partire da una valutazione individuale, tenendo conto delle esigenze, degli obiettivi e della situazione specifica della persona.</p><aside>Questa pagina è in aggiornamento: presto saranno disponibili ulteriori dettagli sul servizio.</aside></>}{service.sections?.map(section => <section><h2>{section.title}</h2><ul>{section.items.map(item => <li>{item}</li>)}</ul></section>)}</div>
+    <aside class="service-detail-side"><p class="eyebrow">Informazioni</p><h2>Vuoi capire se è il percorso giusto?</h2><p>Parlaci della tua esigenza. Ti aiuteremo a individuare il professionista e il primo passo più indicati.</p><a class="button" href="/#contatti">Richiedi informazioni</a></aside>
+  </article>
+  {service.specialists?.length && <section class="service-specialists"><div><p class="eyebrow">Professionisti</p><h2>Chi si occupa di questo servizio</h2></div><div class="specialist-list">{service.specialists.map(person => person.href ? <a href={person.href}><span>{person.name}</span><small>{person.role}</small><i>→</i></a> : <div><span>{person.name}</span><small>{person.role}</small></div>)}</div></section>}
+  <section class="staff-cta"><div><p class="eyebrow light">Percorso personalizzato</p><h2>Ogni persona parte da un punto diverso.</h2></div><div><p>La valutazione iniziale ci permette di costruire un percorso chiaro, proporzionato e condiviso.</p><a class="button button-sand" href="/#contatti">Prenota un primo incontro</a></div></section><Footer />
+</main></BaseLayout>

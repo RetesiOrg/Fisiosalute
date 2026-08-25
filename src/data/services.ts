@@ -1,5 +1,6 @@
 export type Specialist = { name: string; role: string; href?: string };
-export type Service = { slug: string; title: string; summary: string; paragraphs?: string[]; sections?: { title: string; items: string[] }[]; specialists?: Specialist[] };
+export type ServiceImage = { src: string; alt: string };
+export type Service = { slug: string; title: string; summary: string; paragraphs?: string[]; sections?: { title: string; items: string[] }[]; specialists?: Specialist[]; images?: ServiceImage[] };
 export type ServiceArea = { slug: string; number: string; title: string; shortTitle: string; lead: string; services: Service[] };
 
 const physios: Specialist[] = [
@@ -60,4 +61,64 @@ export const serviceAreas: ServiceArea[] = [
   ]},
 ];
 
-export const allServices = serviceAreas.flatMap((area) => area.services.map((service) => ({ ...service, area })));
+const areaDetails: Record<string, { paragraphs: string[]; section: { title: string; items: string[] }; images: ServiceImage[] }> = {
+  "fisioterapia-riabilitazione": {
+    paragraphs: [
+      "Il primo incontro parte dall’ascolto: raccogliamo la storia clinica, osserviamo il movimento e individuiamo insieme le attività che oggi risultano più difficili.",
+      "Il trattamento viene poi adattato nel tempo, alternando tecniche manuali, esercizio terapeutico ed educazione per rendere i progressi concreti anche nella vita quotidiana.",
+    ],
+    section: { title: "Come si svolge il percorso", items: ["Valutazione funzionale iniziale", "Obiettivi concordati e misurabili", "Trattamento individuale", "Esercizi e indicazioni per casa", "Verifiche periodiche dei progressi"] },
+    images: [{ src: "/images/riabilitazione.webp", alt: "Seduta di fisioterapia presso FisioSalute" }, { src: "/images/valutazione.webp", alt: "Valutazione individuale del movimento" }],
+  },
+  "medicina-specialistica": {
+    paragraphs: [
+      "La visita specialistica approfondisce i sintomi, la storia clinica e gli eventuali esami già eseguiti, per arrivare a un inquadramento chiaro e comprensibile.",
+      "Quando utile, il medico dialoga con i professionisti del centro per integrare la valutazione con un percorso fisioterapico o riabilitativo coordinato.",
+    ],
+    section: { title: "Cosa portare alla visita", items: ["Referti ed esami recenti", "Elenco dei farmaci assunti", "Indicazioni del medico curante", "Domande e dubbi da approfondire"] },
+    images: [{ src: "/images/valutazione.webp", alt: "Valutazione clinica presso FisioSalute" }, { src: "/images/studio-fisiosalute.webp", alt: "Uno degli ambienti del centro FisioSalute" }],
+  },
+  "pilates-postura": {
+    paragraphs: [
+      "Il lavoro parte da una valutazione del movimento e viene costruito sulle capacità della persona, senza protocolli uguali per tutti.",
+      "Gli esercizi progrediscono gradualmente per migliorare mobilità, forza, controllo e consapevolezza, con la guida costante del fisioterapista.",
+    ],
+    section: { title: "Gli obiettivi del lavoro", items: ["Muoversi con maggiore consapevolezza", "Migliorare mobilità e controllo", "Rinforzare in modo graduale", "Gestire meglio posture e carichi", "Consolidare i risultati nel tempo"] },
+    images: [{ src: "/images/studio-fisiosalute.webp", alt: "Spazio dedicato al movimento nel centro FisioSalute" }, { src: "/images/riabilitazione.webp", alt: "Esercizio guidato individualmente" }],
+  },
+  "terapie-fisiche": {
+    paragraphs: [
+      "La terapia strumentale non viene proposta in modo isolato: il fisioterapista ne valuta l’indicazione e la inserisce, quando utile, in un progetto terapeutico più ampio.",
+      "Parametri, frequenza e durata vengono definiti in base alla condizione, alla fase del recupero e alla risposta della persona al trattamento.",
+    ],
+    section: { title: "Un trattamento su indicazione", items: ["Valutazione prima del trattamento", "Parametri personalizzati", "Monitoraggio della risposta", "Integrazione con esercizio e terapia manuale"] },
+    images: [{ src: "/images/laserterapia.jpeg", alt: "Apparecchiatura per laserterapia" }, { src: "/images/studio.webp", alt: "Ambiente di trattamento FisioSalute" }],
+  },
+  "salute-benessere-donna": {
+    paragraphs: [
+      "Ogni fase della vita può portare esigenze diverse. Il colloquio iniziale permette di affrontarle con ascolto, riservatezza e obiettivi condivisi.",
+      "Il percorso integra educazione, esercizio e trattamento fisioterapico, rispettando i tempi della persona e favorendo autonomia e consapevolezza.",
+    ],
+    section: { title: "Un percorso pensato per te", items: ["Colloquio e valutazione individuale", "Obiettivi condivisi", "Esercizi personalizzati", "Indicazioni per la quotidianità", "Controlli e progressione graduale"] },
+    images: [{ src: "/images/erika-formazione.webp", alt: "Attività dedicata alla salute e al benessere femminile" }, { src: "/images/valutazione.webp", alt: "Valutazione fisioterapica individuale" }],
+  },
+  "dieta-nutrizione": {
+    paragraphs: [
+      "Il percorso nutrizionale parte dalle abitudini reali, dalla storia clinica e dagli obiettivi personali, per costruire indicazioni compatibili con la vita di tutti i giorni.",
+      "Gli incontri di controllo servono a leggere i cambiamenti, affrontare le difficoltà e adattare il piano senza rigidità, lavorando sulla sostenibilità nel tempo.",
+    ],
+    section: { title: "Le fasi del percorso", items: ["Anamnesi clinica e alimentare", "Definizione degli obiettivi", "Indicazioni personalizzate", "Controlli periodici", "Adattamento del piano nel tempo"] },
+    images: [{ src: "/images/studio.webp", alt: "Ambiente dedicato ai colloqui presso FisioSalute" }, { src: "/images/studio-fisiosalute.webp", alt: "Gli spazi accoglienti del centro FisioSalute" }],
+  },
+};
+
+export const allServices = serviceAreas.flatMap((area) => area.services.map((service) => {
+  const defaults = areaDetails[area.slug];
+  return {
+    ...service,
+    area,
+    paragraphs: [...(service.paragraphs ?? []), ...defaults.paragraphs],
+    sections: service.sections?.length ? service.sections : [defaults.section],
+    images: service.images ?? defaults.images,
+  };
+}));

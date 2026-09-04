@@ -4,11 +4,11 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { allServices, serviceAreas } from "../data/services";
 ---
-<BaseLayout title="Servizi | FisioSalute Sondrio" description="Scopri tutti i servizi e le sei aree di FisioSalute a Sondrio.">
+<BaseLayout title="Servizi | FisioSalute Sondrio" description="Scopri tutti i servizi e le otto aree di FisioSalute a Sondrio.">
   <main><Header />
     <section class="services-hero"><p class="eyebrow light">La cura intorno alla persona</p><h1>I nostri servizi</h1><p>Esplora tutte le prestazioni oppure parti dall’area più vicina alla tua esigenza. Se hai un dubbio, ti aiutiamo noi a individuare il punto di partenza.</p></section>
     <nav class="services-tabs" aria-label="Aree dei servizi"><a class="active" href="#tutti">Tutti i servizi</a>{serviceAreas.map(area => <a href={`/servizi/area/${area.slug}`}>{area.shortTitle}</a>)}</nav>
-    <section class="services-overview" id="aree"><div class="services-heading"><p class="eyebrow">Sei macro-aree</p><h2>Competenze diverse,<br />un percorso coordinato.</h2></div><div class="area-card-grid">{serviceAreas.map(area => <a class="area-card" href={`/servizi/area/${area.slug}`}><span>{area.number}</span><p class="eyebrow">Area</p><h3>{area.title}</h3><p>{area.lead}</p><strong>Esplora l’area →</strong></a>)}</div></section>
+    <section class="services-overview" id="aree"><div class="services-heading"><p class="eyebrow">Otto aree</p><h2>Competenze diverse,<br />un percorso coordinato.</h2></div><div class="area-card-grid">{serviceAreas.map(area => <a class="area-card" href={`/servizi/area/${area.slug}`}><span>{area.number}</span><p class="eyebrow">Area</p><h3>{area.title}</h3><p>{area.lead}</p><strong>Esplora l’area →</strong></a>)}</div></section>
     <section class="all-services" id="tutti"><div class="services-heading"><p class="eyebrow">Indice completo</p><h2>Tutti i servizi</h2></div><div class="service-index">{allServices.map(service => <a href={`/servizi/${service.slug}`}><small>{service.area.shortTitle}</small><span>{service.title}</span><i aria-hidden="true">→</i></a>)}</div></section>
     <section class="staff-cta"><div><p class="eyebrow light">Hai un dubbio?</p><h2>Non devi scegliere da solo.</h2></div><div><p>Raccontaci il problema: ti aiuteremo a capire quale valutazione o professionista può essere il punto di partenza più utile.</p><a class="button button-sand" href="/#contatti">Contatta FisioSalute</a></div></section><Footer />
   </main>

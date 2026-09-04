@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { instagramProfileUrl, latestInstagramPosts } from "../data/news";
+
+const posts = latestInstagramPosts.slice(0, 2);
+---
+
+<BaseLayout
+  title="News | FisioSalute"
+  description="Le ultime notizie, attività e informazioni pubblicate da FisioSalute sul profilo Instagram ufficiale."
+>
+  <main>
+    <Header />
+
+    <section class="news-hero">
+      <p class="eyebrow light">News e aggiornamenti</p>
+      <h1>Le ultime da<br />FisioSalute.</h1>
+      <p>Attività, consigli e novità dal centro attraverso il nostro profilo Instagram ufficiale.</p>
+    </section>
+
+    <section class="instagram-news" aria-labelledby="instagram-news-title">
+      <header>
+        <p class="eyebrow">Dal nostro profilo</p>
+        <h2 id="instagram-news-title">Ultime novità</h2>
+      </header>
+
+      <div class="instagram-feed">
+        {posts.map((post) => (
+          <article class="instagram-post">
+            <time datetime={post.date}>{post.dateLabel}</time>
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink={`${post.url}?utm_source=ig_embed&utm_campaign=loading`}
+              data-instgrm-version="14"
+            >
+              <a href={post.url} target="_blank" rel="noreferrer">{post.title}</a>
+            </blockquote>
+          </article>
+        ))}
+      </div>
+
+      <div class="instagram-news-footer">
+        <p>Vuoi vedere tutti i contenuti e seguire FisioSalute?</p>
+        <a class="button" href={instagramProfileUrl} target="_blank" rel="noreferrer">
+          Vai al profilo Instagram ↗
+        </a>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+  <script is:inline async src="https://www.instagram.com/embed.js"></script>
+</BaseLayout>

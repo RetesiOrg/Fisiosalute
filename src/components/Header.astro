@@ -1,7 +1,7 @@
 ---
 import { navigation } from "../data/navigation";
-const professionals = navigation.slice(0, 1).concat(navigation.slice(2, 4));
-const mainNavigation = [navigation[1], ...navigation.slice(4)];
+const professionals = navigation.filter(({ label }) => ["Erika Voltan", "Fisioterapisti", "Medici specialisti"].includes(label));
+const mainNavigation = navigation.filter(({ label }) => !["Erika Voltan", "Fisioterapisti", "Medici specialisti"].includes(label));
 ---
 <header class="site-header">
   <a class="brand" href="/#inizio" aria-label="FisioSalute, torna alla pagina iniziale">
@@ -12,13 +12,13 @@ const mainNavigation = [navigation[1], ...navigation.slice(4)];
       <span class="nav-dropdown-trigger" tabindex="0">Professionisti <span aria-hidden="true">⌄</span></span>
       <div>{professionals.map(({ label, href }) => <a href={href}>{label}</a>)}</div>
     </div>
-    {mainNavigation.map(({ label, href }) => <a href={href}>{label}</a>)}
+    {mainNavigation.map((item) => <a href={item.href} target={"external" in item && item.external ? "_blank" : undefined} rel={"external" in item && item.external ? "noreferrer" : undefined}>{item.label}{"external" in item && item.external ? " ↗" : ""}</a>)}
   </nav>
   <a class="button button-small" href="/#contatti">Richiedi un appuntamento</a>
   <details class="mobile-menu">
     <summary><span>Menu</span><i aria-hidden="true"></i></summary>
     <nav aria-label="Navigazione mobile">
-      {navigation.map(({ label, href }) => <a href={href}>{label}</a>)}
+      {navigation.map((item) => <a href={item.href} target={"external" in item && item.external ? "_blank" : undefined} rel={"external" in item && item.external ? "noreferrer" : undefined}>{item.label}{"external" in item && item.external ? " ↗" : ""}</a>)}
     </nav>
   </details>
 </header>

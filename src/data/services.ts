@@ -75,7 +75,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Il trattamento viene poi adattato nel tempo, alternando tecniche manuali, esercizio terapeutico ed educazione per rendere i progressi concreti anche nella vita quotidiana.",
     ],
     section: { title: "Come si svolge il percorso", items: ["Valutazione funzionale iniziale", "Obiettivi concordati e misurabili", "Trattamento individuale", "Esercizi e indicazioni per casa", "Verifiche periodiche dei progressi"] },
-    images: [{ src: "/images/riabilitazione.webp", alt: "Seduta di fisioterapia presso FisioSalute" }, { src: "/images/valutazione.webp", alt: "Valutazione individuale del movimento" }],
+    images: [{ src: "/images/palestra-riabilitativa-reale.webp", alt: "Palestra riabilitativa di FisioSalute" }, { src: "/images/studio-riabilitazione-reale.webp", alt: "Studio reale dedicato alla riabilitazione" }],
   },
   "fisiatria": {
     paragraphs: [
@@ -83,7 +83,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Quando utile, il medico dialoga con i professionisti del centro per integrare la valutazione con un percorso fisioterapico o riabilitativo coordinato.",
     ],
     section: { title: "Cosa portare alla visita", items: ["Referti ed esami recenti", "Elenco dei farmaci assunti", "Indicazioni del medico curante", "Domande e dubbi da approfondire"] },
-    images: [{ src: "/images/valutazione.webp", alt: "Valutazione clinica presso FisioSalute" }, { src: "/images/studio-fisiosalute.webp", alt: "Uno degli ambienti del centro FisioSalute" }],
+    images: [{ src: "/images/studio-medico-reale.webp", alt: "Studio medico di FisioSalute" }, { src: "/images/reception-fisiosalute-reale.webp", alt: "Reception e sala d’attesa di FisioSalute" }],
   },
   "ortopedia": {
     paragraphs: [
@@ -91,7 +91,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Quando utile, lo specialista dialoga con i fisioterapisti del centro per coordinare trattamento medico e recupero funzionale.",
     ],
     section: { title: "Cosa portare alla visita", items: ["Referti ed esami recenti", "Elenco dei farmaci assunti", "Indicazioni del medico curante", "Domande e dubbi da approfondire"] },
-    images: [{ src: "/images/valutazione.webp", alt: "Valutazione specialistica presso FisioSalute" }, { src: "/images/studio-fisiosalute.webp", alt: "Uno degli ambienti del centro FisioSalute" }],
+    images: [{ src: "/images/studio-trattamenti-reale.webp", alt: "Studio reale per visite e trattamenti" }, { src: "/images/palestra-riabilitativa-reale.webp", alt: "Palestra per il recupero funzionale" }],
   },
   "otorinolaringoiatria": {
     paragraphs: [
@@ -99,7 +99,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "La collaborazione con la fisioterapia è particolarmente utile quando vertigini, equilibrio e componenti cervicali richiedono competenze complementari.",
     ],
     section: { title: "Un percorso coordinato", items: ["Inquadramento specialistico", "Approfondimenti quando indicati", "Confronto con il fisioterapista", "Indicazioni chiare per il percorso"] },
-    images: [{ src: "/images/studio.webp", alt: "Studio medico FisioSalute" }, { src: "/images/valutazione.webp", alt: "Valutazione clinica individuale" }],
+    images: [{ src: "/images/studio-medico-reale.webp", alt: "Studio medico reale di FisioSalute" }, { src: "/images/reception-fisiosalute-reale.webp", alt: "Spazi di accoglienza di FisioSalute" }],
   },
   "pilates-postura": {
     paragraphs: [
@@ -107,7 +107,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Gli esercizi progrediscono gradualmente per migliorare mobilità, forza, controllo e consapevolezza, con la guida costante del fisioterapista.",
     ],
     section: { title: "Gli obiettivi del lavoro", items: ["Muoversi con maggiore consapevolezza", "Migliorare mobilità e controllo", "Rinforzare in modo graduale", "Gestire meglio posture e carichi", "Consolidare i risultati nel tempo"] },
-    images: [{ src: "/images/studio-fisiosalute.webp", alt: "Spazio dedicato al movimento nel centro FisioSalute" }, { src: "/images/riabilitazione.webp", alt: "Esercizio guidato individualmente" }],
+    images: [{ src: "/images/palestra-riabilitativa-reale.webp", alt: "Palestra reale dedicata al movimento" }, { src: "/images/studio-riabilitazione-reale.webp", alt: "Studio riabilitativo di FisioSalute" }],
   },
   "terapie-fisiche-infiltrative": {
     paragraphs: [
@@ -115,7 +115,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Parametri, frequenza e durata vengono definiti in base alla condizione, alla fase del recupero e alla risposta della persona al trattamento.",
     ],
     section: { title: "Un trattamento su indicazione", items: ["Valutazione prima del trattamento", "Parametri personalizzati", "Monitoraggio della risposta", "Integrazione con esercizio e terapia manuale"] },
-    images: [{ src: "/images/laserterapia.jpeg", alt: "Apparecchiatura per laserterapia" }, { src: "/images/studio.webp", alt: "Ambiente di trattamento FisioSalute" }],
+    images: [{ src: "/images/laserterapia.jpeg", alt: "Apparecchiatura per laserterapia" }, { src: "/images/studio-trattamenti-reale.webp", alt: "Ambiente reale dedicato ai trattamenti" }],
   },
   "salute-benessere-donna": {
     paragraphs: [
@@ -123,7 +123,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Il percorso integra educazione, esercizio e trattamento fisioterapico, rispettando i tempi della persona e favorendo autonomia e consapevolezza.",
     ],
     section: { title: "Un percorso pensato per te", items: ["Colloquio e valutazione individuale", "Obiettivi condivisi", "Esercizi personalizzati", "Indicazioni per la quotidianità", "Controlli e progressione graduale"] },
-    images: [{ src: "/images/erika-formazione.webp", alt: "Attività dedicata alla salute e al benessere femminile" }, { src: "/images/valutazione.webp", alt: "Valutazione fisioterapica individuale" }],
+    images: [{ src: "/images/studio-riabilitazione-reale.webp", alt: "Studio riservato per i percorsi dedicati alla donna" }, { src: "/images/studio-trattamenti-reale.webp", alt: "Ambiente reale per valutazioni e trattamenti" }],
   },
   "nutrizione-dieta": {
     paragraphs: [
@@ -131,7 +131,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Gli incontri di controllo servono a leggere i cambiamenti, affrontare le difficoltà e adattare il piano senza rigidità, lavorando sulla sostenibilità nel tempo.",
     ],
     section: { title: "Le fasi del percorso", items: ["Anamnesi clinica e alimentare", "Definizione degli obiettivi", "Indicazioni personalizzate", "Controlli periodici", "Adattamento del piano nel tempo"] },
-    images: [{ src: "/images/studio.webp", alt: "Ambiente dedicato ai colloqui presso FisioSalute" }, { src: "/images/studio-fisiosalute.webp", alt: "Gli spazi accoglienti del centro FisioSalute" }],
+    images: [{ src: "/images/studio-consulenza-reale.webp", alt: "Studio reale dedicato ai colloqui e alle consulenze" }, { src: "/images/reception-fisiosalute-reale.webp", alt: "Gli spazi di accoglienza di FisioSalute" }],
   },
 };
 

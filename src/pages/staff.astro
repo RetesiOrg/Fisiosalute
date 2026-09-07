@@ -10,7 +10,7 @@ const profiles = [
     role: "Fisioterapista",
     image: "/images/silvia-simonini.webp",
     imageWidth: 900,
-    imageHeight: 1100,
+    imageHeight: 1521,
     intro: "La Dott.ssa Silvia Simonini si è laureata in Fisioterapia nel 2023 presso l’Università degli Studi di Milano-Bicocca.",
     paragraphs: [
       "Nel corso degli studi ha maturato una significativa esperienza pratica presso strutture pubbliche e private, tra cui l’Ospedale Papa Giovanni XXIII di Bergamo e le cliniche dei gruppi Humanitas e Habilita.",
@@ -25,7 +25,7 @@ const profiles = [
     role: "Fisioterapista",
     image: "/images/alessandra-cao.webp",
     imageWidth: 900,
-    imageHeight: 1100,
+    imageHeight: 1417,
     intro: "La Dott.ssa Alessandra Cao si è laureata in Fisioterapia nel 2024 presso l’Università degli Studi di Milano.",
     paragraphs: [
       "Durante gli studi ha svolto tirocini presso l’Ospedale San Paolo, il Centro specialistico ortopedico-traumatologico Gaetano Pini e gli Istituti Clinici Scientifici Maugeri di Milano.",
@@ -38,9 +38,9 @@ const profiles = [
     id: "monica-colzada",
     name: "Monica Colzada",
     role: "Fisioterapista",
-    image: "/images/Monica%20Colzada.jpeg",
-    imageWidth: 768,
-    imageHeight: 1365,
+    image: "/images/monica-colzada.webp",
+    imageWidth: 900,
+    imageHeight: 1320,
     intro: "La Dott.ssa Monica Colzada si è laureata in Fisioterapia a Pavia nel 2017 e ha conseguito un Master in Terapia Manuale a Bologna.",
     paragraphs: [
       "Ha sempre avuto la passione per il movimento e l’attività fisica. Crede nell’esercizio terapeutico come forma di prevenzione e riabilitazione del dolore.",
@@ -51,11 +51,11 @@ const profiles = [
   {
     id: "emanuela-giordani",
     name: "Emanuela Giordani",
-    role: "Osteopata e infermiera",
-    image: "/images/Emanuela%20Giordani.jpeg",
-    imageWidth: 768,
-    imageHeight: 1365,
-    intro: "La Dott.ssa Emanuela Giordani è osteopata e infermiera e collabora con l’équipe FisioSalute.",
+    role: "Fisioterapista, osteopata ed infermiera",
+    image: "/images/emanuela-giordani.webp",
+    imageWidth: 900,
+    imageHeight: 1600,
+    intro: "La Dott.ssa Emanuela Giordani è fisioterapista, osteopata ed infermiera e collabora con l’équipe FisioSalute.",
     paragraphs: [
       "Si occupa di riabilitazione sportiva e della gestione dei runner, dalla video-analisi della corsa alla prevenzione degli infortuni e alla riabilitazione post infortunio.",
       "Completa il suo lavoro con la rieducazione posturale e la gestione delle lesioni cutanee e delle medicazioni. È fondatrice della Running Clinic a Torino.",
@@ -93,7 +93,7 @@ const profiles = [
       {profiles.map((profile, index) => (
         <article class:list={["staff-profile", { reverse: index % 2 === 1 }]} id={profile.id}>
           <div class="staff-profile-image">
-            <img src={profile.image} alt={`${profile.name}, ${profile.role}`} width={profile.imageWidth} height={profile.imageHeight} decoding="async" />
+            <img src={profile.image} alt={`${profile.name}, ${profile.role}`} width={profile.imageWidth} height={profile.imageHeight} loading="lazy" decoding="async" />
             <span>0{index + 1}</span>
           </div>
           <div class="staff-profile-copy">
@@ -122,3 +122,10 @@ const profiles = [
     <Footer />
   </main>
 </BaseLayout>
+
+<style>
+  #emanuela-giordani .staff-profile-image img {
+    transform: scale(1.1);
+    transform-origin: center top;
+  }
+</style>

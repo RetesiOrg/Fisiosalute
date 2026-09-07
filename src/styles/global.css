@@ -97,6 +97,7 @@ footer{padding:55px clamp(24px,8vw,128px) 30px;background:linear-gradient(100deg
 .care-circle strong{left:50%;top:50%;width:112px;height:112px;transform:translate(-50%,-50%);border-radius:50%;background:var(--sand);border-color:var(--sand);color:var(--deep);font-size:18px}
 .care-circle-physio{left:50%;top:0;width:142px;min-height:66px;transform:translate(-50%,-35%)}
 .care-circle-doctors{right:0;top:50%;width:142px;min-height:66px;transform:translate(35%,-50%)}
+.care-circle-learning{left:0;top:50%;width:156px;min-height:66px;transform:translate(-35%,-50%)}
 .care-circle-recovery{left:50%;bottom:0;width:142px;min-height:66px;transform:translate(-50%,35%)}
 .studio-highlights-grid img{height:92px;border-radius:2px;border-width:2px}
 .news-section{display:flex;align-items:center;justify-content:space-between;gap:60px;background:#fff}.news-section>div{max-width:720px}.news-section>div>p:last-child{color:#56635f}

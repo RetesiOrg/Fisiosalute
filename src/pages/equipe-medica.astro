@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { medicalSpecialists, medicalSpecialtyOptions } from "../data/medical-specialists";
+
 const specialties = [
   ["Fisiatria", "Per l’inquadramento dei disturbi muscoloscheletrici e la definizione del progetto riabilitativo.", "/servizi/area/fisiatria"],
   ["Ortopedia", "Per patologie articolari, indicazioni infiltrative e percorsi prima o dopo un intervento.", "/servizi/area/ortopedia"],
@@ -10,4 +12,410 @@ const specialties = [
   ["Nutrizione e dieta", "Visite dietistiche e percorsi nutrizionali personalizzati a supporto degli obiettivi di salute.", "/servizi/area/nutrizione-dieta"],
 ];
 ---
-<BaseLayout title="Medici specialisti | FisioSalute Sondrio" description="I medici specialisti che collaborano con i fisioterapisti di FisioSalute a Sondrio."><main><Header /><section class="page-hero medical-hero"><p class="eyebrow light">Competenze che lavorano insieme</p><h1>I medici specialisti.</h1><p>Gli specialisti affiancano il lavoro fisioterapico quando una valutazione medica può rendere la presa in carico più completa.</p></section><section class="section medical-intro"><div><p class="eyebrow">Il modello FisioSalute</p><h2>Un unico staff<br />intorno al paziente.</h2></div><p>Fisioterapisti e medici condividono obiettivi e progressi nel rispetto dei rispettivi ruoli professionali. Così ogni passaggio del percorso resta comprensibile e coordinato.</p></section><section class="specialty-grid">{specialties.map(([title,copy,href],i) => <article><span>0{i+1}</span><h2>{title}</h2><p>{copy}</p><a href={href}>Approfondisci l’area →</a></article>)}</section><section class="staff-cta"><div><p class="eyebrow light">Informazioni e disponibilità</p><h2>Trova lo specialista più adatto.</h2></div><div><p>I profili autorizzati saranno completati con fotografia, formazione e curriculum. Per i medici che operano in strutture AST, nomi e immagini non vengono pubblicati: la segreteria fornisce direttamente le informazioni disponibili.</p><a class="button button-sand" href="/#contatti">Richiedi informazioni</a></div></section><Footer /></main></BaseLayout>
+
+<BaseLayout title="Medici specialisti | FisioSalute Sondrio" description="I medici specialisti che collaborano con i fisioterapisti di FisioSalute a Sondrio.">
+  <main>
+    <Header />
+    <section class="page-hero medical-hero">
+      <p class="eyebrow light">Competenze che lavorano insieme</p>
+      <h1>I medici specialisti.</h1>
+      <p>Gli specialisti affiancano il lavoro fisioterapico quando una valutazione medica può rendere la presa in carico più completa.</p>
+    </section>
+
+    <section class="section medical-intro">
+      <div>
+        <p class="eyebrow">Il modello FisioSalute</p>
+        <h2>Un unico staff<br />intorno al paziente.</h2>
+      </div>
+      <p>Fisioterapisti e medici condividono obiettivi e progressi nel rispetto dei rispettivi ruoli professionali. Così ogni passaggio del percorso resta comprensibile e coordinato.</p>
+    </section>
+
+    <section class="medical-directory" aria-labelledby="medical-directory-title">
+      <div class="medical-directory-heading">
+        <div>
+          <p class="eyebrow">L’équipe medica</p>
+          <h2 id="medical-directory-title">Conosci i professionisti.</h2>
+        </div>
+        <p>Consulta i profili, cerca un medico per nome oppure filtra l’équipe in base alla specialità.</p>
+      </div>
+
+      <div class="medical-filters" aria-label="Ricerca medici specialisti">
+        <label>
+          <span>Cerca per medico o specialità</span>
+          <input id="medical-search" type="search" placeholder="Es. ortopedia, vertigini…" autocomplete="off" />
+        </label>
+        <label>
+          <span>Filtra per specialità</span>
+          <select id="medical-specialty-filter">
+            <option value="">Tutte le specialità</option>
+            {medicalSpecialtyOptions.map((specialty) => <option value={specialty}>{specialty}</option>)}
+          </select>
+        </label>
+      </div>
+
+      <p class="medical-results" data-medical-results aria-live="polite">{medicalSpecialists.length} medici presenti</p>
+
+      <div class="medical-cards">
+        {medicalSpecialists.map((doctor, index) => (
+          <article
+            class="medical-card"
+            id={doctor.slug}
+            data-medical-card
+            data-search={`${doctor.name} ${doctor.role} ${doctor.specialties.join(" ")} ${doctor.summary}`.toLocaleLowerCase("it-IT")}
+            data-specialties={doctor.specialties.join("|")}
+          >
+            <div class="medical-card-image">
+              <img src={doctor.image} alt={`${doctor.name}, ${doctor.role}`} width={doctor.imageWidth} height={doctor.imageHeight} loading={index === 0 ? "eager" : "lazy"} decoding="async" />
+              <span>0{index + 1}</span>
+            </div>
+            <div class="medical-card-content">
+              <p class="eyebrow">{doctor.specialties[0]}</p>
+              <h2>{doctor.name}</h2>
+              <p class="medical-role">{doctor.role}</p>
+              <p>{doctor.summary}</p>
+              <div class="medical-tags" aria-label={`Specialità di ${doctor.name}`}>
+                {doctor.specialties.map((specialty) => <span>{specialty}</span>)}
+              </div>
+              <div class="medical-cv">
+                <div>
+                  <h3>Formazione e ruolo</h3>
+                  <ul>{doctor.education.map((item) => <li>{item}</li>)}</ul>
+                </div>
+                <div>
+                  <h3>Competenze</h3>
+                  <ul>{doctor.expertise.map((item) => <li>{item}</li>)}</ul>
+                </div>
+              </div>
+              <div class="medical-links">
+                {doctor.serviceLinks.map((link) => <a href={link.href}>{link.label} <span aria-hidden="true">→</span></a>)}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="medical-empty" data-medical-empty hidden>Nessun medico corrisponde ai criteri di ricerca.</p>
+    </section>
+
+    <section class="medical-specialties" aria-labelledby="medical-specialties-title">
+      <div class="medical-specialties-heading">
+        <p class="eyebrow">Per area clinica</p>
+        <h2 id="medical-specialties-title">Trova la competenza che ti serve.</h2>
+      </div>
+      <div class="specialty-grid">
+        {specialties.map(([title, copy, href], i) => (
+          <article>
+            <span>0{i + 1}</span>
+            <h2>{title}</h2>
+            <p>{copy}</p>
+            <a href={href}>Approfondisci l’area →</a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="staff-cta">
+      <div>
+        <p class="eyebrow light">Informazioni e disponibilità</p>
+        <h2>Trova lo specialista più adatto.</h2>
+      </div>
+      <div>
+        <p>L’équipe medica crescerà nel tempo con nuovi professionisti e specialità. Per disponibilità, prestazioni e prenotazioni, la segreteria ti aiuta a individuare il percorso più indicato.</p>
+        <a class="button button-sand" href="/#contatti">Richiedi informazioni</a>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</BaseLayout>
+
+<script>
+  const searchInput = document.querySelector("#medical-search") as HTMLInputElement | null;
+  const specialtyFilter = document.querySelector("#medical-specialty-filter") as HTMLSelectElement | null;
+  const cards = [...document.querySelectorAll<HTMLElement>("[data-medical-card]")];
+  const resultLabel = document.querySelector("[data-medical-results]");
+  const emptyLabel = document.querySelector("[data-medical-empty]") as HTMLElement | null;
+
+  const normalize = (value: string) => value.toLocaleLowerCase("it-IT").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  const filterDoctors = () => {
+    const query = normalize(searchInput?.value ?? "");
+    const specialty = specialtyFilter?.value ?? "";
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const matchesQuery = !query || normalize(card.dataset.search ?? "").includes(query);
+      const matchesSpecialty = !specialty || (card.dataset.specialties ?? "").split("|").includes(specialty);
+      const isVisible = matchesQuery && matchesSpecialty;
+      card.hidden = !isVisible;
+      if (isVisible) visible += 1;
+    });
+
+    if (resultLabel) resultLabel.textContent = `${visible} ${visible === 1 ? "medico presente" : "medici presenti"}`;
+    if (emptyLabel) emptyLabel.hidden = visible !== 0;
+  };
+
+  searchInput?.addEventListener("input", filterDoctors);
+  specialtyFilter?.addEventListener("change", filterDoctors);
+</script>
+
+<style>
+  .medical-directory {
+    padding: 110px clamp(24px, 8vw, 128px);
+    background: var(--ivory);
+  }
+
+  .medical-directory-heading {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 45px;
+  }
+
+  .medical-directory-heading h2,
+  .medical-specialties-heading h2 {
+    margin: 0;
+    color: var(--deep);
+    font-size: clamp(38px, 4.5vw, 62px);
+    line-height: 1.07;
+    letter-spacing: -.045em;
+  }
+
+  .medical-directory-heading > p {
+    max-width: 570px;
+    margin: 0;
+    color: #56635f;
+    font-size: 18px;
+  }
+
+  .medical-filters {
+    display: grid;
+    grid-template-columns: 1.4fr .6fr;
+    gap: 25px;
+    padding: 24px 0;
+    border-top: 1px solid #c7d1cc;
+    border-bottom: 1px solid #c7d1cc;
+  }
+
+  .medical-filters label {
+    display: block;
+  }
+
+  .medical-filters label > span {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--deep);
+    font: 700 11px "Montserrat", sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .medical-filters input,
+  .medical-filters select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #b9c9c2;
+    border-radius: 0;
+    background: #fff;
+    color: var(--deep);
+    font: 16px "Lato", sans-serif;
+  }
+
+  .medical-filters input:focus,
+  .medical-filters select:focus {
+    outline: 2px solid var(--sand);
+    outline-offset: 2px;
+  }
+
+  .medical-results {
+    margin: 18px 0;
+    color: var(--petrol);
+    font: 700 12px "Montserrat", sans-serif;
+    letter-spacing: .04em;
+  }
+
+  .medical-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: #cbd5d0;
+  }
+
+  .medical-card {
+    display: grid;
+    grid-template-columns: minmax(170px, .7fr) 1.3fr;
+    min-width: 0;
+    background: #fff;
+  }
+
+  .medical-card[hidden] {
+    display: none;
+  }
+
+  .medical-card-image {
+    position: relative;
+    min-height: 560px;
+    overflow: hidden;
+    background: #dfe5e0;
+  }
+
+  .medical-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .medical-card-image > span {
+    position: absolute;
+    top: 20px;
+    right: 18px;
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--sand);
+    color: var(--deep);
+    font: 700 11px "Montserrat", sans-serif;
+  }
+
+  .medical-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 38px clamp(22px, 3vw, 42px);
+  }
+
+  .medical-card-content h2 {
+    margin: 8px 0 12px;
+    color: var(--deep);
+    font-size: clamp(26px, 2.2vw, 36px);
+    line-height: 1.05;
+    letter-spacing: -.04em;
+  }
+
+  .medical-role {
+    margin-bottom: 18px;
+    color: var(--petrol) !important;
+    font-size: 15px !important;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .medical-card-content > p:not(.eyebrow):not(.medical-role) {
+    color: #56635f;
+    font-size: 15px;
+  }
+
+  .medical-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 5px 0 24px;
+  }
+
+  .medical-tags span {
+    padding: 7px 9px;
+    border: 1px solid #b9c9c2;
+    color: var(--deep);
+    font: 600 10px "Montserrat", sans-serif;
+  }
+
+  .medical-cv {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #d5ddd8;
+  }
+
+  .medical-cv h3 {
+    margin-bottom: 8px;
+    color: var(--deep);
+    font: 700 12px "Montserrat", sans-serif;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .medical-cv ul {
+    display: grid;
+    gap: 5px;
+    margin: 0;
+    padding: 0 0 0 17px;
+    color: #56635f;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .medical-links {
+    display: grid;
+    gap: 8px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 24px;
+  }
+
+  .medical-links a {
+    color: var(--petrol);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .medical-links a span {
+    margin-left: 5px;
+  }
+
+  .medical-empty {
+    padding: 25px;
+    background: #fff;
+    color: #56635f;
+  }
+
+  .medical-specialties {
+    padding: 100px clamp(24px, 8vw, 128px);
+    background: #fff;
+  }
+
+  .medical-specialties-heading {
+    max-width: 700px;
+    margin-bottom: 42px;
+  }
+
+  .medical-specialties .specialty-grid {
+    margin: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .medical-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .medical-directory-heading,
+    .medical-filters {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .medical-card {
+      grid-template-columns: minmax(220px, .7fr) 1.3fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .medical-directory,
+    .medical-specialties {
+      padding: 75px 24px;
+    }
+
+    .medical-card {
+      display: block;
+    }
+
+    .medical-card-image {
+      min-height: 520px;
+    }
+  }
+</style>

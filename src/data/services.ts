@@ -1,3 +1,5 @@
+import { medicalSpecialistRefs } from "./medical-specialists";
+
 export type Specialist = { name: string; role: string; href?: string };
 export type ServiceImage = { src: string; alt: string };
 export type Service = { slug: string; title: string; summary: string; paragraphs?: string[]; sections?: { title: string; items: string[] }[]; specialists?: Specialist[]; images?: ServiceImage[] };
@@ -31,7 +33,7 @@ export const serviceAreas: ServiceArea[] = [
     { slug: "laserterapia", title: "Laserterapia ad alta potenza", summary: "ILUX XP Mectronic® supporta la gestione del dolore, dei processi infiammatori e il recupero dei tessuti.", paragraphs: ["La laserterapia ad alta potenza permette di lavorare a diverse profondità e può essere impiegata nelle problematiche muscolari, tendinee e muscoloscheletriche.", "Non viene proposta come trattamento isolato: è uno strumento che il fisioterapista integra, quando indicato, con esercizio terapeutico e terapia manuale."], sections: [{ title: "Può essere utilizzata per", items: ["Contribuire alla riduzione del dolore", "Supportare la gestione dei processi infiammatori", "Favorire riparazione e recupero dei tessuti", "Accompagnare il recupero dopo traumi e interventi"] }] },
     { slug: "tecarterapia", title: "Tecarterapia", summary: "Doctor Tecar PLUS Mectronic® è un supporto strumentale di ultima generazione inserito nel progetto riabilitativo.", paragraphs: ["L’utilizzo della tecarterapia viene definito in relazione alle caratteristiche della persona, al quadro clinico e agli obiettivi del percorso."], sections: [{ title: "Obiettivi del trattamento", items: ["Contribuire alla riduzione del dolore", "Favorire drenaggio e gestione dell’edema", "Supportare il recupero dei tessuti", "Accompagnare il recupero dopo traumi, interventi o sovraccarichi", "Supportare prevenzione e ritorno all’attività sportiva"] }] },
     { slug: "pressoterapia", title: "Pressoterapia", summary: "Compressione pneumatica controllata per favorire il drenaggio dei liquidi e il ritorno venoso e linfatico.", paragraphs: ["Il trattamento utilizza applicatori che esercitano una pressione sequenziale e graduata sugli arti.", "Nel linfedema non viene considerata un trattamento unico, ma può essere inserita in un percorso con terapia manuale, esercizio, bendaggio e altre strategie specifiche."], sections: [{ title: "Quando può essere indicata", items: ["Edema e gonfiore degli arti", "Pesantezza e tensione agli arti inferiori", "Alterazioni del ritorno venoso", "Gestione del linfedema", "Recupero dopo interventi selezionati"] }] },
-    { slug: "terapie-infiltrative", title: "Terapie infiltrative", summary: "Trattamenti eseguiti dal medico specialista dopo un’accurata valutazione ortopedica.", paragraphs: ["La scelta dipende dalla diagnosi, dal distretto coinvolto, dalla fase della problematica e dalle caratteristiche del paziente.", "Quando appropriate, infiltrazione, fisioterapia ed esercizio terapeutico lavorano insieme: il trattamento medico facilita la gestione dei sintomi, mentre la riabilitazione recupera movimento, forza e funzione."], sections: [{ title: "Tipologie", items: ["Farmaci antidolorifici", "Farmaci antinfiammatori", "Acido ialuronico intra-articolare"] }] },
+    { slug: "terapie-infiltrative", title: "Terapie infiltrative", summary: "Trattamenti eseguiti dal medico specialista dopo un’accurata valutazione ortopedica.", paragraphs: ["La scelta dipende dalla diagnosi, dal distretto coinvolto, dalla fase della problematica e dalle caratteristiche del paziente.", "Quando appropriate, infiltrazione, fisioterapia ed esercizio terapeutico lavorano insieme: il trattamento medico facilita la gestione dei sintomi, mentre la riabilitazione recupera movimento, forza e funzione."], sections: [{ title: "Tipologie", items: ["Farmaci antidolorifici", "Farmaci antinfiammatori", "Acido ialuronico intra-articolare"] }], specialists: [medicalSpecialistRefs.giuffrida] },
   ]},
   { slug: "pilates-postura", number: "03", title: "Pilates e rieducazione posturale", shortTitle: "Pilates e postura", lead: "Movimento guidato per migliorare controllo, forza, mobilità e consapevolezza.", services: [
     { slug: "fisiopilates-macchinari", title: "FisioPilates con Reformer e Cadillac", summary: "Sedute individuali 1:1 con il fisioterapista e un programma costruito sulla valutazione della persona.", paragraphs: ["Reformer e Cadillac Worldpilates® permettono di modulare assistenze e resistenze, adattando ogni esercizio alle capacità e agli obiettivi della persona."], specialists: physios },
@@ -51,18 +53,18 @@ export const serviceAreas: ServiceArea[] = [
     { slug: "fisiatria", title: "Visita fisiatrica", summary: "Valutazione medica delle problematiche che limitano movimento, funzione e qualità di vita.", paragraphs: ["La Fisiatria, o Medicina Fisica e Riabilitativa, si occupa di problematiche muscoloscheletriche, neurologiche e articolari e degli esiti di traumi o interventi.", "Fisiatra e fisioterapista hanno competenze differenti e complementari: il medico definisce l’inquadramento clinico e il progetto, il fisioterapista realizza il percorso riabilitativo."], sections: [{ title: "La visita può essere utile per", items: ["Mal di schiena e dolore cervicale", "Problematiche muscolari, articolari e neurologiche", "Dolore irradiato, acuto o cronico", "Infortuni sportivi e traumi", "Recupero pre e post chirurgico", "Problematiche posturali e del movimento"] }] },
   ]},
   { slug: "ortopedia", number: "06", title: "Ortopedia", shortTitle: "Ortopedia", lead: "Valutazione specialistica dell’apparato muscoloscheletrico e integrazione con il percorso riabilitativo.", services: [
-    { slug: "ortopedia", title: "Ortopedia e traumatologia", summary: "Diagnosi e trattamento delle problematiche di ossa, articolazioni, muscoli, tendini e legamenti.", paragraphs: ["La valutazione ortopedica è importante per inquadrare una problematica strutturale, gli esiti di un trauma o un dolore persistente e stabilire se sia indicato un trattamento conservativo o chirurgico.", "FisioSalute favorisce un’équipe di ortopedici con competenze nei diversi distretti corporei, per indirizzare ogni paziente verso il professionista più indicato."], sections: [{ title: "Ambiti principali", items: ["Traumi, fratture, distorsioni e instabilità", "Artrosi e problematiche degenerative", "Lesioni muscolari, tendinee, meniscali e legamentose", "Problematiche della colonna", "Dolore di spalla, gomito, mano, anca, ginocchio, caviglia e piede", "Percorsi pre e post operatori"] }] },
+    { slug: "ortopedia", title: "Ortopedia e traumatologia", summary: "Diagnosi e trattamento delle problematiche di ossa, articolazioni, muscoli, tendini e legamenti.", paragraphs: ["La valutazione ortopedica è importante per inquadrare una problematica strutturale, gli esiti di un trauma o un dolore persistente e stabilire se sia indicato un trattamento conservativo o chirurgico.", "FisioSalute favorisce un’équipe di ortopedici con competenze nei diversi distretti corporei, per indirizzare ogni paziente verso il professionista più indicato."], sections: [{ title: "Ambiti principali", items: ["Traumi, fratture, distorsioni e instabilità", "Artrosi e problematiche degenerative", "Lesioni muscolari, tendinee, meniscali e legamentose", "Problematiche della colonna", "Dolore di spalla, gomito, mano, anca, ginocchio, caviglia e piede", "Percorsi pre e post operatori"] }], specialists: [medicalSpecialistRefs.giuffrida] },
   ]},
   { slug: "otorinolaringoiatria", number: "07", title: "Otorinolaringoiatria", shortTitle: "ORL", lead: "Valutazione di orecchio, naso, gola, equilibrio, voce e deglutizione.", services: [
-    { slug: "otorinolaringoiatria", title: "Visita otorinolaringoiatrica", summary: "Valutazione specialistica delle funzioni di udito, equilibrio, respirazione, voce e deglutizione.", paragraphs: ["La visita analizza sintomi e storia clinica per individuare il percorso più appropriato e gli eventuali approfondimenti.", "Nelle vertigini e nei disturbi dell’equilibrio, la valutazione medica può integrarsi con la riabilitazione vestibolare svolta da fisioterapisti specializzati."], sections: [{ title: "Quando rivolgersi allo specialista", items: ["Disturbi dell’udito, acufeni e sensazione di orecchio chiuso", "Vertigini e instabilità", "Otiti, riniti, sinusiti e poliposi", "Russamento e apnee del sonno", "Disturbi di voce e deglutizione", "Problematiche del distretto testa-collo"] }] },
+    { slug: "otorinolaringoiatria", title: "Visita otorinolaringoiatrica", summary: "Valutazione specialistica delle funzioni di udito, equilibrio, respirazione, voce e deglutizione.", paragraphs: ["La visita analizza sintomi e storia clinica per individuare il percorso più appropriato e gli eventuali approfondimenti.", "Nelle vertigini e nei disturbi dell’equilibrio, la valutazione medica può integrarsi con la riabilitazione vestibolare svolta da fisioterapisti specializzati."], sections: [{ title: "Quando rivolgersi allo specialista", items: ["Disturbi dell’udito, acufeni e sensazione di orecchio chiuso", "Vertigini e instabilità", "Otiti, riniti, sinusiti e poliposi", "Russamento e apnee del sonno", "Disturbi di voce e deglutizione", "Problematiche del distretto testa-collo"] }], specialists: [medicalSpecialistRefs.narducci] },
   ]},
   { slug: "nutrizione-dieta", number: "08", title: "Nutrizione e dieta", shortTitle: "Nutrizione e dieta", lead: "Un supporto nutrizionale personalizzato, integrato agli obiettivi di salute e benessere.", services: [
     { slug: "visita-dietistica", title: "Visita dietistica e valutazione nutrizionale", summary: "Anamnesi clinica, alimentare e dello stile di vita per comprendere bisogni e obiettivi della persona." },
-    { slug: "educazione-alimentare", title: "Educazione alimentare", summary: "Strumenti concreti per costruire un’alimentazione equilibrata, varia e sostenibile nel tempo.", images: [{ src: "/images/services-generated/educazione-alimentare-1.png", alt: "Dietista insegna a comporre un piatto equilibrato" }, { src: "/images/services-generated/educazione-alimentare-2.png", alt: "Confronto pratico delle porzioni alimentari" }] },
+    { slug: "educazione-alimentare", title: "Educazione alimentare", summary: "Strumenti concreti per costruire un’alimentazione equilibrata, varia e sostenibile nel tempo.", images: [{ src: "/images/services-generated/educazione-alimentare-1.webp", alt: "Dietista insegna a comporre un piatto equilibrato" }, { src: "/images/services-generated/educazione-alimentare-2.webp", alt: "Confronto pratico delle porzioni alimentari" }] },
     { slug: "composizione-corporea", title: "Analisi della composizione corporea", summary: "Circonferenze, bioimpedenziometria e plicometria, quando indicate, per andare oltre il numero sulla bilancia." },
     { slug: "percorso-nutrizionale", title: "Ricomposizione corporea e gestione del peso", summary: "Piano alimentare personalizzato e controlli periodici per perdita, aumento o ricomposizione del peso corporeo." },
     { slug: "nutrizione-condizioni-fisiologiche", title: "Nutrizione nelle diverse fasi della vita", summary: "Supporto personalizzato in gravidanza, menopausa e nei percorsi di prevenzione." },
-    { slug: "nutrizione-patologie", title: "Nutrizione e condizioni patologiche", summary: "Gestione nutrizionale integrata di patologie diagnosticate, in confronto con il medico curante.", images: [{ src: "/images/services-generated/nutrizione-patologie-1.png", alt: "Colloquio di nutrizione clinica per una condizione diagnosticata" }, { src: "/images/services-generated/nutrizione-patologie-2.png", alt: "Adattamento di un piano nutrizionale clinico" }] },
+    { slug: "nutrizione-patologie", title: "Nutrizione e condizioni patologiche", summary: "Gestione nutrizionale integrata di patologie diagnosticate, in confronto con il medico curante.", images: [{ src: "/images/services-generated/nutrizione-patologie-1.webp", alt: "Colloquio di nutrizione clinica per una condizione diagnosticata" }, { src: "/images/services-generated/nutrizione-patologie-2.webp", alt: "Adattamento di un piano nutrizionale clinico" }] },
     { slug: "nutrizione-gastrointestinale", title: "Nutrizione e disturbi gastrointestinali", summary: "Percorsi per reflusso, intestino irritabile, stipsi e gastrite già diagnosticati." },
     { slug: "nutrizione-sportiva", title: "Nutrizione sportiva", summary: "Alimentazione, composizione corporea ed eventuale integrazione coerenti con allenamenti e obiettivi dell’atleta." },
   ]},
@@ -75,7 +77,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Il trattamento viene poi adattato nel tempo, alternando tecniche manuali, esercizio terapeutico ed educazione per rendere i progressi concreti anche nella vita quotidiana.",
     ],
     section: { title: "Come si svolge il percorso", items: ["Valutazione funzionale iniziale", "Obiettivi concordati e misurabili", "Trattamento individuale", "Esercizi e indicazioni per casa", "Verifiche periodiche dei progressi"] },
-    images: [{ src: "/images/services-generated/fisioterapia-1.png", alt: "Fisioterapista guida un esercizio di mobilità" }, { src: "/images/services-generated/fisioterapia-2.png", alt: "Valutazione fisioterapica del movimento" }],
+    images: [{ src: "/images/services-generated/fisioterapia-1.webp", alt: "Fisioterapista guida un esercizio di mobilità" }, { src: "/images/services-generated/fisioterapia-2.webp", alt: "Valutazione fisioterapica del movimento" }],
   },
   "fisiatria": {
     paragraphs: [
@@ -83,7 +85,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Quando utile, il medico dialoga con i professionisti del centro per integrare la valutazione con un percorso fisioterapico o riabilitativo coordinato.",
     ],
     section: { title: "Cosa portare alla visita", items: ["Referti ed esami recenti", "Elenco dei farmaci assunti", "Indicazioni del medico curante", "Domande e dubbi da approfondire"] },
-    images: [{ src: "/images/services-generated/fisiatria-1.png", alt: "Consulto fisiatrico con modello anatomico" }, { src: "/images/services-generated/fisiatria-2.png", alt: "Valutazione clinica del movimento" }],
+    images: [{ src: "/images/services-generated/fisiatria-1.webp", alt: "Consulto fisiatrico con modello anatomico" }, { src: "/images/services-generated/fisiatria-2.webp", alt: "Valutazione clinica del movimento" }],
   },
   "ortopedia": {
     paragraphs: [
@@ -91,7 +93,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Quando utile, lo specialista dialoga con i fisioterapisti del centro per coordinare trattamento medico e recupero funzionale.",
     ],
     section: { title: "Cosa portare alla visita", items: ["Referti ed esami recenti", "Elenco dei farmaci assunti", "Indicazioni del medico curante", "Domande e dubbi da approfondire"] },
-    images: [{ src: "/images/services-generated/ortopedia-1.png", alt: "Consulto ortopedico con modello anatomico" }, { src: "/images/services-generated/ortopedia-2.png", alt: "Esame ortopedico dell’arto superiore" }],
+    images: [{ src: "/images/services-generated/ortopedia-1.webp", alt: "Consulto ortopedico con modello anatomico" }, { src: "/images/services-generated/ortopedia-2.webp", alt: "Esame ortopedico dell’arto superiore" }],
   },
   "otorinolaringoiatria": {
     paragraphs: [
@@ -99,7 +101,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "La collaborazione con la fisioterapia è particolarmente utile quando vertigini, equilibrio e componenti cervicali richiedono competenze complementari.",
     ],
     section: { title: "Un percorso coordinato", items: ["Inquadramento specialistico", "Approfondimenti quando indicati", "Confronto con il fisioterapista", "Indicazioni chiare per il percorso"] },
-    images: [{ src: "/images/services-generated/orl-1.png", alt: "Strumenti per la valutazione otorinolaringoiatrica" }, { src: "/images/services-generated/orl-2.png", alt: "Valutazione dell’equilibrio" }],
+    images: [{ src: "/images/services-generated/orl-1.webp", alt: "Strumenti per la valutazione otorinolaringoiatrica" }, { src: "/images/services-generated/orl-2.webp", alt: "Valutazione dell’equilibrio" }],
   },
   "pilates-postura": {
     paragraphs: [
@@ -107,7 +109,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Gli esercizi progrediscono gradualmente per migliorare mobilità, forza, controllo e consapevolezza, con la guida costante del fisioterapista.",
     ],
     section: { title: "Gli obiettivi del lavoro", items: ["Muoversi con maggiore consapevolezza", "Migliorare mobilità e controllo", "Rinforzare in modo graduale", "Gestire meglio posture e carichi", "Consolidare i risultati nel tempo"] },
-    images: [{ src: "/images/services-generated/pilates-1.png", alt: "Sessione di Pilates clinico su Reformer" }, { src: "/images/services-generated/pilates-2.png", alt: "Esercizi di Pilates clinico a corpo libero" }],
+    images: [{ src: "/images/services-generated/pilates-1.webp", alt: "Sessione di Pilates clinico su Reformer" }, { src: "/images/services-generated/pilates-2.webp", alt: "Esercizi di Pilates clinico a corpo libero" }],
   },
   "terapie-fisiche-infiltrative": {
     paragraphs: [
@@ -115,7 +117,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Parametri, frequenza e durata vengono definiti in base alla condizione, alla fase del recupero e alla risposta della persona al trattamento.",
     ],
     section: { title: "Un trattamento su indicazione", items: ["Valutazione prima del trattamento", "Parametri personalizzati", "Monitoraggio della risposta", "Integrazione con esercizio e terapia manuale"] },
-    images: [{ src: "/images/services-generated/terapie-1.png", alt: "Trattamento con laserterapia ad alta potenza" }, { src: "/images/services-generated/terapie-2.png", alt: "Pressoterapia con compressione pneumatica" }],
+    images: [{ src: "/images/services-generated/terapie-1.webp", alt: "Trattamento con laserterapia ad alta potenza" }, { src: "/images/services-generated/terapie-2.webp", alt: "Pressoterapia con compressione pneumatica" }],
   },
   "salute-benessere-donna": {
     paragraphs: [
@@ -123,7 +125,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Il percorso integra educazione, esercizio e trattamento fisioterapico, rispettando i tempi della persona e favorendo autonomia e consapevolezza.",
     ],
     section: { title: "Un percorso pensato per te", items: ["Colloquio e valutazione individuale", "Obiettivi condivisi", "Esercizi personalizzati", "Indicazioni per la quotidianità", "Controlli e progressione graduale"] },
-    images: [{ src: "/images/services-generated/donna-1.png", alt: "Percorso di movimento durante la gravidanza" }, { src: "/images/services-generated/donna-2.png", alt: "Esercizio riabilitativo dedicato alla salute femminile" }],
+    images: [{ src: "/images/services-generated/donna-1.webp", alt: "Percorso di movimento durante la gravidanza" }, { src: "/images/services-generated/donna-2.webp", alt: "Esercizio riabilitativo dedicato alla salute femminile" }],
   },
   "nutrizione-dieta": {
     paragraphs: [
@@ -131,7 +133,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Gli incontri di controllo servono a leggere i cambiamenti, affrontare le difficoltà e adattare il piano senza rigidità, lavorando sulla sostenibilità nel tempo.",
     ],
     section: { title: "Le fasi del percorso", items: ["Anamnesi clinica e alimentare", "Definizione degli obiettivi", "Indicazioni personalizzate", "Controlli periodici", "Adattamento del piano nel tempo"] },
-    images: [{ src: "/images/services-generated/nutrizione-1.png", alt: "Consulenza nutrizionale con alimenti freschi" }, { src: "/images/services-generated/nutrizione-2.png", alt: "Pianificazione di un’alimentazione personalizzata" }],
+    images: [{ src: "/images/services-generated/nutrizione-1.webp", alt: "Consulenza nutrizionale con alimenti freschi" }, { src: "/images/services-generated/nutrizione-2.webp", alt: "Pianificazione di un’alimentazione personalizzata" }],
   },
 };
 
@@ -340,8 +342,8 @@ const serviceEnhancements: Record<string, Partial<Pick<Service, "paragraphs" | "
 };
 
 const generatedServiceImages: Record<string, ServiceImage[]> = Object.fromEntries([
-  ["fisioterapia-sportiva", "fisioterapia-reumatologica", "fisioterapia-neurologica", "fisioterapia-prevenzione", "riabilitazione", "articolazione-temporo-mandibolare", "pavimento-pelvico", "sindromi-vertiginose", "cefalee-muscolo-tensive", "linfodrenaggio", "riabilitazione-post-oncologica", "idrokinesiterapia", "fisioterapia-domiciliare", "riatletizzazione-esercizio-specifico", "laserterapia", "tecarterapia", "pressoterapia", "terapie-infiltrative", "fisiopilates-macchinari", "pilates-clinico", "pilates-clinico-aperto", "rieducazione-posturale", "preparazione-parto", "recupero-post-partum"].map((slug) => [slug, [{ src: `/images/services-generated/${slug}.png`, alt: `Immagine dedicata a ${slug.replaceAll("-", " ")}` }, { src: `/images/services-generated/${slug}-2.png`, alt: `Seconda immagine dedicata a ${slug.replaceAll("-", " ")}` }]]),
-  ["fisioterapia-muscoloscheletrica", "salute-donna-fasi-vita", "diastasi-cicatrice-cesareo", "prevenzione-pavimento-pelvico", "movimento-benessere-femminile", "fisiatria", "ortopedia", "otorinolaringoiatria", "visita-dietistica", "composizione-corporea", "percorso-nutrizionale", "nutrizione-condizioni-fisiologiche", "nutrizione-gastrointestinale", "nutrizione-sportiva"].map((slug) => [slug, [1, 2].map((index) => ({ src: `/images/services-generated/${slug}-${index}.png`, alt: `Immagine dedicata a ${slug.replaceAll("-", " ")}` }))])
+  ["fisioterapia-sportiva", "fisioterapia-reumatologica", "fisioterapia-neurologica", "fisioterapia-prevenzione", "riabilitazione", "articolazione-temporo-mandibolare", "pavimento-pelvico", "sindromi-vertiginose", "cefalee-muscolo-tensive", "linfodrenaggio", "riabilitazione-post-oncologica", "idrokinesiterapia", "fisioterapia-domiciliare", "riatletizzazione-esercizio-specifico", "laserterapia", "tecarterapia", "pressoterapia", "terapie-infiltrative", "fisiopilates-macchinari", "pilates-clinico", "pilates-clinico-aperto", "rieducazione-posturale", "preparazione-parto", "recupero-post-partum"].map((slug) => [slug, [{ src: `/images/services-generated/${slug}.webp`, alt: `Immagine dedicata a ${slug.replaceAll("-", " ")}` }, { src: `/images/services-generated/${slug}-2.webp`, alt: `Seconda immagine dedicata a ${slug.replaceAll("-", " ")}` }]]),
+  ["fisioterapia-muscoloscheletrica", "salute-donna-fasi-vita", "diastasi-cicatrice-cesareo", "prevenzione-pavimento-pelvico", "movimento-benessere-femminile", "fisiatria", "ortopedia", "otorinolaringoiatria", "visita-dietistica", "composizione-corporea", "percorso-nutrizionale", "nutrizione-condizioni-fisiologiche", "nutrizione-gastrointestinale", "nutrizione-sportiva"].map((slug) => [slug, [1, 2].map((index) => ({ src: `/images/services-generated/${slug}-${index}.webp`, alt: `Immagine dedicata a ${slug.replaceAll("-", " ")}` }))])
 ].flat());
 
 export const allServices = serviceAreas.flatMap((area) => area.services.map((service) => {

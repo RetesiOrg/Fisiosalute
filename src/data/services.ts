@@ -58,11 +58,11 @@ export const serviceAreas: ServiceArea[] = [
   ]},
   { slug: "nutrizione-dieta", number: "08", title: "Nutrizione e dieta", shortTitle: "Nutrizione e dieta", lead: "Un supporto nutrizionale personalizzato, integrato agli obiettivi di salute e benessere.", services: [
     { slug: "visita-dietistica", title: "Visita dietistica e valutazione nutrizionale", summary: "Anamnesi clinica, alimentare e dello stile di vita per comprendere bisogni e obiettivi della persona." },
-    { slug: "educazione-alimentare", title: "Educazione alimentare", summary: "Strumenti concreti per costruire un’alimentazione equilibrata, varia e sostenibile nel tempo." },
+    { slug: "educazione-alimentare", title: "Educazione alimentare", summary: "Strumenti concreti per costruire un’alimentazione equilibrata, varia e sostenibile nel tempo.", images: [{ src: "/images/services-generated/educazione-alimentare-1.png", alt: "Dietista insegna a comporre un piatto equilibrato" }, { src: "/images/services-generated/educazione-alimentare-2.png", alt: "Confronto pratico delle porzioni alimentari" }] },
     { slug: "composizione-corporea", title: "Analisi della composizione corporea", summary: "Circonferenze, bioimpedenziometria e plicometria, quando indicate, per andare oltre il numero sulla bilancia." },
     { slug: "percorso-nutrizionale", title: "Ricomposizione corporea e gestione del peso", summary: "Piano alimentare personalizzato e controlli periodici per perdita, aumento o ricomposizione del peso corporeo." },
     { slug: "nutrizione-condizioni-fisiologiche", title: "Nutrizione nelle diverse fasi della vita", summary: "Supporto personalizzato in gravidanza, menopausa e nei percorsi di prevenzione." },
-    { slug: "nutrizione-patologie", title: "Nutrizione e condizioni patologiche", summary: "Gestione nutrizionale integrata di patologie diagnosticate, in confronto con il medico curante." },
+    { slug: "nutrizione-patologie", title: "Nutrizione e condizioni patologiche", summary: "Gestione nutrizionale integrata di patologie diagnosticate, in confronto con il medico curante.", images: [{ src: "/images/services-generated/nutrizione-patologie-1.png", alt: "Colloquio di nutrizione clinica per una condizione diagnosticata" }, { src: "/images/services-generated/nutrizione-patologie-2.png", alt: "Adattamento di un piano nutrizionale clinico" }] },
     { slug: "nutrizione-gastrointestinale", title: "Nutrizione e disturbi gastrointestinali", summary: "Percorsi per reflusso, intestino irritabile, stipsi e gastrite già diagnosticati." },
     { slug: "nutrizione-sportiva", title: "Nutrizione sportiva", summary: "Alimentazione, composizione corporea ed eventuale integrazione coerenti con allenamenti e obiettivi dell’atleta." },
   ]},
@@ -75,7 +75,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Il trattamento viene poi adattato nel tempo, alternando tecniche manuali, esercizio terapeutico ed educazione per rendere i progressi concreti anche nella vita quotidiana.",
     ],
     section: { title: "Come si svolge il percorso", items: ["Valutazione funzionale iniziale", "Obiettivi concordati e misurabili", "Trattamento individuale", "Esercizi e indicazioni per casa", "Verifiche periodiche dei progressi"] },
-    images: [{ src: "/images/palestra-riabilitativa-reale.webp", alt: "Palestra riabilitativa di FisioSalute" }, { src: "/images/studio-riabilitazione-reale.webp", alt: "Studio reale dedicato alla riabilitazione" }],
+    images: [{ src: "/images/services-generated/fisioterapia-1.png", alt: "Fisioterapista guida un esercizio di mobilità" }, { src: "/images/services-generated/fisioterapia-2.png", alt: "Valutazione fisioterapica del movimento" }],
   },
   "fisiatria": {
     paragraphs: [
@@ -83,7 +83,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Quando utile, il medico dialoga con i professionisti del centro per integrare la valutazione con un percorso fisioterapico o riabilitativo coordinato.",
     ],
     section: { title: "Cosa portare alla visita", items: ["Referti ed esami recenti", "Elenco dei farmaci assunti", "Indicazioni del medico curante", "Domande e dubbi da approfondire"] },
-    images: [{ src: "/images/studio-medico-reale.webp", alt: "Studio medico di FisioSalute" }, { src: "/images/reception-fisiosalute-reale.webp", alt: "Reception e sala d’attesa di FisioSalute" }],
+    images: [{ src: "/images/services-generated/fisiatria-1.png", alt: "Consulto fisiatrico con modello anatomico" }, { src: "/images/services-generated/fisiatria-2.png", alt: "Valutazione clinica del movimento" }],
   },
   "ortopedia": {
     paragraphs: [
@@ -91,7 +91,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Quando utile, lo specialista dialoga con i fisioterapisti del centro per coordinare trattamento medico e recupero funzionale.",
     ],
     section: { title: "Cosa portare alla visita", items: ["Referti ed esami recenti", "Elenco dei farmaci assunti", "Indicazioni del medico curante", "Domande e dubbi da approfondire"] },
-    images: [{ src: "/images/studio-trattamenti-reale.webp", alt: "Studio reale per visite e trattamenti" }, { src: "/images/palestra-riabilitativa-reale.webp", alt: "Palestra per il recupero funzionale" }],
+    images: [{ src: "/images/services-generated/ortopedia-1.png", alt: "Consulto ortopedico con modello anatomico" }, { src: "/images/services-generated/ortopedia-2.png", alt: "Esame ortopedico dell’arto superiore" }],
   },
   "otorinolaringoiatria": {
     paragraphs: [
@@ -99,7 +99,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "La collaborazione con la fisioterapia è particolarmente utile quando vertigini, equilibrio e componenti cervicali richiedono competenze complementari.",
     ],
     section: { title: "Un percorso coordinato", items: ["Inquadramento specialistico", "Approfondimenti quando indicati", "Confronto con il fisioterapista", "Indicazioni chiare per il percorso"] },
-    images: [{ src: "/images/studio-medico-reale.webp", alt: "Studio medico reale di FisioSalute" }, { src: "/images/reception-fisiosalute-reale.webp", alt: "Spazi di accoglienza di FisioSalute" }],
+    images: [{ src: "/images/services-generated/orl-1.png", alt: "Strumenti per la valutazione otorinolaringoiatrica" }, { src: "/images/services-generated/orl-2.png", alt: "Valutazione dell’equilibrio" }],
   },
   "pilates-postura": {
     paragraphs: [
@@ -107,7 +107,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Gli esercizi progrediscono gradualmente per migliorare mobilità, forza, controllo e consapevolezza, con la guida costante del fisioterapista.",
     ],
     section: { title: "Gli obiettivi del lavoro", items: ["Muoversi con maggiore consapevolezza", "Migliorare mobilità e controllo", "Rinforzare in modo graduale", "Gestire meglio posture e carichi", "Consolidare i risultati nel tempo"] },
-    images: [{ src: "/images/palestra-riabilitativa-reale.webp", alt: "Palestra reale dedicata al movimento" }, { src: "/images/studio-riabilitazione-reale.webp", alt: "Studio riabilitativo di FisioSalute" }],
+    images: [{ src: "/images/services-generated/pilates-1.png", alt: "Sessione di Pilates clinico su Reformer" }, { src: "/images/services-generated/pilates-2.png", alt: "Esercizi di Pilates clinico a corpo libero" }],
   },
   "terapie-fisiche-infiltrative": {
     paragraphs: [
@@ -115,7 +115,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Parametri, frequenza e durata vengono definiti in base alla condizione, alla fase del recupero e alla risposta della persona al trattamento.",
     ],
     section: { title: "Un trattamento su indicazione", items: ["Valutazione prima del trattamento", "Parametri personalizzati", "Monitoraggio della risposta", "Integrazione con esercizio e terapia manuale"] },
-    images: [{ src: "/images/laserterapia.jpeg", alt: "Apparecchiatura per laserterapia" }, { src: "/images/studio-trattamenti-reale.webp", alt: "Ambiente reale dedicato ai trattamenti" }],
+    images: [{ src: "/images/services-generated/terapie-1.png", alt: "Trattamento con laserterapia ad alta potenza" }, { src: "/images/services-generated/terapie-2.png", alt: "Pressoterapia con compressione pneumatica" }],
   },
   "salute-benessere-donna": {
     paragraphs: [
@@ -123,7 +123,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Il percorso integra educazione, esercizio e trattamento fisioterapico, rispettando i tempi della persona e favorendo autonomia e consapevolezza.",
     ],
     section: { title: "Un percorso pensato per te", items: ["Colloquio e valutazione individuale", "Obiettivi condivisi", "Esercizi personalizzati", "Indicazioni per la quotidianità", "Controlli e progressione graduale"] },
-    images: [{ src: "/images/studio-riabilitazione-reale.webp", alt: "Studio riservato per i percorsi dedicati alla donna" }, { src: "/images/studio-trattamenti-reale.webp", alt: "Ambiente reale per valutazioni e trattamenti" }],
+    images: [{ src: "/images/services-generated/donna-1.png", alt: "Percorso di movimento durante la gravidanza" }, { src: "/images/services-generated/donna-2.png", alt: "Esercizio riabilitativo dedicato alla salute femminile" }],
   },
   "nutrizione-dieta": {
     paragraphs: [
@@ -131,7 +131,7 @@ const areaDetails: Record<string, { paragraphs: string[]; section: { title: stri
       "Gli incontri di controllo servono a leggere i cambiamenti, affrontare le difficoltà e adattare il piano senza rigidità, lavorando sulla sostenibilità nel tempo.",
     ],
     section: { title: "Le fasi del percorso", items: ["Anamnesi clinica e alimentare", "Definizione degli obiettivi", "Indicazioni personalizzate", "Controlli periodici", "Adattamento del piano nel tempo"] },
-    images: [{ src: "/images/studio-consulenza-reale.webp", alt: "Studio reale dedicato ai colloqui e alle consulenze" }, { src: "/images/reception-fisiosalute-reale.webp", alt: "Gli spazi di accoglienza di FisioSalute" }],
+    images: [{ src: "/images/services-generated/nutrizione-1.png", alt: "Consulenza nutrizionale con alimenti freschi" }, { src: "/images/services-generated/nutrizione-2.png", alt: "Pianificazione di un’alimentazione personalizzata" }],
   },
 };
 
@@ -339,6 +339,11 @@ const serviceEnhancements: Record<string, Partial<Pick<Service, "paragraphs" | "
   },
 };
 
+const generatedServiceImages: Record<string, ServiceImage[]> = Object.fromEntries([
+  ["fisioterapia-sportiva", "fisioterapia-reumatologica", "fisioterapia-neurologica", "fisioterapia-prevenzione", "riabilitazione", "articolazione-temporo-mandibolare", "pavimento-pelvico", "sindromi-vertiginose", "cefalee-muscolo-tensive", "linfodrenaggio", "riabilitazione-post-oncologica", "idrokinesiterapia", "fisioterapia-domiciliare", "riatletizzazione-esercizio-specifico", "laserterapia", "tecarterapia", "pressoterapia", "terapie-infiltrative", "fisiopilates-macchinari", "pilates-clinico", "pilates-clinico-aperto", "rieducazione-posturale", "preparazione-parto", "recupero-post-partum"].map((slug) => [slug, [{ src: `/images/services-generated/${slug}.png`, alt: `Immagine dedicata a ${slug.replaceAll("-", " ")}` }, { src: `/images/services-generated/${slug}-2.png`, alt: `Seconda immagine dedicata a ${slug.replaceAll("-", " ")}` }]]),
+  ["fisioterapia-muscoloscheletrica", "salute-donna-fasi-vita", "diastasi-cicatrice-cesareo", "prevenzione-pavimento-pelvico", "movimento-benessere-femminile", "fisiatria", "ortopedia", "otorinolaringoiatria", "visita-dietistica", "composizione-corporea", "percorso-nutrizionale", "nutrizione-condizioni-fisiologiche", "nutrizione-gastrointestinale", "nutrizione-sportiva"].map((slug) => [slug, [1, 2].map((index) => ({ src: `/images/services-generated/${slug}-${index}.png`, alt: `Immagine dedicata a ${slug.replaceAll("-", " ")}` }))])
+].flat());
+
 export const allServices = serviceAreas.flatMap((area) => area.services.map((service) => {
   const defaults = areaDetails[area.slug];
   const enhancement = serviceEnhancements[service.slug];
@@ -347,6 +352,6 @@ export const allServices = serviceAreas.flatMap((area) => area.services.map((ser
     area,
     paragraphs: [...(enhancement?.paragraphs ?? service.paragraphs ?? []), ...defaults.paragraphs],
     sections: enhancement?.sections ?? (service.sections?.length ? service.sections : [defaults.section]),
-    images: service.images ?? defaults.images,
+    images: service.images ?? generatedServiceImages[service.slug] ?? defaults.images,
   };
 }));

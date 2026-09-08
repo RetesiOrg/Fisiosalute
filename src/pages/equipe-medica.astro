@@ -8,7 +8,7 @@ const specialties = [
   ["Fisiatria", "Per l’inquadramento dei disturbi muscoloscheletrici e la definizione del progetto riabilitativo.", "/servizi/area/fisiatria"],
   ["Ortopedia", "Per patologie articolari, indicazioni infiltrative e percorsi prima o dopo un intervento.", "/servizi/area/ortopedia"],
   ["Terapie infiltrative", "Prestazioni eseguite dallo specialista quando indicate nel percorso clinico.", "/servizi/terapie-infiltrative"],
-  ["Otorinolaringoiatria", "Per disturbi di orecchio, naso e gola e per l’inquadramento di vertigini e alterazioni dell’equilibrio.", "/servizi/area/otorinolaringoiatria"],
+  ["Otorino\u00adlaringoiatria", "Per disturbi di orecchio, naso e gola e per l’inquadramento di vertigini e alterazioni dell’equilibrio.", "/servizi/area/otorinolaringoiatria"],
   ["Nutrizione e dieta", "Visite dietistiche e percorsi nutrizionali personalizzati a supporto degli obiettivi di salute.", "/servizi/area/nutrizione-dieta"],
 ];
 ---
@@ -131,6 +131,7 @@ const specialties = [
   const searchInput = document.querySelector("#medical-search") as HTMLInputElement | null;
   const specialtyFilter = document.querySelector("#medical-specialty-filter") as HTMLSelectElement | null;
   const cards = [...document.querySelectorAll<HTMLElement>("[data-medical-card]")];
+  const cardsGrid = document.querySelector(".medical-cards");
   const resultLabel = document.querySelector("[data-medical-results]");
   const emptyLabel = document.querySelector("[data-medical-empty]") as HTMLElement | null;
 
@@ -149,6 +150,7 @@ const specialties = [
       if (isVisible) visible += 1;
     });
 
+    cardsGrid?.classList.toggle("single-result", visible === 1);
     if (resultLabel) resultLabel.textContent = `${visible} ${visible === 1 ? "medico presente" : "medici presenti"}`;
     if (emptyLabel) emptyLabel.hidden = visible !== 0;
   };
@@ -238,6 +240,10 @@ const specialties = [
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1px;
     background: #cbd5d0;
+  }
+
+  .medical-cards.single-result {
+    grid-template-columns: 1fr;
   }
 
   .medical-card {
@@ -383,7 +389,28 @@ const specialties = [
   }
 
   .medical-specialties .specialty-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1px;
     margin: 0;
+  }
+
+  @media (max-width: 1500px) {
+    .medical-specialties .specialty-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .medical-specialties .specialty-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .medical-specialties .specialty-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 1100px) {

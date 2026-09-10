@@ -367,7 +367,7 @@ const serviceImageOverrides: Record<string, ServiceImage[]> = {
   ],
   "pavimento-pelvico": [
     generatedServiceImages["pavimento-pelvico"][0],
-    { src: "/images/services-generated/donna-2.webp", alt: "Donna in piedi con le mani all’altezza del pube per dolore pelvico" },
+    { src: "/images/services-generated/pavimento-pelvico-dolore.png", alt: "Donna in piedi con le mani all’altezza del pube per dolore pelvico" },
   ],
 };
 

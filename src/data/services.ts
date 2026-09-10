@@ -348,6 +348,26 @@ const generatedServiceImages: Record<string, ServiceImage[]> = Object.fromEntrie
 
 // Varianti più riconoscibili per i servizi in cui le due immagini risultavano troppo simili.
 const serviceImageOverrides: Record<string, ServiceImage[]> = {
+  // Feedback Erika: per Tecarterapia mostrare solo la seconda immagine.
+  "tecarterapia": [generatedServiceImages["tecarterapia"][1]],
+  // Feedback Erika: immagine distinta per la rieducazione posturale.
+  "rieducazione-posturale": [
+    { src: "/images/services-generated/fisioterapia-muscoloscheletrica-2.webp", alt: "Esercizio terapeutico per mobilità e controllo del movimento" },
+  ],
+  // Feedback Erika: visual più pertinenti per i servizi dedicati alla salute della donna.
+  "salute-donna-fasi-vita": [{ src: "/images/services-generated/salute-donna-fasi-vita-new.webp", alt: "Tre donne di età diverse insieme" }],
+  "recupero-post-partum": [{ src: "/images/services-generated/recupero-post-partum-new.webp", alt: "Donna che lavora sul recupero dell’addome nel post parto" }],
+  "diastasi-cicatrice-cesareo": [{ src: "/images/services-generated/diastasi-cicatrice-cesareo-new.webp", alt: "Donna che accompagna il recupero della zona addominale dopo un cesareo" }],
+  "prevenzione-pavimento-pelvico": [{ src: "/images/services-generated/recupero-post-partum-new.webp", alt: "Mani appoggiate sull’addome durante un esercizio di consapevolezza" }],
+  "movimento-benessere-femminile": [{ src: "/images/services-generated/movimento-benessere-femminile-new.webp", alt: "Gruppo di donne impegnate in esercizi di movimento" }],
+  // L’attuale seconda immagine ortopedica è stata segnalata come artificiale.
+  "ortopedia": [generatedServiceImages["ortopedia"][0], { src: "/images/services-generated/ortopedia-2-new.webp", alt: "Consulto ortopedico realistico per la valutazione del ginocchio" }],
+  // Per la nutrizione si usa un’immagine comune, mantenendo distinta solo la nutrizione sportiva.
+  "visita-dietistica": [{ src: "/images/services-generated/nutrizione-1.webp", alt: "Colloquio nutrizionale" }],
+  "composizione-corporea": [{ src: "/images/services-generated/nutrizione-1.webp", alt: "Colloquio nutrizionale" }],
+  "percorso-nutrizionale": [{ src: "/images/services-generated/nutrizione-1.webp", alt: "Colloquio nutrizionale" }],
+  "nutrizione-condizioni-fisiologiche": [{ src: "/images/services-generated/nutrizione-1.webp", alt: "Colloquio nutrizionale" }],
+  "nutrizione-gastrointestinale": [{ src: "/images/services-generated/nutrizione-1.webp", alt: "Colloquio nutrizionale" }],
   "articolazione-temporo-mandibolare": generatedServiceImages["articolazione-temporo-mandibolare"].slice(0, 1),
   "riabilitazione-post-oncologica": generatedServiceImages["riabilitazione-post-oncologica"].slice(0, 1),
   "fisioterapia-reumatologica": [

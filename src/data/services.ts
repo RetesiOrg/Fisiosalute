@@ -346,6 +346,31 @@ const generatedServiceImages: Record<string, ServiceImage[]> = Object.fromEntrie
   ["fisioterapia-muscoloscheletrica", "salute-donna-fasi-vita", "diastasi-cicatrice-cesareo", "prevenzione-pavimento-pelvico", "movimento-benessere-femminile", "fisiatria", "ortopedia", "otorinolaringoiatria", "visita-dietistica", "composizione-corporea", "percorso-nutrizionale", "nutrizione-condizioni-fisiologiche", "nutrizione-gastrointestinale", "nutrizione-sportiva"].map((slug) => [slug, [1, 2].map((index) => ({ src: `/images/services-generated/${slug}-${index}.webp`, alt: `Immagine dedicata a ${slug.replaceAll("-", " ")}` }))])
 ].flat());
 
+// Varianti più riconoscibili per i servizi in cui le due immagini risultavano troppo simili.
+const serviceImageOverrides: Record<string, ServiceImage[]> = {
+  "articolazione-temporo-mandibolare": generatedServiceImages["articolazione-temporo-mandibolare"].slice(0, 1),
+  "riabilitazione-post-oncologica": generatedServiceImages["riabilitazione-post-oncologica"].slice(0, 1),
+  "fisioterapia-reumatologica": [
+    generatedServiceImages["fisioterapia-reumatologica"][0],
+    { src: "/images/services-generated/fisioterapia-muscoloscheletrica-1.webp", alt: "Esercizio terapeutico per la fisioterapia reumatologica" },
+  ],
+  "fisioterapia-neurologica": [
+    generatedServiceImages["fisioterapia-neurologica"][0],
+    { src: "/images/services-generated/riabilitazione-2.webp", alt: "Esercizio riabilitativo per la fisioterapia neurologica" },
+  ],
+  "sindromi-vertiginose": [
+    generatedServiceImages["sindromi-vertiginose"][0],
+    { src: "/images/services-generated/sindromi-vertiginose-dizziness.png", alt: "Persona con sensazione di testa che gira" },
+  ],
+  "cefalee-muscolo-tensive": [
+    { src: "/images/services-generated/cefalee-muscolo-tensive.webp", alt: "Persona con le mani sulla testa per il mal di testa" },
+  ],
+  "pavimento-pelvico": [
+    generatedServiceImages["pavimento-pelvico"][0],
+    { src: "/images/services-generated/donna-2.webp", alt: "Donna in piedi con le mani all’altezza del pube per dolore pelvico" },
+  ],
+};
+
 export const allServices = serviceAreas.flatMap((area) => area.services.map((service) => {
   const defaults = areaDetails[area.slug];
   const enhancement = serviceEnhancements[service.slug];
@@ -354,6 +379,6 @@ export const allServices = serviceAreas.flatMap((area) => area.services.map((ser
     area,
     paragraphs: [...(enhancement?.paragraphs ?? service.paragraphs ?? []), ...defaults.paragraphs],
     sections: enhancement?.sections ?? (service.sections?.length ? service.sections : [defaults.section]),
-    images: service.images ?? generatedServiceImages[service.slug] ?? defaults.images,
+    images: service.images ?? serviceImageOverrides[service.slug] ?? generatedServiceImages[service.slug] ?? defaults.images,
   };
 }));

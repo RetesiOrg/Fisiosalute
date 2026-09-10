@@ -363,7 +363,7 @@ const serviceImageOverrides: Record<string, ServiceImage[]> = {
     { src: "/images/services-generated/sindromi-vertiginose-dizziness.png", alt: "Persona con sensazione di testa che gira" },
   ],
   "cefalee-muscolo-tensive": [
-    { src: "/images/services-generated/cefalee-muscolo-tensive.webp", alt: "Persona con le mani sulla testa per il mal di testa" },
+    { src: "/images/services-generated/cefalee-muscolo-tensive-headache.png", alt: "Persona con le mani sulla testa per la cefalea muscolo-tensiva" },
   ],
   "pavimento-pelvico": [
     generatedServiceImages["pavimento-pelvico"][0],

@@ -360,14 +360,14 @@ const serviceImageOverrides: Record<string, ServiceImage[]> = {
   ],
   "sindromi-vertiginose": [
     generatedServiceImages["sindromi-vertiginose"][0],
-    { src: "/images/services-generated/sindromi-vertiginose-dizziness.png", alt: "Persona con sensazione di testa che gira" },
+    { src: "/images/services-generated/sindromi-vertiginose-dizziness.webp", alt: "Persona con sensazione di testa che gira" },
   ],
   "cefalee-muscolo-tensive": [
-    { src: "/images/services-generated/cefalee-muscolo-tensive-headache.png", alt: "Persona con le mani sulla testa per la cefalea muscolo-tensiva" },
+    { src: "/images/services-generated/cefalee-muscolo-tensive-headache.webp", alt: "Persona con le mani sulla testa per la cefalea muscolo-tensiva" },
   ],
   "pavimento-pelvico": [
     generatedServiceImages["pavimento-pelvico"][0],
-    { src: "/images/services-generated/pavimento-pelvico-dolore.png", alt: "Donna in piedi con le mani all’altezza del pube per dolore pelvico" },
+    { src: "/images/services-generated/pavimento-pelvico-dolore.webp", alt: "Donna in piedi con le mani all’altezza del pube per dolore pelvico" },
   ],
 };
 

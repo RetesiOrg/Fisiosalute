@@ -3,8 +3,9 @@ export const navigation = [
   { label: "Servizi", href: "/servizi" },
   { label: "Fisioterapisti", href: "/staff" },
   { label: "Medici specialisti", href: "/equipe-medica" },
+  { label: "Altri professionisti", href: "/altri-professionisti" },
   { label: "News", href: "/news" },
   { label: "Recensioni", href: "/#recensioni" },
-  { label: "Contatti", href: "/#contatti" },
-  { label: "Dove siamo", href: "/dove-siamo" },
+  { label: "Contatti e dove siamo", href: "/contatti" },
+  { label: "Collaborazioni", href: "/collaborazioni" },
 ] as const;

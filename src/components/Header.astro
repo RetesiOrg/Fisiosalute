@@ -1,7 +1,7 @@
 ---
 import { navigation } from "../data/navigation";
-const professionals = navigation.filter(({ label }) => ["Erika Voltan", "Fisioterapisti", "Medici specialisti"].includes(label));
-const mainNavigation = navigation.filter(({ label }) => !["Erika Voltan", "Fisioterapisti", "Medici specialisti"].includes(label));
+const professionals = navigation.filter(({ label }) => ["Erika Voltan", "Fisioterapisti", "Medici specialisti", "Altri professionisti"].includes(label));
+const mainNavigation = navigation.filter(({ label }) => !["Erika Voltan", "Fisioterapisti", "Medici specialisti", "Altri professionisti"].includes(label));
 ---
 <header class="site-header">
   <a class="brand" href="/#inizio" aria-label="FisioSalute, torna alla pagina iniziale">

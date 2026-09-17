@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="Altri professionisti | FisioSalute Sondrio" description="Gli altri professionisti che collaborano con FisioSalute a Sondrio.">
+  <main>
+    <Header />
+    <section class="other-hero">
+      <p class="eyebrow light">Competenze che completano il percorso</p>
+      <h1>Altri professionisti.</h1>
+      <p>Professionisti con competenze specifiche che affiancano il lavoro fisioterapico per prenderci cura della persona a 360°.</p>
+    </section>
+    <section class="other-directory" aria-labelledby="other-title">
+      <div class="other-heading">
+        <div><p class="eyebrow">L’équipe FisioSalute</p><h2 id="other-title">I nostri professionisti.</h2></div>
+        <p>Un supporto specializzato per costruire percorsi personalizzati e coerenti con gli obiettivi di salute.</p>
+      </div>
+      <article class="other-card">
+        <div class="other-card-image"><img src="/images/Pedrolini.png" alt="Dott.ssa Elisa Pedrolini, dietista" width="941" height="1672" /></div>
+        <div class="other-card-content">
+          <p class="eyebrow">Dietista</p>
+          <h2>Elisa Pedrolini</h2>
+          <p class="other-role">Dietista</p>
+          <p>La dott.ssa Elisa Pedrolini entra a far parte dell’équipe FisioSalute.</p>
+          <p>Elisa è specializzata in:</p>
+          <ul>
+            <li>Counseling nutrizionale per il cambiamento dello stile di vita</li>
+            <li>Nutrizione sportiva (endurance e ricomposizione corporea)</li>
+            <li>Difficoltà con l’alimentazione e disturbi alimentari</li>
+            <li>Nutrizione per condizioni fisiologiche e patologiche (gravidanza, dimagrimento, disturbi gastrointestinali ecc.)</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+    <section class="staff-cta"><div><p class="eyebrow light">Un percorso su misura</p><h2>Ogni competenza al servizio della persona.</h2></div><div><p>Contattaci per conoscere la professionista più indicata per le tue esigenze.</p><a class="button button-sand" href="/#contatti">Richiedi informazioni</a></div></section>
+    <Footer />
+  </main>
+</BaseLayout>
+
+<style>
+  .other-hero{padding:120px clamp(24px,8vw,128px);background:var(--deep);color:#fff}.other-hero h1{margin:0 0 24px;font-size:clamp(48px,6vw,82px);line-height:1.02}.other-hero>p:last-child{max-width:650px;color:#d5e1de;font-size:19px}
+  .other-directory{padding:110px clamp(24px,8vw,128px);background:var(--ivory)}.other-heading{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end;margin-bottom:45px}.other-heading h2{margin:0;color:var(--deep);font-size:clamp(38px,4.5vw,62px)}.other-heading>p{color:#56635f;font-size:18px}.other-card{display:grid;grid-template-columns:1fr 1fr;max-width:1100px;margin:auto;background:#fff}.other-card-image{min-height:650px;background:#e8e0dc}.other-card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}.other-card-content{padding:70px clamp(32px,6vw,85px);align-self:center}.other-card-content h2{margin:0 0 12px;color:var(--deep);font-size:clamp(38px,4vw,58px)}.other-role{color:var(--petrol);font-weight:700}.other-card-content>p{color:#56635f}.other-card-content ul{padding-left:20px;color:#56635f;line-height:1.55}.other-card-content li{margin:10px 0}
+  @media(max-width:900px){.other-heading,.other-card{grid-template-columns:1fr;gap:28px}.other-card-image{min-height:520px}.other-card-content{padding:55px 28px}}
+</style>

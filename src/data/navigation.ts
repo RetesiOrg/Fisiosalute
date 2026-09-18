@@ -6,6 +6,6 @@ export const navigation = [
   { label: "Altri professionisti", href: "/altri-professionisti" },
   { label: "News", href: "/news" },
   { label: "Recensioni", href: "/#recensioni" },
-  { label: "Contatti e dove siamo", href: "/contatti" },
+  { label: "Contatti", href: "/contatti" },
   { label: "Collaborazioni", href: "/collaborazioni" },
 ] as const;

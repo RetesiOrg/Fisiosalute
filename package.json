@@ -11,7 +11,7 @@
     "localhost": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro dev --host localhost --port 4321"
   },
   "dependencies": {
-    "astro": "^7.2.3"
+    "astro": "^7.3.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

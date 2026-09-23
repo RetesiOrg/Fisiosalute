@@ -7,5 +7,4 @@ export const navigation = [
   { label: "News", href: "/news" },
   { label: "Recensioni", href: "/#recensioni" },
   { label: "Contatti", href: "/contatti" },
-  { label: "Collaborazioni", href: "/collaborazioni" },
 ] as const;

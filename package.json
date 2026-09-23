@@ -4,10 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "check": "astro check"
+    "dev": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro dev",
+    "build": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro build",
+    "preview": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro preview",
+    "check": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro check",
+    "localhost": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro dev --host localhost --port 4321"
   },
   "dependencies": {
     "astro": "^7.2.3"

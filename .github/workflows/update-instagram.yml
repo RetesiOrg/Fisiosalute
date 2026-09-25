@@ -1,0 +1,57 @@
+name: Aggiorna news Instagram
+
+on:
+  schedule:
+    # Controlla ogni ora e lavora solo alle 07:00, 13:00 e 20:00, ora italiana.
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Esegui solo alle 07:00 o alle 13:00 italiane
+        run: |
+          HOUR=$(TZ=Europe/Rome date +%H)
+          if [ "$HOUR" != "07" ] && [ "$HOUR" != "13" ] && [ "$HOUR" != "20" ]; then
+            echo "Ora italiana: $HOUR. Nessun aggiornamento previsto."
+            echo "UPDATE_NEEDED=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Scarica il repository
+        if: env.UPDATE_NEEDED != 'false'
+        uses: actions/checkout@v4
+
+      - name: Configura Node.js
+        if: env.UPDATE_NEEDED != 'false'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sito-fisiosalute/package-lock.json
+
+      - name: Aggiorna gli ultimi due post
+        if: env.UPDATE_NEEDED != 'false'
+        working-directory: sito-fisiosalute
+        env:
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+        run: |
+          npm ci
+          node scripts/update-instagram.mjs
+
+      - name: Pubblica l’aggiornamento
+        if: env.UPDATE_NEEDED != 'false'
+        run: |
+          if git diff --quiet -- sito-fisiosalute/src/data/instagram.generated.ts; then
+            echo "Nessun nuovo contenuto Instagram."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sito-fisiosalute/src/data/instagram.generated.ts
+          git commit -m "chore: aggiorna news Instagram"
+          git push

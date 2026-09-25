@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro dev",
-    "build": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro build",
-    "preview": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro preview",
-    "check": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro check",
-    "localhost": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI astro dev --host localhost --port 4321"
+    "dev": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "localhost": "env -u ELECTRON_RUN_AS_NODE -u CODEX_CI ASTRO_TELEMETRY_DISABLED=1 astro dev --host 127.0.0.1 --port 4321"
   },
   "dependencies": {
     "astro": "^7.3.4"

@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/",
+    "status": 200
+  },
+  {
+    "path": "/equipe-medica/",
+    "status": 200
+  },
+  {
+    "path": "/api/instagram.json",
+    "status": 200
+  },
+  {
+    "path": "/fisiosalute-aggiornamento-2026-10-12.zip",
+    "status": 403
+  },
+  {
+    "path": "/pagina-inesistente-verifica-20261012/",
+    "status": 404
+  }
+]

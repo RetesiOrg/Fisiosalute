@@ -35,6 +35,22 @@ export const medicalSpecialists: MedicalSpecialist[] = [
     href: "/equipe-medica/#elio-basso-narducci",
   },
   {
+    slug: "gregorio-baldini",
+    name: "Dott. Gregorio Baldini",
+    role: "Fisiatra",
+    image: "/images/medical-gregorio-baldini.webp",
+    imageWidth: 1179,
+    imageHeight: 1376,
+    specialties: ["Fisiatria", "Riabilitazione ortopedica e funzionale", "Medicina manuale", "Riabilitazione respiratoria"],
+    summary: "Il dott. Gregorio Baldini, Medico fisiatra con una lunga esperienza ospedaliera, ha lavorato per oltre 30 anni nei reparti di Recupero e Riabilitazione Funzionale e di Riabilitazione Ortopedica presso gli ospedali di Sondrio e Sondalo. La sua esperienza in ambito ospedaliero e riabilitativo arricchisce l’équipe FisioSalute, con l’obiettivo di offrire al paziente un percorso di cura personalizzato e multidisciplinare.",
+    education: ["Medico fisiatra", "Specializzazione in fisiopatologia e fisiochinesiterapia respiratoria", "Oltre 30 anni di esperienza ospedaliera a Sondrio e Sondalo"],
+    expertise: ["Riabilitazione ortopedica e funzionale", "Valutazione e trattamento delle problematiche dell’apparato muscolo-scheletrico", "Medicina manuale", "Riabilitazione respiratoria, grazie alla specializzazione in fisiopatologia e fisiochinesiterapia respiratoria"],
+    serviceLinks: [
+      { label: "Area Fisiatria", href: "/servizi/area/fisiatria/" },
+    ],
+    href: "/equipe-medica/#gregorio-baldini",
+  },
+  {
     slug: "alberto-giuffrida",
     name: "Dott. Alberto Giuffrida",
     role: "Medico chirurgo specialista in Ortopedia e Traumatologia",

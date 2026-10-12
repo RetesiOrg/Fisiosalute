@@ -638,5 +638,10 @@
     "width": 380,
     "height": 115,
     "srcset": null
+  },
+  "/images/medical-gregorio-baldini.webp": {
+    "width": 1179,
+    "height": 1376,
+    "srcset": "/images/responsive/medical-gregorio-baldini-480.webp 480w, /images/responsive/medical-gregorio-baldini-800.webp 800w, /images/medical-gregorio-baldini.webp 1179w"
   }
 }

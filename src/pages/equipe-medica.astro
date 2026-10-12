@@ -163,7 +163,7 @@ const specialties = [
 <style>
   .medical-directory {
     padding: 110px clamp(24px, 8vw, 128px);
-    background: var(--ivory);
+    background: #fff;
   }
 
   .medical-directory-heading {
@@ -239,8 +239,9 @@ const specialties = [
   .medical-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
     gap: 1px;
-    background: #cbd5d0;
+    background: #fff;
   }
 
   .medical-cards.single-result {
@@ -262,15 +263,28 @@ const specialties = [
     position: relative;
     min-height: 560px;
     overflow: hidden;
-    background: #dfe5e0;
+    background: #fff;
   }
 
   .medical-card-image img {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center top;
+  }
+
+  /* Match the size and height of the faces within the same portrait frame. */
+  #gregorio-baldini .medical-card-image img {
+    transform: scale(1.25);
+    transform-origin: 50% 86%;
+  }
+
+  #alberto-giuffrida .medical-card-image img {
+    transform: scale(1.05);
+    transform-origin: 50% 0;
   }
 
   .medical-card-image > span {
@@ -442,8 +456,23 @@ const specialties = [
       display: block;
     }
 
+    .medical-cards {
+      grid-auto-rows: auto;
+    }
+
     .medical-card-image {
       min-height: 520px;
+      aspect-ratio: 3 / 4;
     }
+
+    #gregorio-baldini .medical-card-image img {
+      transform: scale(1.3);
+      transform-origin: 50% 72%;
+    }
+
+    #alberto-giuffrida .medical-card-image img {
+      transform: scale(1.15);
+    }
+
   }
 </style>

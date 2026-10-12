@@ -3,19 +3,19 @@ import { generatedInstagramPosts } from "./instagram.generated";
 
 const fallbackInstagramPosts = [
   {
-    url: "https://www.instagram.com/p/Dcd6L8ECKeJ/",
-    image: "",
-    title: "Il dottor Alberto Giuffrida entra a far parte dell’équipe FisioSalute",
-    date: "2026-08-25",
-    dateLabel: "25 agosto 2026",
+    "url": "https://www.instagram.com/p/Dd6LaopDVUv/",
+    "image": "/images/instagram/Dd6LaopDVUv.jpg",
+    "title": "FisioSalute al fianco dei giocatori MGM 2000",
+    "date": "",
+    "dateLabel": ""
   },
   {
-    url: "https://www.instagram.com/p/DcS3BlNDN6l/",
-    image: "",
-    title: "L’esercizio come alleato contro il dolore",
-    date: "2026-08-21",
-    dateLabel: "21 agosto 2026",
-  },
+    "url": "https://www.instagram.com/p/Dd5xyyFjhbG/",
+    "image": "/images/instagram/Dd5xyyFjhbG.jpg",
+    "title": "La dott.ssa Benedetta Nicolussi: dal gennaio 2027 nello staff FisioSalute",
+    "date": "",
+    "dateLabel": ""
+  }
 ] as const;
 
 type InstagramApiPost = {

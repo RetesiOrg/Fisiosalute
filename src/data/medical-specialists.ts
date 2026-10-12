@@ -29,10 +29,10 @@ export const medicalSpecialists: MedicalSpecialist[] = [
     education: ["Medico chirurgo", "Specialista in Otorinolaringoiatria", "Direttore sanitario di FisioSalute"],
     expertise: ["Otiti, ipoacusia e acufeni", "Vertigini e disturbi dell’equilibrio", "Sinusiti, poliposi e deviazione del setto nasale", "Patologie della gola e disturbi della voce", "Problemi respiratori e apnee notturne"],
     serviceLinks: [
-      { label: "Area Otorinolaringoiatria", href: "/servizi/area/otorinolaringoiatria" },
-      { label: "Riabilitazione delle sindromi vertiginose", href: "/servizi/sindromi-vertiginose" },
+      { label: "Area Otorinolaringoiatria", href: "/servizi/area/otorinolaringoiatria/" },
+      { label: "Riabilitazione delle sindromi vertiginose", href: "/servizi/sindromi-vertiginose/" },
     ],
-    href: "/equipe-medica#elio-basso-narducci",
+    href: "/equipe-medica/#elio-basso-narducci",
   },
   {
     slug: "alberto-giuffrida",
@@ -46,10 +46,10 @@ export const medicalSpecialists: MedicalSpecialist[] = [
     education: ["Laurea in Medicina e Chirurgia · Università Cattolica del Sacro Cuore di Roma, 2017", "Specializzazione in Ortopedia e Traumatologia · Humanitas University di Milano, 2023"],
     expertise: ["Protesi d’anca con tecnica anteriore mininvasiva senza sezione muscolare", "Protesi di ginocchio con allineamento personalizzato", "Chirurgia robotica nella protesica di ginocchio", "Traumatologia dello sport", "Medicina rigenerativa della cartilagine", "Pubblicazioni scientifiche e partecipazione a congressi nazionali e internazionali"],
     serviceLinks: [
-      { label: "Area Ortopedia", href: "/servizi/area/ortopedia" },
-      { label: "Terapie infiltrative", href: "/servizi/terapie-infiltrative" },
+      { label: "Area Ortopedia", href: "/servizi/area/ortopedia/" },
+      { label: "Terapie infiltrative", href: "/servizi/terapie-infiltrative/" },
     ],
-    href: "/equipe-medica#alberto-giuffrida",
+    href: "/equipe-medica/#alberto-giuffrida",
   },
 ];
 
@@ -57,12 +57,12 @@ export const medicalSpecialistRefs = {
   narducci: {
     name: "Dott. Elio Basso Narducci",
     role: "Otorinolaringoiatra",
-    href: "/equipe-medica#elio-basso-narducci",
+    href: "/equipe-medica/#elio-basso-narducci",
   },
   giuffrida: {
     name: "Dott. Alberto Giuffrida",
     role: "Ortopedico e traumatologo",
-    href: "/equipe-medica#alberto-giuffrida",
+    href: "/equipe-medica/#alberto-giuffrida",
   },
 } satisfies Record<string, MedicalSpecialistRef>;
 

@@ -1,0 +1,8 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import metadata from "../data/image-metadata.json";
+type Props = HTMLAttributes<"img"> & { src: string; alt: string };
+const { src, alt, sizes = "(max-width: 900px) calc(100vw - 48px), 45vw", loading, fetchpriority, ...attributes } = Astro.props;
+const info = (metadata as Record<string, { width: number; height: number; srcset: string | null }>)[src];
+---
+<img {...attributes} src={src} alt={alt} width={info?.width ?? attributes.width} height={info?.height ?? attributes.height} srcset={info?.srcset} sizes={info?.srcset ? sizes : undefined} loading={loading ?? (fetchpriority === "high" ? "eager" : "lazy")} fetchpriority={fetchpriority} decoding="async" />

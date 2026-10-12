@@ -1,7 +1,18 @@
 ---
-import { navigation } from "../data/navigation";
-const professionals = navigation.filter(({ label }) => ["Erika Voltan", "Fisioterapisti", "Medici specialisti", "Altri professionisti"].includes(label));
-const mainNavigation = navigation.filter(({ label }) => !["Erika Voltan", "Fisioterapisti", "Medici specialisti", "Altri professionisti"].includes(label));
+import { navigation, professionalNavigation as professionals, mainNavigation } from "../data/navigation";
+import { allServices } from "../data/services";
+const searchIndex = [
+  ...navigation.filter(({ href }) => !href.startsWith("/#")).map(({ label, href }) => ({ title: label, text: label, href })),
+  ...allServices.map((service) => ({
+    title: service.title,
+    text: `${service.title} ${service.summary} ${service.paragraphs.join(" ")} ${service.sections.map((section) => `${section.title} ${section.items.join(" ")}`).join(" ")}`,
+    href: `/servizi/${service.slug}/`,
+  })),
+  { title: "Erika Voltan — Gestione del runner", text: "runner running corsa videoanalisi biomeccanica tecnica performance infortuni", href: "/erika-voltan/" },
+  { title: "Silvia Simonini — Fisioterapista", text: "runner running corsa videoanalisi biomeccanica prevenzione recupero infortuni", href: "/staff/#silvia-simonini" },
+];
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isCurrent = (href: string) => !href.includes("#") && currentPath === (href.replace(/\/$/, "") || "/");
 ---
 <header class="site-header">
   <a class="brand" href="/#inizio" aria-label="FisioSalute, torna alla pagina iniziale">
@@ -9,16 +20,113 @@ const mainNavigation = navigation.filter(({ label }) => !["Erika Voltan", "Fisio
   </a>
   <nav aria-label="Navigazione principale">
     <div class="nav-dropdown">
-      <span class="nav-dropdown-trigger" tabindex="0">Professionisti <span aria-hidden="true">⌄</span></span>
-      <div>{professionals.map(({ label, href }) => <a href={href}>{label}</a>)}</div>
+      <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-controls="professional-links">Professionisti <span aria-hidden="true">⌄</span></button>
+      <div id="professional-links">{professionals.map(({ label, href }) => <a href={href} aria-current={isCurrent(href) ? "page" : undefined}>{label}</a>)}</div>
     </div>
-    {mainNavigation.map((item) => <a href={item.href} target={"external" in item && item.external ? "_blank" : undefined} rel={"external" in item && item.external ? "noreferrer" : undefined}>{item.label}{"external" in item && item.external ? " ↗" : ""}</a>)}
+    {mainNavigation.map((item) => <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined} target={"external" in item && item.external ? "_blank" : undefined} rel={"external" in item && item.external ? "noreferrer" : undefined}>{item.label}{"external" in item && item.external ? " ↗" : ""}</a>)}
   </nav>
   <a class="button button-small" href="/#contatti">Richiedi un appuntamento</a>
+  <button class="search-trigger" type="button" aria-label="Apri la ricerca" aria-controls="site-search" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+  </button>
   <details class="mobile-menu">
     <summary><span>Menu</span><i aria-hidden="true"></i></summary>
     <nav aria-label="Navigazione mobile">
-      {navigation.map((item) => <a href={item.href} target={"external" in item && item.external ? "_blank" : undefined} rel={"external" in item && item.external ? "noreferrer" : undefined}>{item.label}{"external" in item && item.external ? " ↗" : ""}</a>)}
+      {navigation.map((item) => <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined} target={"external" in item && item.external ? "_blank" : undefined} rel={"external" in item && item.external ? "noreferrer" : undefined}>{item.label}{"external" in item && item.external ? " ↗" : ""}</a>)}
     </nav>
   </details>
 </header>
+
+<dialog class="site-search" id="site-search" aria-labelledby="site-search-title">
+  <div class="site-search-inner">
+    <button class="search-close" type="button" aria-label="Chiudi la ricerca">×</button>
+    <p class="eyebrow">FisioSalute</p>
+    <h2 id="site-search-title">Cerca nel sito.</h2>
+    <form class="search-form" method="dialog">
+      <label for="site-search-input">Cosa stai cercando?</label>
+      <div><input id="site-search-input" type="search" autofocus placeholder="Es. pavimento pelvico" autocomplete="off" /><button type="submit">Cerca</button></div>
+    </form>
+    <div class="search-results" aria-live="polite"></div>
+  </div>
+</dialog>
+
+<script is:inline define:vars={{ searchIndex }}>
+  const dropdown = document.querySelector(".nav-dropdown");
+  const dropdownTrigger = dropdown?.querySelector(".nav-dropdown-trigger");
+  const setDropdown = (open) => { dropdown.dataset.open = String(open); dropdownTrigger.setAttribute("aria-expanded", String(open)); };
+  dropdownTrigger?.addEventListener("click", () => setDropdown(true));
+  dropdown?.addEventListener("mouseenter", () => setDropdown(true));
+  dropdown?.addEventListener("mouseleave", () => { if (!dropdown.contains(document.activeElement)) setDropdown(false); });
+  dropdown?.addEventListener("focusin", () => setDropdown(true));
+  dropdown?.addEventListener("focusout", (event) => { if (!dropdown.contains(event.relatedTarget)) setDropdown(false); });
+  dropdown?.addEventListener("keydown", (event) => { if (event.key === "Escape") { dropdownTrigger.focus(); setDropdown(false); event.stopPropagation(); } });
+  document.addEventListener("click", (event) => { if (dropdown && !dropdown.contains(event.target)) setDropdown(false); });
+  const dialog = document.querySelector("#site-search");
+  const trigger = document.querySelector(".search-trigger");
+  const close = dialog?.querySelector(".search-close");
+  const input = dialog?.querySelector("#site-search-input");
+  const results = dialog?.querySelector(".search-results");
+  const form = dialog?.querySelector(".search-form");
+  let searchableIndex = searchIndex;
+  let indexRequested = false;
+
+  const loadFullSiteIndex = async () => {
+    try {
+      const response = await fetch("/search-index.json", { credentials: "same-origin" });
+      if (!response.ok) throw new Error("Search index unavailable");
+      const enriched = await response.json();
+      if (!Array.isArray(enriched)) throw new Error("Invalid search index");
+      searchableIndex = enriched;
+      if (input?.value) renderResults(input.value);
+    } catch { indexRequested = false; }
+  };
+
+  const renderResults = (query = "") => {
+    if (!results) return;
+    const normalized = query.trim().toLocaleLowerCase("it");
+    if (!normalized) {
+      results.innerHTML = '<p class="search-hint">Scrivi una parola per cercare servizi, professionisti e informazioni.</p>';
+      return;
+    }
+    const matches = searchableIndex.filter((item) => `${item.title} ${item.text}`.toLocaleLowerCase("it").includes(normalized)).slice(0, 8);
+    results.innerHTML = matches.length
+      ? matches.map((item) => `<a href="${item.href}"><strong>${item.title}</strong><span>Apri la pagina →</span></a>`).join("")
+      : '<p class="search-hint">Nessun risultato. Prova con un’altra parola.</p>';
+  };
+
+  trigger?.addEventListener("click", () => {
+    dialog?.showModal();
+    if (!indexRequested) { indexRequested = true; void loadFullSiteIndex(); }
+    trigger.setAttribute("aria-expanded", "true");
+    renderResults();
+    input?.focus();
+  });
+  close?.addEventListener("click", () => dialog?.close());
+  dialog?.addEventListener("close", () => { trigger?.setAttribute("aria-expanded", "false"); trigger?.focus(); });
+  dialog?.addEventListener("keydown", (event) => { if (event.key === "Escape") { event.preventDefault(); event.stopPropagation(); dialog.close(); } }, true);
+  form?.addEventListener("submit", (event) => { event.preventDefault(); renderResults(input?.value ?? ""); });
+  input?.addEventListener("input", () => renderResults(input.value));
+  dialog?.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+</script>
+
+<style>
+  .search-trigger { display: grid; place-items: center; width: 42px; height: 42px; padding: 8px; border: 1px solid rgba(22, 76, 74, .28); background: transparent; color: var(--deep); cursor: pointer; }
+  .search-trigger:hover, .search-trigger:focus-visible { background: var(--sand); outline: none; }
+  .search-trigger svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.8; }
+  .site-search { width: min(620px, calc(100% - 32px)); padding: 0; border: 0; color: var(--ink); background: var(--ivory); box-shadow: 0 20px 60px rgba(22,76,74,.22); }
+  .site-search::backdrop { background: rgba(22, 76, 74, .45); backdrop-filter: blur(3px); }
+  .site-search-inner { position: relative; padding: 48px; }
+  .site-search h2 { margin: 0 0 28px; color: var(--deep); font-size: clamp(34px, 5vw, 52px); line-height: 1.05; }
+  .search-close { position: absolute; top: 15px; right: 18px; border: 0; background: none; color: var(--deep); font-size: 30px; line-height: 1; cursor: pointer; }
+  .search-form label { display: block; margin-bottom: 8px; color: var(--deep); font: 600 13px "Montserrat", Arial, sans-serif; }
+  .search-form div { display: flex; gap: 10px; }
+  .search-form input { min-width: 0; flex: 1; padding: 13px 0; border: 0; border-bottom: 1px solid #aebdb7; background: transparent; color: var(--ink); font: 16px "Lato", Arial, sans-serif; outline: none; }
+  .search-form input:focus { border-color: var(--petrol); }
+  .search-form button { padding: 11px 17px; border: 0; background: var(--petrol); color: #fff; font: 600 12px "Montserrat", Arial, sans-serif; cursor: pointer; }
+  .search-results { display: grid; margin-top: 25px; border-top: 1px solid #ccd4cf; }
+  :global(.search-results a) { display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-bottom: 1px solid #ccd4cf; color: var(--deep); }
+  :global(.search-results a span) { color: var(--petrol); font-size: 13px; white-space: nowrap; }
+  :global(.search-hint) { color: #5f6b67; font-size: 15px; }
+  @media (max-width: 900px) { .search-trigger { order: 2; } }
+  @media (max-width: 520px) { .search-trigger { width: 44px; height: 42px; } .site-search-inner { padding: 42px 24px 30px; } .search-form div { flex-direction: column; gap: 14px; } .search-form button { padding: 13px 17px; } .search-results a { align-items: flex-start; flex-direction: column; gap: 3px; } }
+</style>

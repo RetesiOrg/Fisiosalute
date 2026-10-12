@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-05",
+  "public_files_checked": 466,
+  "errors": [],
+  "http_checks": [
+    {
+      "url": "http://www.fisiosalute.it/",
+      "status": 301,
+      "location": "https://www.fisiosalute.it/",
+      "passed": true
+    },
+    {
+      "url": "http://fisiosalute.it/",
+      "status": 301,
+      "location": "https://www.fisiosalute.it/",
+      "passed": true
+    },
+    {
+      "url": "https://fisiosalute.it/",
+      "status": 301,
+      "location": "https://www.fisiosalute.it/",
+      "passed": true
+    },
+    {
+      "url": "https://www.fisiosalute.it/chi-siamo/",
+      "status": 301,
+      "location": "https://www.fisiosalute.it/erika-voltan/",
+      "passed": true
+    },
+    {
+      "url": "https://www.fisiosalute.it/recensioni/",
+      "status": 301,
+      "location": "https://www.fisiosalute.it/#recensioni",
+      "passed": true
+    },
+    {
+      "url": "https://www.fisiosalute.it/pagina-verifica-inesistente-20261005/",
+      "status": 404,
+      "location": null,
+      "passed": true
+    },
+    {
+      "url": "https://www.fisiosalute.it/wp-login.php",
+      "status": 403,
+      "location": null,
+      "passed": true
+    },
+    {
+      "url": "https://www.fisiosalute.it/backups-private/wordpress-originale-2026-10-5.tgz",
+      "status": 403,
+      "location": null,
+      "passed": true
+    },
+    {
+      "url": "https://www.fisiosalute.it/fisiosalute-attiva-produzione.zip",
+      "status": 403,
+      "location": null,
+      "passed": true
+    },
+    {
+      "url": "https://www.fisiosalute.it/api/update-instagram.php",
+      "status": 503,
+      "location": null,
+      "passed": true
+    },
+    {
+      "url": "https://www.fisiosalute.it/api/_private/config.example.php",
+      "status": 403,
+      "location": null,
+      "passed": true
+    },
+    {
+      "url": "https://www.fisiosalute.it/googlef011b7401a30b47d.html",
+      "status": 200,
+      "location": null,
+      "passed": true
+    }
+  ]
+}

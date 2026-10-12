@@ -1,0 +1,642 @@
+{
+  "/images/medical-alberto-giuffrida.webp": {
+    "width": 1162,
+    "height": 1354,
+    "srcset": "/images/responsive/medical-alberto-giuffrida-480.webp 480w, /images/responsive/medical-alberto-giuffrida-800.webp 800w, /images/medical-alberto-giuffrida.webp 1162w"
+  },
+  "/images/staff-team-group.webp": {
+    "width": 900,
+    "height": 1600,
+    "srcset": "/images/responsive/staff-team-group-480.webp 480w, /images/responsive/staff-team-group-800.webp 800w, /images/staff-team-group.webp 900w"
+  },
+  "/images/hero.webp": {
+    "width": 1920,
+    "height": 900,
+    "srcset": "/images/responsive/hero-480.webp 480w, /images/responsive/hero-800.webp 800w, /images/hero.webp 1920w"
+  },
+  "/images/erika-voltan.webp": {
+    "width": 140,
+    "height": 140,
+    "srcset": null
+  },
+  "/images/studio-fisiosalute.webp": {
+    "width": 1920,
+    "height": 900,
+    "srcset": "/images/responsive/studio-fisiosalute-480.webp 480w, /images/responsive/studio-fisiosalute-800.webp 800w, /images/studio-fisiosalute.webp 1920w"
+  },
+  "/images/STAF_Colzada.webp": {
+    "width": 1254,
+    "height": 1254,
+    "srcset": "/images/responsive/STAF_Colzada-480.webp 480w, /images/responsive/STAF_Colzada-800.webp 800w, /images/STAF_Colzada.webp 1254w"
+  },
+  "/images/palestra-riabilitativa-reale.webp": {
+    "width": 900,
+    "height": 700,
+    "srcset": "/images/responsive/palestra-riabilitativa-reale-480.webp 480w, /images/responsive/palestra-riabilitativa-reale-800.webp 800w, /images/palestra-riabilitativa-reale.webp 900w"
+  },
+  "/images/medical-elio-basso-narducci.webp": {
+    "width": 1080,
+    "height": 1456,
+    "srcset": "/images/responsive/medical-elio-basso-narducci-480.webp 480w, /images/responsive/medical-elio-basso-narducci-800.webp 800w, /images/medical-elio-basso-narducci.webp 1080w"
+  },
+  "/images/benedetta-nicolussi.webp": {
+    "width": 1254,
+    "height": 1672,
+    "srcset": "/images/responsive/benedetta-nicolussi-480.webp 480w, /images/responsive/benedetta-nicolussi-800.webp 800w, /images/benedetta-nicolussi.webp 1254w"
+  },
+  "/images/STAF_Alessandra.webp": {
+    "width": 1254,
+    "height": 1254,
+    "srcset": "/images/responsive/STAF_Alessandra-480.webp 480w, /images/responsive/STAF_Alessandra-800.webp 800w, /images/STAF_Alessandra.webp 1254w"
+  },
+  "/images/hero-mobile.webp": {
+    "width": 1080,
+    "height": 1350,
+    "srcset": "/images/responsive/hero-mobile-480.webp 480w, /images/responsive/hero-mobile-800.webp 800w, /images/hero-mobile.webp 1080w"
+  },
+  "/images/studio-lettino-reale.webp": {
+    "width": 900,
+    "height": 1600,
+    "srcset": "/images/responsive/studio-lettino-reale-480.webp 480w, /images/responsive/studio-lettino-reale-800.webp 800w, /images/studio-lettino-reale.webp 900w"
+  },
+  "/images/STAF_Mereghetti.webp": {
+    "width": 1254,
+    "height": 1254,
+    "srcset": "/images/responsive/STAF_Mereghetti-480.webp 480w, /images/responsive/STAF_Mereghetti-800.webp 800w, /images/STAF_Mereghetti.webp 1254w"
+  },
+  "/images/erika-formazione.webp": {
+    "width": 1200,
+    "height": 880,
+    "srcset": "/images/responsive/erika-formazione-480.webp 480w, /images/responsive/erika-formazione-800.webp 800w, /images/erika-formazione.webp 1200w"
+  },
+  "/images/studio.webp": {
+    "width": 1200,
+    "height": 800,
+    "srcset": "/images/responsive/studio-480.webp 480w, /images/responsive/studio-800.webp 800w, /images/studio.webp 1200w"
+  },
+  "/images/collaborazioni-fisiosalute.webp": {
+    "width": 140,
+    "height": 140,
+    "srcset": null
+  },
+  "/images/studio-fisiosalute-mobile.webp": {
+    "width": 900,
+    "height": 1125,
+    "srcset": "/images/responsive/studio-fisiosalute-mobile-480.webp 480w, /images/responsive/studio-fisiosalute-mobile-800.webp 800w, /images/studio-fisiosalute-mobile.webp 900w"
+  },
+  "/images/mgm.webp": {
+    "width": 1600,
+    "height": 955,
+    "srcset": "/images/responsive/mgm-480.webp 480w, /images/responsive/mgm-800.webp 800w, /images/mgm.webp 1600w"
+  },
+  "/images/erika-voltan-portrait-attached.webp": {
+    "width": 1254,
+    "height": 1254,
+    "srcset": "/images/responsive/erika-voltan-portrait-attached-480.webp 480w, /images/responsive/erika-voltan-portrait-attached-800.webp 800w, /images/erika-voltan-portrait-attached.webp 1254w"
+  },
+  "/images/erika-voltan-portrait.webp": {
+    "width": 1000,
+    "height": 1250,
+    "srcset": "/images/responsive/erika-voltan-portrait-480.webp 480w, /images/responsive/erika-voltan-portrait-800.webp 800w, /images/erika-voltan-portrait.webp 1000w"
+  },
+  "/images/Pedrolini.webp": {
+    "width": 941,
+    "height": 1672,
+    "srcset": "/images/responsive/Pedrolini-480.webp 480w, /images/responsive/Pedrolini-800.webp 800w, /images/Pedrolini.webp 941w"
+  },
+  "/images/riabilitazione.webp": {
+    "width": 800,
+    "height": 800,
+    "srcset": "/images/responsive/riabilitazione-480.webp 480w, /images/riabilitazione.webp 800w"
+  },
+  "/images/staff-fisiosalute.webp": {
+    "width": 900,
+    "height": 1600,
+    "srcset": "/images/responsive/staff-fisiosalute-480.webp 480w, /images/responsive/staff-fisiosalute-800.webp 800w, /images/staff-fisiosalute.webp 900w"
+  },
+  "/images/ghp.webp": {
+    "width": 586,
+    "height": 420,
+    "srcset": "/images/responsive/ghp-480.webp 480w, /images/ghp.webp 586w"
+  },
+  "/images/STAF_Silvia.webp": {
+    "width": 1254,
+    "height": 1254,
+    "srcset": "/images/responsive/STAF_Silvia-480.webp 480w, /images/responsive/STAF_Silvia-800.webp 800w, /images/STAF_Silvia.webp 1254w"
+  },
+  "/images/valutazione.webp": {
+    "width": 1200,
+    "height": 800,
+    "srcset": "/images/responsive/valutazione-480.webp 480w, /images/responsive/valutazione-800.webp 800w, /images/valutazione.webp 1200w"
+  },
+  "/images/laserterapia.webp": {
+    "width": 140,
+    "height": 140,
+    "srcset": null
+  },
+  "/images/services-generated/linfodrenaggio-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/linfodrenaggio-2-480.webp 480w, /images/responsive/linfodrenaggio-2-800.webp 800w, /images/services-generated/linfodrenaggio-2.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-sportiva-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-sportiva-2-480.webp 480w, /images/responsive/fisioterapia-sportiva-2-800.webp 800w, /images/services-generated/fisioterapia-sportiva-2.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-prevenzione.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-prevenzione-480.webp 480w, /images/responsive/fisioterapia-prevenzione-800.webp 800w, /images/services-generated/fisioterapia-prevenzione.webp 1024w"
+  },
+  "/images/services-generated/riabilitazione-post-oncologica-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/riabilitazione-post-oncologica-2-480.webp 480w, /images/responsive/riabilitazione-post-oncologica-2-800.webp 800w, /images/services-generated/riabilitazione-post-oncologica-2.webp 1024w"
+  },
+  "/images/services-generated/ortopedia-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/ortopedia-1-480.webp 480w, /images/responsive/ortopedia-1-800.webp 800w, /images/services-generated/ortopedia-1.webp 1024w"
+  },
+  "/images/services-generated/prevenzione-pavimento-pelvico-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/prevenzione-pavimento-pelvico-1-480.webp 480w, /images/responsive/prevenzione-pavimento-pelvico-1-800.webp 800w, /images/services-generated/prevenzione-pavimento-pelvico-1.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-muscoloscheletrica-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-muscoloscheletrica-2-480.webp 480w, /images/responsive/fisioterapia-muscoloscheletrica-2-800.webp 800w, /images/services-generated/fisioterapia-muscoloscheletrica-2.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-reumatologica.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-reumatologica-480.webp 480w, /images/responsive/fisioterapia-reumatologica-800.webp 800w, /images/services-generated/fisioterapia-reumatologica.webp 1024w"
+  },
+  "/images/services-generated/otorinolaringoiatria-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/otorinolaringoiatria-2-480.webp 480w, /images/responsive/otorinolaringoiatria-2-800.webp 800w, /images/services-generated/otorinolaringoiatria-2.webp 1024w"
+  },
+  "/images/services-generated/sindromi-vertiginose-dizziness.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/sindromi-vertiginose-dizziness-480.webp 480w, /images/responsive/sindromi-vertiginose-dizziness-800.webp 800w, /images/services-generated/sindromi-vertiginose-dizziness.webp 1024w"
+  },
+  "/images/services-generated/nutrizione-gastrointestinale-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/nutrizione-gastrointestinale-2-480.webp 480w, /images/responsive/nutrizione-gastrointestinale-2-800.webp 800w, /images/services-generated/nutrizione-gastrointestinale-2.webp 1024w"
+  },
+  "/images/services-generated/educazione-alimentare-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/educazione-alimentare-1-480.webp 480w, /images/responsive/educazione-alimentare-1-800.webp 800w, /images/services-generated/educazione-alimentare-1.webp 1024w"
+  },
+  "/images/services-generated/articolazione-temporo-mandibolare.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/articolazione-temporo-mandibolare-480.webp 480w, /images/responsive/articolazione-temporo-mandibolare-800.webp 800w, /images/services-generated/articolazione-temporo-mandibolare.webp 1024w"
+  },
+  "/images/services-generated/fisiopilates-macchinari.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisiopilates-macchinari-480.webp 480w, /images/responsive/fisiopilates-macchinari-800.webp 800w, /images/services-generated/fisiopilates-macchinari.webp 1024w"
+  },
+  "/images/services-generated/ortopedia-2-new.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/ortopedia-2-new-480.webp 480w, /images/responsive/ortopedia-2-new-800.webp 800w, /images/services-generated/ortopedia-2-new.webp 1536w"
+  },
+  "/images/services-generated/fisioterapia-prevenzione-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-prevenzione-2-480.webp 480w, /images/responsive/fisioterapia-prevenzione-2-800.webp 800w, /images/services-generated/fisioterapia-prevenzione-2.webp 1024w"
+  },
+  "/images/services-generated/sindromi-vertiginose-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/sindromi-vertiginose-2-480.webp 480w, /images/responsive/sindromi-vertiginose-2-800.webp 800w, /images/services-generated/sindromi-vertiginose-2.webp 1024w"
+  },
+  "/images/services-generated/preparazione-parto.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/preparazione-parto-480.webp 480w, /images/responsive/preparazione-parto-800.webp 800w, /images/services-generated/preparazione-parto.webp 1024w"
+  },
+  "/images/services-generated/idrokinesiterapia.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/idrokinesiterapia-480.webp 480w, /images/responsive/idrokinesiterapia-800.webp 800w, /images/services-generated/idrokinesiterapia.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-2.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/fisioterapia-2-480.webp 480w, /images/responsive/fisioterapia-2-800.webp 800w, /images/services-generated/fisioterapia-2.webp 1536w"
+  },
+  "/images/services-generated/composizione-corporea-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/composizione-corporea-2-480.webp 480w, /images/responsive/composizione-corporea-2-800.webp 800w, /images/services-generated/composizione-corporea-2.webp 1024w"
+  },
+  "/images/services-generated/riatletizzazione-esercizio-specifico.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/riatletizzazione-esercizio-specifico-480.webp 480w, /images/responsive/riatletizzazione-esercizio-specifico-800.webp 800w, /images/services-generated/riatletizzazione-esercizio-specifico.webp 1024w"
+  },
+  "/images/services-generated/diastasi-cicatrice-cesareo-new.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/diastasi-cicatrice-cesareo-new-480.webp 480w, /images/responsive/diastasi-cicatrice-cesareo-new-800.webp 800w, /images/services-generated/diastasi-cicatrice-cesareo-new.webp 1536w"
+  },
+  "/images/services-generated/terapie-1.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/terapie-1-480.webp 480w, /images/responsive/terapie-1-800.webp 800w, /images/services-generated/terapie-1.webp 1536w"
+  },
+  "/images/services-generated/nutrizione-sportiva-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/nutrizione-sportiva-2-480.webp 480w, /images/responsive/nutrizione-sportiva-2-800.webp 800w, /images/services-generated/nutrizione-sportiva-2.webp 1024w"
+  },
+  "/images/services-generated/cefalee-muscolo-tensive.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/cefalee-muscolo-tensive-480.webp 480w, /images/responsive/cefalee-muscolo-tensive-800.webp 800w, /images/services-generated/cefalee-muscolo-tensive.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-sportiva.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-sportiva-480.webp 480w, /images/responsive/fisioterapia-sportiva-800.webp 800w, /images/services-generated/fisioterapia-sportiva.webp 1024w"
+  },
+  "/images/services-generated/pilates-clinico-aperto-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pilates-clinico-aperto-2-480.webp 480w, /images/responsive/pilates-clinico-aperto-2-800.webp 800w, /images/services-generated/pilates-clinico-aperto-2.webp 1024w"
+  },
+  "/images/services-generated/pilates-2.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/pilates-2-480.webp 480w, /images/responsive/pilates-2-800.webp 800w, /images/services-generated/pilates-2.webp 1536w"
+  },
+  "/images/services-generated/nutrizione-condizioni-fisiologiche-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/nutrizione-condizioni-fisiologiche-1-480.webp 480w, /images/responsive/nutrizione-condizioni-fisiologiche-1-800.webp 800w, /images/services-generated/nutrizione-condizioni-fisiologiche-1.webp 1024w"
+  },
+  "/images/services-generated/diastasi-cicatrice-cesareo-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/diastasi-cicatrice-cesareo-2-480.webp 480w, /images/responsive/diastasi-cicatrice-cesareo-2-800.webp 800w, /images/services-generated/diastasi-cicatrice-cesareo-2.webp 1024w"
+  },
+  "/images/services-generated/visita-dietistica-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/visita-dietistica-1-480.webp 480w, /images/responsive/visita-dietistica-1-800.webp 800w, /images/services-generated/visita-dietistica-1.webp 1024w"
+  },
+  "/images/services-generated/pavimento-pelvico-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pavimento-pelvico-2-480.webp 480w, /images/responsive/pavimento-pelvico-2-800.webp 800w, /images/services-generated/pavimento-pelvico-2.webp 1024w"
+  },
+  "/images/services-generated/donna-1.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/donna-1-480.webp 480w, /images/responsive/donna-1-800.webp 800w, /images/services-generated/donna-1.webp 1536w"
+  },
+  "/images/services-generated/orl-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/orl-2-480.webp 480w, /images/responsive/orl-2-800.webp 800w, /images/services-generated/orl-2.webp 1024w"
+  },
+  "/images/services-generated/riatletizzazione-esercizio-specifico-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/riatletizzazione-esercizio-specifico-2-480.webp 480w, /images/responsive/riatletizzazione-esercizio-specifico-2-800.webp 800w, /images/services-generated/riatletizzazione-esercizio-specifico-2.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-neurologica-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-neurologica-2-480.webp 480w, /images/responsive/fisioterapia-neurologica-2-800.webp 800w, /images/services-generated/fisioterapia-neurologica-2.webp 1024w"
+  },
+  "/images/services-generated/nutrizione-2.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/nutrizione-2-480.webp 480w, /images/responsive/nutrizione-2-800.webp 800w, /images/services-generated/nutrizione-2.webp 1536w"
+  },
+  "/images/services-generated/percorso-nutrizionale-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/percorso-nutrizionale-1-480.webp 480w, /images/responsive/percorso-nutrizionale-1-800.webp 800w, /images/services-generated/percorso-nutrizionale-1.webp 1024w"
+  },
+  "/images/services-generated/articolazione-temporo-mandibolare-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/articolazione-temporo-mandibolare-2-480.webp 480w, /images/responsive/articolazione-temporo-mandibolare-2-800.webp 800w, /images/services-generated/articolazione-temporo-mandibolare-2.webp 1024w"
+  },
+  "/images/services-generated/recupero-post-partum.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/recupero-post-partum-480.webp 480w, /images/responsive/recupero-post-partum-800.webp 800w, /images/services-generated/recupero-post-partum.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-neurologica.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-neurologica-480.webp 480w, /images/responsive/fisioterapia-neurologica-800.webp 800w, /images/services-generated/fisioterapia-neurologica.webp 1024w"
+  },
+  "/images/services-generated/recupero-post-partum-new.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/recupero-post-partum-new-480.webp 480w, /images/responsive/recupero-post-partum-new-800.webp 800w, /images/services-generated/recupero-post-partum-new.webp 1536w"
+  },
+  "/images/services-generated/rieducazione-posturale-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/rieducazione-posturale-2-480.webp 480w, /images/responsive/rieducazione-posturale-2-800.webp 800w, /images/services-generated/rieducazione-posturale-2.webp 1024w"
+  },
+  "/images/services-generated/tecarterapia.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/tecarterapia-480.webp 480w, /images/responsive/tecarterapia-800.webp 800w, /images/services-generated/tecarterapia.webp 1024w"
+  },
+  "/images/services-generated/nutrizione-patologie-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/nutrizione-patologie-1-480.webp 480w, /images/responsive/nutrizione-patologie-1-800.webp 800w, /images/services-generated/nutrizione-patologie-1.webp 1024w"
+  },
+  "/images/services-generated/rieducazione-posturale.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/rieducazione-posturale-480.webp 480w, /images/responsive/rieducazione-posturale-800.webp 800w, /images/services-generated/rieducazione-posturale.webp 1024w"
+  },
+  "/images/services-generated/movimento-benessere-femminile-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/movimento-benessere-femminile-2-480.webp 480w, /images/responsive/movimento-benessere-femminile-2-800.webp 800w, /images/services-generated/movimento-benessere-femminile-2.webp 1024w"
+  },
+  "/images/services-generated/fisiatria-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisiatria-1-480.webp 480w, /images/responsive/fisiatria-1-800.webp 800w, /images/services-generated/fisiatria-1.webp 1024w"
+  },
+  "/images/services-generated/cefalee-muscolo-tensive-headache.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/cefalee-muscolo-tensive-headache-480.webp 480w, /images/responsive/cefalee-muscolo-tensive-headache-800.webp 800w, /images/services-generated/cefalee-muscolo-tensive-headache.webp 1024w"
+  },
+  "/images/services-generated/pilates-clinico.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pilates-clinico-480.webp 480w, /images/responsive/pilates-clinico-800.webp 800w, /images/services-generated/pilates-clinico.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-domiciliare-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-domiciliare-2-480.webp 480w, /images/responsive/fisioterapia-domiciliare-2-800.webp 800w, /images/services-generated/fisioterapia-domiciliare-2.webp 1024w"
+  },
+  "/images/services-generated/tecarterapia-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/tecarterapia-2-480.webp 480w, /images/responsive/tecarterapia-2-800.webp 800w, /images/services-generated/tecarterapia-2.webp 1024w"
+  },
+  "/images/services-generated/salute-donna-fasi-vita-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/salute-donna-fasi-vita-2-480.webp 480w, /images/responsive/salute-donna-fasi-vita-2-800.webp 800w, /images/services-generated/salute-donna-fasi-vita-2.webp 1024w"
+  },
+  "/images/services-generated/movimento-benessere-femminile-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/movimento-benessere-femminile-1-480.webp 480w, /images/responsive/movimento-benessere-femminile-1-800.webp 800w, /images/services-generated/movimento-benessere-femminile-1.webp 1024w"
+  },
+  "/images/services-generated/fisiatria-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisiatria-2-480.webp 480w, /images/responsive/fisiatria-2-800.webp 800w, /images/services-generated/fisiatria-2.webp 1024w"
+  },
+  "/images/services-generated/terapie-infiltrative-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/terapie-infiltrative-2-480.webp 480w, /images/responsive/terapie-infiltrative-2-800.webp 800w, /images/services-generated/terapie-infiltrative-2.webp 1024w"
+  },
+  "/images/services-generated/pressoterapia-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pressoterapia-2-480.webp 480w, /images/responsive/pressoterapia-2-800.webp 800w, /images/services-generated/pressoterapia-2.webp 1024w"
+  },
+  "/images/services-generated/pavimento-pelvico.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pavimento-pelvico-480.webp 480w, /images/responsive/pavimento-pelvico-800.webp 800w, /images/services-generated/pavimento-pelvico.webp 1024w"
+  },
+  "/images/services-generated/salute-donna-fasi-vita-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/salute-donna-fasi-vita-1-480.webp 480w, /images/responsive/salute-donna-fasi-vita-1-800.webp 800w, /images/services-generated/salute-donna-fasi-vita-1.webp 1024w"
+  },
+  "/images/services-generated/fisiopilates-macchinari-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisiopilates-macchinari-2-480.webp 480w, /images/responsive/fisiopilates-macchinari-2-800.webp 800w, /images/services-generated/fisiopilates-macchinari-2.webp 1024w"
+  },
+  "/images/services-generated/idrokinesiterapia-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/idrokinesiterapia-2-480.webp 480w, /images/responsive/idrokinesiterapia-2-800.webp 800w, /images/services-generated/idrokinesiterapia-2.webp 1024w"
+  },
+  "/images/services-generated/sindromi-vertiginose.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/sindromi-vertiginose-480.webp 480w, /images/responsive/sindromi-vertiginose-800.webp 800w, /images/services-generated/sindromi-vertiginose.webp 1024w"
+  },
+  "/images/services-generated/riabilitazione-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/riabilitazione-2-480.webp 480w, /images/responsive/riabilitazione-2-800.webp 800w, /images/services-generated/riabilitazione-2.webp 1024w"
+  },
+  "/images/services-generated/riabilitazione-post-oncologica.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/riabilitazione-post-oncologica-480.webp 480w, /images/responsive/riabilitazione-post-oncologica-800.webp 800w, /images/services-generated/riabilitazione-post-oncologica.webp 1024w"
+  },
+  "/images/services-generated/laserterapia-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/laserterapia-2-480.webp 480w, /images/responsive/laserterapia-2-800.webp 800w, /images/services-generated/laserterapia-2.webp 1024w"
+  },
+  "/images/services-generated/nutrizione-patologie-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/nutrizione-patologie-2-480.webp 480w, /images/responsive/nutrizione-patologie-2-800.webp 800w, /images/services-generated/nutrizione-patologie-2.webp 1024w"
+  },
+  "/images/services-generated/movimento-benessere-femminile-new.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/movimento-benessere-femminile-new-480.webp 480w, /images/responsive/movimento-benessere-femminile-new-800.webp 800w, /images/services-generated/movimento-benessere-femminile-new.webp 1536w"
+  },
+  "/images/services-generated/nutrizione-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/nutrizione-1-480.webp 480w, /images/responsive/nutrizione-1-800.webp 800w, /images/services-generated/nutrizione-1.webp 1024w"
+  },
+  "/images/services-generated/recupero-post-partum-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/recupero-post-partum-2-480.webp 480w, /images/responsive/recupero-post-partum-2-800.webp 800w, /images/services-generated/recupero-post-partum-2.webp 1024w"
+  },
+  "/images/services-generated/percorso-nutrizionale-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/percorso-nutrizionale-2-480.webp 480w, /images/responsive/percorso-nutrizionale-2-800.webp 800w, /images/services-generated/percorso-nutrizionale-2.webp 1024w"
+  },
+  "/images/services-generated/nutrizione-condizioni-fisiologiche-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/nutrizione-condizioni-fisiologiche-2-480.webp 480w, /images/responsive/nutrizione-condizioni-fisiologiche-2-800.webp 800w, /images/services-generated/nutrizione-condizioni-fisiologiche-2.webp 1024w"
+  },
+  "/images/services-generated/visita-dietistica-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/visita-dietistica-2-480.webp 480w, /images/responsive/visita-dietistica-2-800.webp 800w, /images/services-generated/visita-dietistica-2.webp 1024w"
+  },
+  "/images/services-generated/diastasi-cicatrice-cesareo-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/diastasi-cicatrice-cesareo-1-480.webp 480w, /images/responsive/diastasi-cicatrice-cesareo-1-800.webp 800w, /images/services-generated/diastasi-cicatrice-cesareo-1.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-domiciliare.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-domiciliare-480.webp 480w, /images/responsive/fisioterapia-domiciliare-800.webp 800w, /images/services-generated/fisioterapia-domiciliare.webp 1024w"
+  },
+  "/images/services-generated/pilates-clinico-aperto.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pilates-clinico-aperto-480.webp 480w, /images/responsive/pilates-clinico-aperto-800.webp 800w, /images/services-generated/pilates-clinico-aperto.webp 1024w"
+  },
+  "/images/services-generated/riabilitazione.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/riabilitazione-480.webp 480w, /images/responsive/riabilitazione-800.webp 800w, /images/services-generated/riabilitazione.webp 1024w"
+  },
+  "/images/services-generated/terapie-infiltrative.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/terapie-infiltrative-480.webp 480w, /images/responsive/terapie-infiltrative-800.webp 800w, /images/services-generated/terapie-infiltrative.webp 1024w"
+  },
+  "/images/services-generated/salute-donna-fasi-vita-new.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/salute-donna-fasi-vita-new-480.webp 480w, /images/responsive/salute-donna-fasi-vita-new-800.webp 800w, /images/services-generated/salute-donna-fasi-vita-new.webp 1536w"
+  },
+  "/images/services-generated/donna-2.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/donna-2-480.webp 480w, /images/responsive/donna-2-800.webp 800w, /images/services-generated/donna-2.webp 1536w"
+  },
+  "/images/services-generated/orl-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/orl-1-480.webp 480w, /images/responsive/orl-1-800.webp 800w, /images/services-generated/orl-1.webp 1024w"
+  },
+  "/images/services-generated/pressoterapia.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pressoterapia-480.webp 480w, /images/responsive/pressoterapia-800.webp 800w, /images/services-generated/pressoterapia.webp 1024w"
+  },
+  "/images/services-generated/linfodrenaggio.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/linfodrenaggio-480.webp 480w, /images/responsive/linfodrenaggio-800.webp 800w, /images/services-generated/linfodrenaggio.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-reumatologica-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-reumatologica-2-480.webp 480w, /images/responsive/fisioterapia-reumatologica-2-800.webp 800w, /images/services-generated/fisioterapia-reumatologica-2.webp 1024w"
+  },
+  "/images/services-generated/pilates-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pilates-1-480.webp 480w, /images/responsive/pilates-1-800.webp 800w, /images/services-generated/pilates-1.webp 1024w"
+  },
+  "/images/services-generated/pavimento-pelvico-dolore.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pavimento-pelvico-dolore-480.webp 480w, /images/responsive/pavimento-pelvico-dolore-800.webp 800w, /images/services-generated/pavimento-pelvico-dolore.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-1.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/responsive/fisioterapia-1-480.webp 480w, /images/responsive/fisioterapia-1-800.webp 800w, /images/services-generated/fisioterapia-1.webp 1536w"
+  },
+  "/images/services-generated/composizione-corporea-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/composizione-corporea-1-480.webp 480w, /images/responsive/composizione-corporea-1-800.webp 800w, /images/services-generated/composizione-corporea-1.webp 1024w"
+  },
+  "/images/services-generated/pilates-clinico-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/pilates-clinico-2-480.webp 480w, /images/responsive/pilates-clinico-2-800.webp 800w, /images/services-generated/pilates-clinico-2.webp 1024w"
+  },
+  "/images/services-generated/laserterapia.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/laserterapia-480.webp 480w, /images/responsive/laserterapia-800.webp 800w, /images/services-generated/laserterapia.webp 1024w"
+  },
+  "/images/services-generated/terapie-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/terapie-2-480.webp 480w, /images/responsive/terapie-2-800.webp 800w, /images/services-generated/terapie-2.webp 1024w"
+  },
+  "/images/services-generated/nutrizione-sportiva-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/nutrizione-sportiva-1-480.webp 480w, /images/responsive/nutrizione-sportiva-1-800.webp 800w, /images/services-generated/nutrizione-sportiva-1.webp 1024w"
+  },
+  "/images/services-generated/preparazione-parto-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/preparazione-parto-2-480.webp 480w, /images/responsive/preparazione-parto-2-800.webp 800w, /images/services-generated/preparazione-parto-2.webp 1024w"
+  },
+  "/images/services-generated/otorinolaringoiatria-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/otorinolaringoiatria-1-480.webp 480w, /images/responsive/otorinolaringoiatria-1-800.webp 800w, /images/services-generated/otorinolaringoiatria-1.webp 1024w"
+  },
+  "/images/services-generated/nutrizione-gastrointestinale-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/nutrizione-gastrointestinale-1-480.webp 480w, /images/responsive/nutrizione-gastrointestinale-1-800.webp 800w, /images/services-generated/nutrizione-gastrointestinale-1.webp 1024w"
+  },
+  "/images/services-generated/educazione-alimentare-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/educazione-alimentare-2-480.webp 480w, /images/responsive/educazione-alimentare-2-800.webp 800w, /images/services-generated/educazione-alimentare-2.webp 1024w"
+  },
+  "/images/services-generated/cefalee-muscolo-tensive-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/cefalee-muscolo-tensive-2-480.webp 480w, /images/responsive/cefalee-muscolo-tensive-2-800.webp 800w, /images/services-generated/cefalee-muscolo-tensive-2.webp 1024w"
+  },
+  "/images/services-generated/ortopedia-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/ortopedia-2-480.webp 480w, /images/responsive/ortopedia-2-800.webp 800w, /images/services-generated/ortopedia-2.webp 1024w"
+  },
+  "/images/services-generated/fisioterapia-muscoloscheletrica-1.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/fisioterapia-muscoloscheletrica-1-480.webp 480w, /images/responsive/fisioterapia-muscoloscheletrica-1-800.webp 800w, /images/services-generated/fisioterapia-muscoloscheletrica-1.webp 1024w"
+  },
+  "/images/services-generated/prevenzione-pavimento-pelvico-2.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/responsive/prevenzione-pavimento-pelvico-2-480.webp 480w, /images/responsive/prevenzione-pavimento-pelvico-2-800.webp 800w, /images/services-generated/prevenzione-pavimento-pelvico-2.webp 1024w"
+  },
+  "/images/logo-alomar.png": {
+    "width": 380,
+    "height": 115,
+    "srcset": null
+  }
+}

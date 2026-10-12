@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<BaseLayout title="Pagina non trovata | FisioSalute" description="La pagina richiesta non è disponibile. Torna alla home o contatta FisioSalute.">
+  <Header />
+  <main class="section" id="main-content" tabindex="-1">
+    <p class="eyebrow">Errore 404</p>
+    <h1>Pagina non trovata.</h1>
+    <p>Il collegamento potrebbe essere cambiato. Puoi tornare alla home oppure contattare lo studio.</p>
+    <a class="button" href="/">Torna alla home</a>
+    <a class="text-link" href="/contatti/">Contatta FisioSalute</a>
+  </main>
+  <Footer />
+</BaseLayout>

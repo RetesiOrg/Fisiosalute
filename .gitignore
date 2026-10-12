@@ -4,6 +4,9 @@
 # Astro
 /.astro/
 /dist/
+/dist-prova/
+/dist-aruba/
+/backups-private/
 
 # local hosting state
 /.wrangler/
@@ -16,3 +19,9 @@ npm-debug.log*
 
 # local environment
 .env*
+/aruba/api/_private/config.php
+/aruba/api/_private/state.json
+
+/aruba/api/_private/google-config.php
+/aruba/api/_private/google-reviews.json
+/aruba/api/_private/google-update.lock

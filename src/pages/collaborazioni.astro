@@ -1,23 +1,23 @@
 ---
+import ResponsiveImage from "../components/ResponsiveImage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const partners = [
-  { name: "ALOMAR", label: "Convenzione", description: "Convenzione dedicata agli associati dell’Associazione Lombarda Malati Reumatici per rendere più accessibile la fisioterapia specialistica.", href: "/servizi/area/fisioterapia-riabilitazione", className: "alomar" },
-  { name: "Rete medico-specialistica", label: "Specialisti", description: "Specialisti che collaborano con i fisioterapisti nel rispetto dei ruoli professionali e della riservatezza prevista dalle strutture di appartenenza.", href: "/equipe-medica", className: "medical-network" },
-  { name: "Strutture riabilitative", label: "Strutture", description: "Collaborazioni sul territorio per integrare servizi specifici, tra cui l’idrokinesiterapia in piscina riabilitativa con acqua calda.", href: "/servizi", className: "rehab-structures" },
+  { name: "ALOMAR", label: "Convenzione", description: "Convenzione dedicata agli associati dell’Associazione Lombarda Malati Reumatici per rendere più accessibile la fisioterapia specialistica.", href: "/servizi/area/fisioterapia-riabilitazione/", className: "alomar" },
+  { name: "Rete medico-specialistica", label: "Specialisti", description: "Specialisti che collaborano con i fisioterapisti nel rispetto dei ruoli professionali e della riservatezza prevista dalle strutture di appartenenza.", href: "/equipe-medica/", className: "medical-network" },
+  { name: "Strutture riabilitative", label: "Strutture", description: "Collaborazioni sul territorio per integrare servizi specifici, tra cui l’idrokinesiterapia in piscina riabilitativa con acqua calda.", href: "/servizi/", className: "rehab-structures" },
   { name: "Self Defense Sondrio ASD", label: "Self Defense", description: "Corsi di difesa personale, consapevolezza e preparazione a Sondrio e Morbegno.", href: "https://www.selfdefensesondrio.it", className: "self-defense" },
   { name: "Ortopedia Medisan", label: "MEDISAN", description: "Ortopedia e supporto specializzato per le esigenze della persona.", href: "https://www.facebook.com/p/Ortopedia-Medisan-100063492822762/", className: "medisan" },
 ];
 ---
 
 <BaseLayout title="Collaborazioni | FisioSalute Sondrio" description="Le collaborazioni di FisioSalute con realtà e professionisti del territorio.">
-  <main>
-    <Header />
+  <Header /><main id="main-content" tabindex="-1">
     <section class="collab-hero"><p class="eyebrow light">Una rete intorno alla persona</p><h1>Collaborazioni.</h1><p>Professionisti e realtà del territorio con cui condividiamo attenzione, competenza e cura per il benessere.</p></section>
     <section class="collab-directory" aria-labelledby="collab-title"><p class="eyebrow">Collaborazioni</p><h2 id="collab-title">I nostri partner.</h2><div class="collab-grid">
-      {partners.map((partner) => <a class:list={["collab-card", partner.className]} href={partner.href} target={partner.href.startsWith("http") ? "_blank" : undefined} rel={partner.href.startsWith("http") ? "noreferrer" : undefined}><div class="partner-logo">{partner.className === "self-defense" ? <img src="https://www.selfdefensesondrio.it/images/logo.webp" alt={`Logo ${partner.name}`} /> : partner.className === "medisan" ? <img src="/brand/ortopedia-medisan.svg" alt={`Logo ${partner.name}`} /> : <span>{partner.label}</span>}</div><div><h3>{partner.name}</h3><p>{partner.description}</p><span class="collab-link">Visita il sito o la pagina <span aria-hidden="true">↗</span></span></div></a>)}
+      {partners.map((partner) => <a class:list={["collab-card", partner.className]} href={partner.href} target={partner.href.startsWith("http") ? "_blank" : undefined} rel={partner.href.startsWith("http") ? "noreferrer" : undefined}><div class="partner-logo">{partner.className === "self-defense" ? <ResponsiveImage src="/images/self-defense-logo.webp" alt={`Logo ${partner.name}`} /> : partner.className === "medisan" ? <ResponsiveImage src="/brand/ortopedia-medisan.svg" alt={`Logo ${partner.name}`} /> : <span>{partner.label}</span>}</div><div><h3>{partner.name}</h3><p>{partner.description}</p><span class="collab-link">Visita il sito o la pagina <span aria-hidden="true">↗</span></span></div></a>)}
     </div></section>
     <Footer />
   </main>

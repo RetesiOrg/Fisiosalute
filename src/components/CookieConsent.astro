@@ -1,0 +1,95 @@
+<aside id="cookie-banner" class="cookie-banner" aria-labelledby="cookie-title" hidden>
+  <div class="cookie-copy">
+    <h2 id="cookie-title">La scelta è tua.</h2>
+    <p>FisioSalute usa una memoria tecnica per ricordare le tue preferenze. Solo con il tuo consenso carichiamo Google Maps, che può utilizzare cookie e ricevere dati di navigazione. Puoi rifiutare e continuare a usare il sito.</p>
+    <p><a href="/cookie-policy/">Cookie Policy</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" data-consent-reject>Rifiuta non necessari</button>
+    <button type="button" data-consent-accept>Accetta tutti</button>
+    <button type="button" data-cookie-settings>Personalizza</button>
+  </div>
+</aside>
+<dialog id="cookie-preferences" aria-labelledby="cookie-preferences-title" aria-describedby="cookie-preferences-description">
+  <h2 id="cookie-preferences-title">Preferenze cookie</h2>
+  <p id="cookie-preferences-description">Scegli i servizi facoltativi. Puoi modificare o revocare il consenso in qualsiasi momento dal footer.</p>
+  <div class="cookie-category"><strong>Memoria tecnica — sempre attiva</strong><p>Ricorda la tua scelta per sei mesi. Non viene usata per pubblicità o analisi.</p></div>
+  <div class="cookie-category"><label><input id="consent-maps" type="checkbox" /> <strong>Mappe Google</strong></label><p>Consente di visualizzare le mappe incorporate. Google riceve l’indirizzo IP e altri dati tecnici e può utilizzare cookie. <a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noreferrer">Informativa Google</a>.</p></div>
+  <div class="cookie-actions">
+    <button type="button" data-consent-reject>Rifiuta non necessari</button>
+    <button type="button" data-consent-accept>Accetta tutti</button>
+    <button type="button" id="consent-save">Salva le preferenze</button>
+    <button type="button" id="consent-close">Chiudi senza modificare</button>
+  </div>
+  <p><a href="/cookie-policy/">Leggi la Cookie Policy</a></p>
+</dialog>
+<p id="cookie-status" class="cookie-status" role="status" aria-live="polite"></p>
+<script>
+  import { CONSENT_KEY, parseConsent, newConsent, type Consent } from '../scripts/consent-store';
+  const banner = document.querySelector<HTMLElement>('#cookie-banner')!;
+  const dialog = document.querySelector<HTMLDialogElement>('#cookie-preferences')!;
+  const checkbox = document.querySelector<HTMLInputElement>('#consent-maps')!;
+  const status = document.querySelector<HTMLElement>('#cookie-status')!;
+  let consent: Consent | null = null;
+  let opener: HTMLElement | null = null;
+  let expiryTimer: ReturnType<typeof setTimeout>;
+  const read = () => { try { return parseConsent(localStorage.getItem(CONSENT_KEY)); } catch { return null; } };
+  const apply = () => {
+    clearTimeout(expiryTimer);
+    if (consent && consent.expires <= Date.now()) consent = null;
+    const allowed = consent?.maps === true;
+    document.querySelectorAll<HTMLElement>('[data-consent-map]').forEach((map) => {
+      const placeholder = map.querySelector<HTMLElement>('[data-map-placeholder]')!;
+      const frame = map.querySelector<HTMLElement>('[data-map-frame]')!;
+      placeholder.hidden = allowed;
+      if (allowed && !frame.querySelector('iframe')) {
+        const iframe = document.createElement('iframe');
+        iframe.title = map.dataset.mapTitle ?? 'Mappa FisioSalute';
+        iframe.referrerPolicy = 'no-referrer';
+        iframe.allowFullscreen = true;
+        iframe.src = 'https://www.google.com/maps?q=Via%20Brigata%20Alpina%20Orobica%2041%2FC%2C%2023100%20Sondrio%20SO&output=embed';
+        frame.append(iframe);
+      } else if (!allowed) frame.replaceChildren();
+    });
+    banner.hidden = consent !== null;
+    if (consent) expiryTimer = setTimeout(apply, Math.min(consent.expires - Date.now(), 2_147_483_647));
+  };
+  const save = (maps: boolean) => {
+    consent = newConsent(maps);
+    let stored = true;
+    try { localStorage.setItem(CONSENT_KEY, JSON.stringify(consent)); } catch { stored = false; }
+    apply();
+    if (dialog.open) dialog.close();
+    status.textContent = stored ? 'Preferenze cookie salvate.' : 'Scelta applicata a questa pagina. Il browser non consente di memorizzarla.';
+  };
+  document.querySelectorAll<HTMLButtonElement>('[data-cookie-settings]').forEach((button) => button.addEventListener('click', () => {
+    opener = button;
+    checkbox.checked = consent?.maps === true;
+    if (!dialog.open) dialog.showModal();
+  }));
+  document.querySelectorAll('[data-consent-reject]').forEach((b) => b.addEventListener('click', () => save(false)));
+  document.querySelectorAll('[data-consent-accept]').forEach((b) => b.addEventListener('click', () => save(true)));
+  document.querySelector('#consent-save')!.addEventListener('click', () => save(checkbox.checked));
+  document.querySelector('#consent-close')!.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('close', () => { if (opener && !opener.closest('[hidden]')) opener.focus(); });
+  window.addEventListener('storage', (event) => { if (event.key === CONSENT_KEY || event.key === null) { consent = read(); apply(); checkbox.checked = consent?.maps === true; } });
+  window.addEventListener('pageshow', () => { consent = read(); apply(); });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) { consent = read(); apply(); } });
+  consent = read();
+  apply();
+</script>
+<style>
+.cookie-banner{position:fixed;z-index:110;bottom:20px;left:20px;right:20px;max-width:1200px;margin:auto;padding:26px 30px;background:#fff;color:var(--deep);border:1px solid #a6bab2;box-shadow:0 12px 60px #103c3a30;display:grid;grid-template-columns:1fr 320px;gap:28px;max-height:85dvh;overflow:auto;border-radius:12px}
+.cookie-banner[hidden]{display:none}
+h2{margin:0 0 12px;font-size:28px;color:var(--deep);line-height:1.2}
+p{font-size:14px;line-height:1.6;margin:8px 0}
+a{text-decoration:underline;text-underline-offset:3px}
+.cookie-actions{display:flex;flex-wrap:wrap;align-content:center;gap:10px}
+.cookie-actions button{flex:1 1 180px;padding:13px 16px;border:1px solid var(--deep);background:var(--ivory);color:var(--deep);font:600 13px 'Montserrat',sans-serif;border-radius:5px;cursor:pointer;min-height:46px}
+button:hover{background:#dce9df}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #987228;outline-offset:4px}
+#cookie-preferences{width:min(640px,calc(100% - 32px));max-height:85dvh;overflow:auto;padding:30px;border:1px solid #a6bab2;border-radius:12px;color:var(--deep);background:#fff;margin:auto}
+#cookie-preferences::backdrop{background:#103c3a99}
+.cookie-category{padding:18px 0;border-top:1px solid #d3dcd7}.cookie-category label{display:flex;align-items:center;gap:12px;cursor:pointer}.cookie-category input{width:22px;height:22px;accent-color:var(--deep)}
+.cookie-status{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:700px){.cookie-banner{left:10px;right:10px;bottom:10px;padding:22px;grid-template-columns:1fr;gap:10px}.cookie-actions button{flex-basis:100%}h2{font-size:24px}}
+</style>

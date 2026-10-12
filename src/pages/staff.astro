@@ -1,4 +1,6 @@
 ---
+import ResponsiveImage from "../components/ResponsiveImage.astro";
+import { physiotherapistTags } from "../data/professional-tags";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -15,6 +17,7 @@ const profiles = [
     paragraphs: [
       "Nel corso degli studi ha maturato una significativa esperienza pratica presso strutture pubbliche e private, tra cui l’Ospedale Papa Giovanni XXIII di Bergamo e le cliniche dei gruppi Humanitas e Habilita.",
       "Ha continuato a perfezionarsi nella riabilitazione sportiva, nella gestione della lombalgia, nelle patologie neurologiche secondo il metodo Bobath, nella ginnastica posturale e nell’utilizzo del Pilates Reformer.",
+      "Ha inoltre approfondito la gestione del runner, occupandosi di videoanalisi biomeccanica della corsa, prevenzione e recupero dagli infortuni, con l’obiettivo di migliorare la tecnica di corsa e ottimizzare la performance.",
       "Dal gennaio 2024 fa parte dello staff di FisioSalute, dove collabora in stretta sinergia con la Dott.ssa Erika Voltan.",
     ],
     skills: ["Riabilitazione sportiva", "Bendaggio e kinesiotaping", "Metodo Bobath", "Pilates Reformer"],
@@ -45,10 +48,23 @@ const profiles = [
     id: "benedetta-nicolussi",
     name: "Benedetta Nicolussi",
     role: "Fisioterapista",
-    image: null,
-    intro: "Il profilo di Benedetta Nicolussi sarà completato con la nuova fotografia e le informazioni professionali.",
-    paragraphs: [],
-    skills: [],
+    image: "/images/benedetta-nicolussi.webp",
+    imageWidth: 1254,
+    imageHeight: 1672,
+    intro: "La Dott.ssa Benedetta Nicolussi è fisioterapista esperta nella riabilitazione del pavimento pelvico.",
+    paragraphs: [
+      "Si è laureata in Fisioterapia nel 2022 presso l’Università degli Studi di Milano e ha conseguito il Master in riabilitazione delle disfunzioni pelvi-perineali presso l’Università degli Studi di Milano-Bicocca.",
+      "Si occupa di riabilitazione del pavimento pelvico nella donna e nell’uomo, dalla gravidanza al post-parto e alla menopausa, integrando anche i principi del Pilates. Dal gennaio 2027 farà parte dello staff di FisioSalute, dove collaborerà con la Dott.ssa Erika Voltan.",
+    ],
+    skills: [
+      "Incontinenza urinaria e fecale",
+      "Riabilitazione post chirurgia pelvica",
+      "Dolore pelvico e cistiti ricorrenti",
+      "Stipsi e defecazione ostruita",
+      "Gravidanza e post-parto",
+      "Cicatrici e diastasi addominale",
+      "Pilates",
+    ],
   },
   {
     id: "maria-mereghetti",
@@ -64,9 +80,8 @@ const profiles = [
 ];
 ---
 
-<BaseLayout title="Staff | FisioSalute di Erika Voltan" description="Conosci lo staff di FisioSalute: fisioterapiste con competenze complementari per percorsi riabilitativi personalizzati a Sondrio.">
-  <main>
-    <Header />
+<BaseLayout keywords={physiotherapistTags} title="Staff | FisioSalute di Erika Voltan" description="Conosci lo staff di FisioSalute: fisioterapiste con competenze complementari per percorsi riabilitativi personalizzati a Sondrio.">
+  <Header /><main id="main-content" tabindex="-1">
     <section class="staff-hero">
       <div class="staff-hero-copy">
         <p class="eyebrow light">FisioSalute · Sondrio</p>
@@ -76,7 +91,7 @@ const profiles = [
       </div>
       <div class="staff-hero-image">
         <span aria-hidden="true">Il team</span>
-        <img src="/images/staff-team-group.webp" alt="Il team FisioSalute: Maria Mereghetti, Erika Voltan, Monica Colzada, Alessandra Cao e Silvia Simonini" width="500" height="625" fetchpriority="high" />
+        <ResponsiveImage src="/images/staff-team-group.webp" alt="Il team FisioSalute: Maria Mereghetti, Erika Voltan, Monica Colzada, Alessandra Cao e Silvia Simonini" width="500" height="625" fetchpriority="high" />
         <small>Da sinistra in alto: Maria Mereghetti, Erika Voltan e Monica Colzada. In primo piano: Alessandra Cao e Silvia Simonini.</small>
       </div>
     </section>
@@ -93,7 +108,7 @@ const profiles = [
       {profiles.map((profile, index) => (
         <article class:list={["staff-profile", { reverse: index % 2 === 1 }]} id={profile.id}>
           <div class="staff-profile-image">
-            {profile.image ? <img src={profile.image} alt={`${profile.name}, ${profile.role}`} width={profile.imageWidth} height={profile.imageHeight} loading="lazy" decoding="async" /> : <div class="staff-profile-image-placeholder">Foto in arrivo</div>}
+            {profile.image ? <ResponsiveImage src={profile.image} alt={`${profile.name}, ${profile.role}`} width={profile.imageWidth} height={profile.imageHeight} loading="lazy" decoding="async" /> : <div class="staff-profile-image-placeholder">Foto in arrivo</div>}
             <span>0{index + 1}</span>
           </div>
           <div class="staff-profile-copy">
@@ -149,5 +164,10 @@ const profiles = [
   #emanuela-giordani .staff-profile-image img {
     transform: scale(1.1);
     transform-origin: center top;
+  }
+
+  #benedetta-nicolussi .staff-profile-image img {
+    object-fit: contain;
+    background: #dfe5e0;
   }
 </style>

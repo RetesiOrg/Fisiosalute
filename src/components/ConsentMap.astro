@@ -1,0 +1,23 @@
+---
+const { title = 'Mappa di FisioSalute a Sondrio' } = Astro.props;
+---
+<div class="consent-map" data-consent-map data-map-title={title}>
+  <div data-map-placeholder>
+    <strong>Ci trovi a Sondrio</strong>
+    <p>Via Brigata Alpina Orobica 41/C</p>
+    <p>Per mostrare la mappa, Google riceve dati di navigazione e può utilizzare cookie. Puoi scegliere se consentire questo servizio.</p>
+    <button type="button" data-cookie-settings>Gestisci preferenze e carica la mappa</button>
+    <a href="https://www.google.com/maps?q=Via%20Brigata%20Alpina%20Orobica%2041%2FC%2C%2023100%20Sondrio%20SO" target="_blank" rel="noreferrer">Apri Google Maps in una nuova scheda ↗</a>
+  </div>
+  <div data-map-frame></div>
+</div>
+<style>
+.consent-map{background:var(--ivory);min-height:420px;width:100%}
+[data-map-placeholder]{padding:38px 28px;color:var(--deep);line-height:1.6}
+[data-map-placeholder] strong{font-size:24px}
+[data-map-placeholder] p{margin:12px 0}
+[data-map-placeholder] button{padding:14px 18px;background:var(--deep);color:white;border:1px solid var(--deep);font:inherit;cursor:pointer}
+[data-map-placeholder] a{display:block;margin-top:20px;text-decoration:underline}
+.consent-map :global(iframe){display:block;width:100%;height:420px;border:0}
+[hidden]{display:none!important}
+</style>

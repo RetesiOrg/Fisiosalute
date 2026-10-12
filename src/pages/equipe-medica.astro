@@ -1,21 +1,22 @@
 ---
+import ResponsiveImage from "../components/ResponsiveImage.astro";
+import { doctorTags } from "../data/professional-tags";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { medicalSpecialists, medicalSpecialtyOptions } from "../data/medical-specialists";
 
 const specialties = [
-  ["Fisiatria", "Per l’inquadramento dei disturbi muscoloscheletrici e la definizione del progetto riabilitativo.", "/servizi/area/fisiatria"],
-  ["Ortopedia", "Per patologie articolari, indicazioni infiltrative e percorsi prima o dopo un intervento.", "/servizi/area/ortopedia"],
-  ["Terapie infiltrative", "Prestazioni eseguite dallo specialista quando indicate nel percorso clinico.", "/servizi/terapie-infiltrative"],
-  ["Otorino\u00adlaringoiatria", "Per disturbi di orecchio, naso e gola e per l’inquadramento di vertigini e alterazioni dell’equilibrio.", "/servizi/area/otorinolaringoiatria"],
-  ["Nutrizione e dieta", "Visite dietistiche e percorsi nutrizionali personalizzati a supporto degli obiettivi di salute.", "/servizi/area/nutrizione-dieta"],
+  ["Fisiatria", "Per l’inquadramento dei disturbi muscoloscheletrici e la definizione del progetto riabilitativo.", "/servizi/area/fisiatria/"],
+  ["Ortopedia", "Per patologie articolari, indicazioni infiltrative e percorsi prima o dopo un intervento.", "/servizi/area/ortopedia/"],
+  ["Terapie infiltrative", "Prestazioni eseguite dallo specialista quando indicate nel percorso clinico.", "/servizi/terapie-infiltrative/"],
+  ["Otorino\u00adlaringoiatria", "Per disturbi di orecchio, naso e gola e per l’inquadramento di vertigini e alterazioni dell’equilibrio.", "/servizi/area/otorinolaringoiatria/"],
+  ["Nutrizione e dieta", "Visite dietistiche e percorsi nutrizionali personalizzati a supporto degli obiettivi di salute.", "/servizi/area/nutrizione-dieta/"],
 ];
 ---
 
-<BaseLayout title="Medici specialisti | FisioSalute Sondrio" description="I medici specialisti che collaborano con i fisioterapisti di FisioSalute a Sondrio.">
-  <main>
-    <Header />
+<BaseLayout keywords={doctorTags} title="Medici specialisti | FisioSalute Sondrio" description="I medici specialisti che collaborano con i fisioterapisti di FisioSalute a Sondrio.">
+  <Header /><main id="main-content" tabindex="-1">
     <section class="page-hero medical-hero">
       <p class="eyebrow light">Competenze che lavorano insieme</p>
       <h1>I medici specialisti.</h1>
@@ -65,7 +66,7 @@ const specialties = [
             data-specialties={doctor.specialties.join("|")}
           >
             <div class="medical-card-image">
-              <img src={doctor.image} alt={`${doctor.name}, ${doctor.role}`} width={doctor.imageWidth} height={doctor.imageHeight} loading={index === 0 ? "eager" : "lazy"} decoding="async" />
+              <ResponsiveImage src={doctor.image} alt={`${doctor.name}, ${doctor.role}`} width={doctor.imageWidth} height={doctor.imageHeight} loading={index === 0 ? "eager" : "lazy"} decoding="async" />
               <span>0{index + 1}</span>
             </div>
             <div class="medical-card-content">

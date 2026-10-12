@@ -1,0 +1,30 @@
+---
+import PolicyLayout from '../layouts/PolicyLayout.astro';
+import CompanyDetails from '../components/CompanyDetails.astro';
+---
+<PolicyLayout title="Cookie Policy" description="Cookie, servizi esterni e strumenti utilizzati durante la navigazione sul sito FisioSalute.">
+  <h2>1. Chi gestisce il sito</h2>
+  <CompanyDetails />
+  <p>Per le informazioni generali sul trattamento dei dati e sull’esercizio dei diritti consulta la <a href="/privacy-policy/">Privacy Policy</a>.</p>
+  <h2>2. Cosa sono i cookie</h2>
+  <p>I cookie sono piccoli file che un sito può memorizzare sul dispositivo per riconoscere una sessione o conservare informazioni. Altri strumenti, come lo spazio di archiviazione del browser o identificatori analoghi, possono svolgere funzioni simili. I cookie tecnici servono al funzionamento del servizio; quelli di profilazione e gli altri strumenti non necessari richiedono, quando previsto, un consenso preventivo.</p>
+  <h2>3. Funzioni del sito</h2>
+  <p>Il sito memorizza nel browser la scelta sui servizi facoltativi tramite localStorage, con la chiave tecnica fisiosalute-consent-v1. La registrazione contiene la versione dell’informativa di consenso, la scelta relativa alle mappe e la scadenza di sei mesi. Non contiene un identificatore pubblicitario e non viene trasmessa al server. Alla scadenza la scelta non viene più applicata e viene richiesto nuovamente il consenso. Non integra Google Analytics, Meta Pixel o strumenti di registrazione delle sessioni. La ricerca interna, i menu e il modulo che prepara un’email non richiedono cookie applicativi.</p>
+  <p>Questa descrizione riguarda le funzioni del sito e non equivale a dichiarare l’assenza di cookie dei servizi esterni o dell’infrastruttura di hosting.</p>
+  <h2>4. Servizi di terze parti</h2>
+  <h3>Google Maps</h3>
+  <p>Le pagine Contatti e Dove siamo includono una mappa Google. La mappa resta bloccata fino al consenso alla categoria “Mappe Google”, selezionabile nel banner o nelle preferenze. Rifiutando, restano disponibili indirizzo e collegamento esterno a Google Maps. Il caricamento trasmette dati tecnici a Google e può comportare l’uso di cookie o identificatori del fornitore, anche in relazione a un account Google già attivo.</p>
+  <p>Le finalità e le durate dei cookie Google variano secondo i servizi e le impostazioni. Consulta le <a href="https://policies.google.com/technologies/cookies?hl=it" target="_blank" rel="noreferrer">informazioni Google su cookie, finalità e durate</a> e la <a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noreferrer">Privacy Policy Google</a>.</p>
+  <h3>Caratteri tipografici</h3>
+  <p>I caratteri Lato e Montserrat sono ospitati insieme al sito. Il loro caricamento non richiede una connessione del browser ai server di Google Fonts.</p>
+  <h3>Recensioni e contenuti social</h3>
+  <p>Il testo delle recensioni Google è inserito nelle pagine durante la preparazione del sito e può essere aggiornato leggendo una cache sul nostro server. La sua lettura non carica un widget Google né imposta cookie tramite Google Places. Aprendo una recensione su Google si passa invece al servizio esterno.</p>
+  <p>Le news contengono collegamenti a Instagram e possono mostrare immagini provenienti da server esterni. Non è integrato un feed tramite lo script di incorporamento di Instagram. I pulsanti WhatsApp e i collegamenti social aprono i rispettivi servizi solo quando vengono selezionati; su tali servizi si applicano le informative dei fornitori.</p>
+  <h2>5. Scelte dell’utente</h2>
+  <p><button class="button" type="button" data-cookie-settings>Gestisci le preferenze cookie</button></p>
+  <p>Puoi consultare indirizzo e contatti anche senza interagire con la mappa. Al primo accesso puoi accettare tutti i servizi facoltativi, rifiutarli oppure personalizzare la scelta. Le opzioni facoltative sono inizialmente disattivate. Il pulsante “Preferenze cookie” nel footer riapre il pannello: per revocare il consenso scegli “Rifiuta non necessari” oppure disattiva “Mappe Google” e salva. Le mappe già aperte vengono rimosse. La revoca non cancella i dati già comunicati a Google né può eliminare i cookie del dominio Google; per questi usa le impostazioni del browser o del fornitore. Le impostazioni del browser consentono di visualizzare, bloccare ed eliminare i cookie e i dati dei siti; eliminare i dati già salvati non impedisce da solo nuovi caricamenti di servizi esterni.</p>
+  <p>Il blocco dei cookie nel browser non sostituisce l’eventuale consenso preventivo che il sito deve richiedere per strumenti non necessari. La prosecuzione della navigazione e lo scorrimento della pagina non vengono considerati espressione di consenso.</p>
+  <h2>6. Aggiornamenti e contatti</h2>
+  <p>Questa pagina deve essere aggiornata quando cambiano i servizi effettivamente utilizzati. Per domande sui dati personali o sui servizi esterni scrivi a <a href="mailto:info@fisiosalute.it">info@fisiosalute.it</a>.</p>
+  <p>Riferimento: <a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876" target="_blank" rel="noreferrer">Linee guida del Garante su cookie e altri strumenti di tracciamento</a>.</p>
+</PolicyLayout>

@@ -1,4 +1,5 @@
 ---
+import ResponsiveImage from "../components/ResponsiveImage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -29,12 +30,16 @@ const specializations = [
     title: "Articolazione temporo-mandibolare",
     copy: "Dal 2017 approfondisce i disturbi cranio-mandibolari collaborando con dentisti e odontotecnici per dolore facciale, difficoltà di movimento e disfunzioni masticatorie.",
   },
+  {
+    number: "06",
+    title: "Gestione del runner",
+    copy: "Gestione completa del runner, dalla videoanalisi biomeccanica della corsa alla prevenzione e al recupero dagli infortuni. Un percorso personalizzato per ottimizzare la tecnica di corsa, migliorare la performance e tornare a correre in sicurezza.",
+  },
 ];
 ---
 
-<BaseLayout title="Erika Voltan, fisioterapista | FisioSalute" description="Conosci Erika Voltan, fisioterapista a Sondrio: percorso professionale, formazione universitaria e specializzazioni riabilitative.">
-  <main>
-    <Header />
+<BaseLayout keywords={["Fisioterapista", "Voltan Erika"]} title="Erika Voltan, fisioterapista | FisioSalute" description="Conosci Erika Voltan, fisioterapista a Sondrio: percorso professionale, formazione universitaria e specializzazioni riabilitative.">
+  <Header /><main id="main-content" tabindex="-1">
     <section class="erika-hero">
       <div class="erika-hero-copy">
         <p class="eyebrow light">Fisioterapista · OMPT</p>
@@ -46,14 +51,14 @@ const specializations = [
         </div>
       </div>
       <div class="erika-hero-image">
-        <img src="/images/erika-voltan-portrait-attached.webp" alt="Erika Voltan, fisioterapista e fondatrice di FisioSalute" width="1254" height="1254" fetchpriority="high" />
+        <ResponsiveImage src="/images/erika-voltan-portrait-attached.webp" alt="Erika Voltan, fisioterapista e fondatrice di FisioSalute" width="1254" height="1254" fetchpriority="high" />
         <div><strong>Dal 2016</strong><span>esperienza in fisioterapia</span></div>
       </div>
     </section>
 
     <section class="erika-story" id="percorso">
       <div class="erika-story-image">
-        <img src="/images/erika-formazione.webp" alt="Erika Voltan durante una seduta di riabilitazione in studio" width="1200" height="880" decoding="async" />
+        <ResponsiveImage src="/images/erika-formazione.webp" alt="Erika Voltan durante una seduta di riabilitazione in studio" width="1200" height="880" decoding="async" />
       </div>
       <div class="erika-story-copy">
         <p class="eyebrow">Il percorso professionale</p>

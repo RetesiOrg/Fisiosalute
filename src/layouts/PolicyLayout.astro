@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+---
+<BaseLayout title={`${title} | FisioSalute`} description={description}>
+  <Header />
+  <main id="main-content" tabindex="-1">
+    <section class="page-hero"><p class="eyebrow light">Informazioni e trasparenza</p><h1>{title}</h1><p>{description}</p></section>
+    <article class="policy-copy">
+      <p class="policy-date">Versione del 2 ottobre 2026</p>
+      <slot />
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
+<style>
+  .policy-copy{max-width:960px;margin:auto;padding:56px 24px 90px;color:var(--ink);line-height:1.8;overflow-wrap:anywhere}
+  .policy-copy :global(h2){font-size:clamp(25px,3vw,34px);line-height:1.25;color:var(--deep);margin:42px 0 16px}
+  .policy-copy :global(h3){font-size:21px;color:var(--deep);margin:24px 0 10px}
+  .policy-copy :global(p),.policy-copy :global(ul){margin:0 0 18px}
+  .policy-copy :global(ul){padding-left:24px;list-style:disc}
+  .policy-copy :global(li){margin-bottom:8px}
+  .policy-copy :global(a){text-decoration:underline;text-underline-offset:3px}
+  .policy-copy :global(address){font-style:normal;padding:24px;background:var(--ivory);border-left:3px solid var(--sand)}
+  .policy-date{font-size:13px;color:#56635f}
+</style>

@@ -3,7 +3,7 @@ import { medicalSpecialistRefs } from "./medical-specialists";
 export type Specialist = { name: string; role: string; href?: string };
 export type ServiceImage = { src: string; alt: string };
 export type Service = { slug: string; title: string; summary: string; paragraphs?: string[]; sections?: { title: string; items: string[] }[]; specialists?: Specialist[]; images?: ServiceImage[] };
-export type ServiceArea = { slug: string; number: string; title: string; shortTitle: string; lead: string; services: Service[] };
+export type ServiceArea = { slug: string; number: string; title: string; shortTitle: string; lead: string; paragraphs?: string[]; sections?: { title: string; items?: string[]; paragraphs?: string[] }[]; services: Service[] };
 
 const physios: Specialist[] = [
   { name: "Erika Voltan", role: "Fisioterapista", href: "/erika-voltan/" },
@@ -12,6 +12,19 @@ const physios: Specialist[] = [
 ];
 
 const dietista: Specialist = { name: "Elisa Pedrolini", role: "Dietista", href: "/altri-professionisti/#elisa-pedrolini" };
+
+const urologyScope = [
+  "Disturbi della minzione, come difficoltà a urinare, flusso urinario debole, urgenza minzionale e aumento della frequenza urinaria.",
+  "Incontinenza urinaria e altri disturbi del controllo vescicale.",
+  "Disturbi del pavimento pelvico, nella donna e nell’uomo, che possono manifestarsi con alterazioni della continenza, difficoltà nello svuotamento vescicale e dolore pelvico.",
+  "Prolassi degli organi pelvici nella donna, con particolare attenzione alle possibili ripercussioni sulla funzione urinaria.",
+  "Dolore pelvico, anche persistente o associato a disturbi urinari e genitali.",
+  "Infezioni urinarie ricorrenti e valutazione delle problematiche associate.",
+  "Patologie prostatiche, tra cui ipertrofia prostatica benigna e disturbi urinari correlati.",
+  "Disfunzioni urologiche maschili, comprese le problematiche legate alla salute prostatica e alla funzione urinaria.",
+  "Calcolosi delle vie urinarie e disturbi correlati.",
+  "Prevenzione e controlli urologici, in base all’età, ai sintomi e ai fattori di rischio individuali.",
+];
 
 export const serviceAreas: ServiceArea[] = [
   { slug: "fisioterapia-riabilitazione", number: "01", title: "Fisioterapia e riabilitazione", shortTitle: "Fisioterapia", lead: "Valutazione, trattamento ed esercizio terapeutico per recuperare movimento, autonomia e fiducia.", services: [
@@ -70,6 +83,48 @@ export const serviceAreas: ServiceArea[] = [
     { slug: "nutrizione-gastrointestinale", title: "Nutrizione e disturbi gastrointestinali", summary: "Percorsi per reflusso, intestino irritabile, stipsi e gastrite già diagnosticati.", specialists: [dietista] },
     { slug: "nutrizione-sportiva", title: "Nutrizione sportiva", summary: "Alimentazione, composizione corporea ed eventuale integrazione coerenti con allenamenti e obiettivi dell’atleta.", specialists: [dietista] },
   ]},
+  {
+    slug: "urologia", number: "09", title: "Urologia", shortTitle: "Urologia",
+    lead: "Prevenzione, diagnosi e trattamento delle patologie dell’apparato urinario maschile e femminile e dell’apparato genitale maschile.",
+    paragraphs: [
+      "L’urologia si occupa della prevenzione, della diagnosi e del trattamento delle patologie dell’apparato urinario maschile e femminile e dell’apparato genitale maschile.",
+      "Presso FisioSalute è possibile effettuare visite urologiche specialistiche per valutare disturbi urinari, problematiche della salute prostatica e altre condizioni che possono influire sul benessere e sulla qualità della vita.",
+    ],
+    sections: [
+      { title: "Di cosa si occupa", items: urologyScope },
+      {
+        title: "Un approccio multidisciplinare al pavimento pelvico",
+        paragraphs: [
+          "Presso FisioSalute, la gestione dei disturbi del pavimento pelvico si basa sulla collaborazione tra urologo e fisioterapista specializzato. La valutazione medica e quella fisioterapica si integrano per comprendere le esigenze della persona e definire un percorso personalizzato, mirato al miglioramento della funzionalità del pavimento pelvico, alla riduzione dei sintomi e al recupero della qualità della vita.",
+          "L’obiettivo è offrire una presa in carico coordinata, che unisca competenze mediche e riabilitative per accompagnare ogni paziente nel proprio percorso di cura.",
+        ],
+      },
+    ],
+    services: [
+      {
+        slug: "visita-urologica", title: "Prima visita e controllo urologico",
+        summary: "Visite urologiche specialistiche per valutare disturbi urinari, problematiche della salute prostatica e altre condizioni che possono influire sul benessere e sulla qualità della vita.",
+        paragraphs: ["Presso FisioSalute è possibile effettuare una prima visita urologica e visite di controllo con la Dott.ssa Alberta Paiusco, medico chirurgo specialista in Urologia."],
+        sections: [{ title: "Di cosa si occupa", items: urologyScope }],
+        specialists: [medicalSpecialistRefs.paiusco],
+      },
+      {
+        slug: "ecografia-urologica-femminile", title: "Ecografia urologica femminile e maschile",
+        summary: "Esame diagnostico non invasivo rivolto a donne e uomini, che utilizza ultrasuoni per valutare i reni e la vescica, contribuendo all’inquadramento di diversi disturbi urinari.",
+        paragraphs: [
+          "L’ecografia dell’apparato urinario nella donna e nell’uomo è un esame diagnostico non invasivo che utilizza ultrasuoni per valutare i reni e la vescica, contribuendo all’inquadramento di diversi disturbi urinari.",
+          "L’esame può essere indicato nell’ambito della valutazione di sintomi urinari, infezioni ricorrenti e difficoltà nello svuotamento della vescica.",
+        ],
+        sections: [{ title: "Permette di valutare", items: [
+          "Reni e vie urinarie, per individuare eventuali alterazioni strutturali e segni di calcolosi.",
+          "Vescica, per esaminarne la morfologia e il contenuto.",
+          "Residuo post-minzionale, per verificare la quantità di urina che rimane in vescica dopo la minzione, quando previsto.",
+          "Disturbi urinari, come difficoltà nello svuotamento vescicale, urgenza e aumento della frequenza minzionale.",
+        ] }],
+        specialists: [medicalSpecialistRefs.paiusco],
+      },
+    ],
+  },
 ];
 
 const areaDetails: Record<string, { paragraphs: string[]; section: { title: string; items: string[] }; images: ServiceImage[] }> = {
@@ -400,8 +455,8 @@ export const allServices = serviceAreas.flatMap((area) => area.services.map((ser
   return {
     ...service,
     area,
-    paragraphs: [...(enhancement?.paragraphs ?? service.paragraphs ?? []), ...defaults.paragraphs],
-    sections: enhancement?.sections ?? (service.sections?.length ? service.sections : [defaults.section]),
-    images: service.images ?? serviceImageOverrides[service.slug] ?? generatedServiceImages[service.slug] ?? defaults.images,
+    paragraphs: [...(enhancement?.paragraphs ?? service.paragraphs ?? []), ...(defaults?.paragraphs ?? [])],
+    sections: enhancement?.sections ?? (service.sections?.length ? service.sections : (defaults ? [defaults.section] : [])),
+    images: service.images ?? serviceImageOverrides[service.slug] ?? generatedServiceImages[service.slug] ?? defaults?.images,
   };
 }));

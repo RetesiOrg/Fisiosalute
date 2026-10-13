@@ -67,9 +67,43 @@ export const medicalSpecialists: MedicalSpecialist[] = [
     ],
     href: "/equipe-medica/#alberto-giuffrida",
   },
+  {
+    slug: "alberta-paiusco",
+    name: "Dott.ssa Alberta Paiusco",
+    role: "Medico chirurgo specialista in Urologia",
+    image: "/images/medical-alberta-paiusco.webp",
+    imageWidth: 1179,
+    imageHeight: 1376,
+    specialties: ["Urologia", "Disturbi della minzione", "Urodinamica", "Uro-oncologia"],
+    summary: "La Dott.ssa Alberta Paiusco è specialista in Urologia, con una significativa esperienza ospedaliera maturata presso l’Ospedale di Sondrio. Nel corso della sua carriera ha ricoperto il ruolo di dirigente medico urologo e ha svolto attività specialistica in ambito ambulatoriale, occupandosi in particolare di urodinamica e uro-oncologia.",
+    education: [
+      "Laurea in Medicina e Chirurgia presso l’Università degli Studi di Milano.",
+      "Specializzazione in Urologia presso l’Università degli Studi di Milano.",
+      "Esperienza come dirigente medico urologo presso l’Ospedale di Sondrio.",
+      "Responsabile dell’ambulatorio di urodinamica e dell’ambulatorio uro-oncologico.",
+      "Responsabile dell’ambulatorio urologico distrettuale di Chiavenna.",
+    ],
+    expertise: [
+      "Valutazione delle patologie dell’apparato urinario femminile e maschile.",
+      "Disturbi della minzione e della funzionalità vescicale.",
+      "Diagnostica urodinamica.",
+      "Patologie urologiche in ambito uro-oncologico.",
+    ],
+    serviceLinks: [
+      { label: "Area Urologia", href: "/servizi/area/urologia/" },
+      { label: "Prima visita e controllo urologico", href: "/servizi/visita-urologica/" },
+      { label: "Ecografia urologica femminile e maschile", href: "/servizi/ecografia-urologica-femminile/" },
+    ],
+    href: "/equipe-medica/#alberta-paiusco",
+  },
 ];
 
 export const medicalSpecialistRefs = {
+  paiusco: {
+    name: "Dott.ssa Alberta Paiusco",
+    role: "Medico chirurgo specialista in Urologia",
+    href: "/equipe-medica/#alberta-paiusco",
+  },
   narducci: {
     name: "Dott. Elio Basso Narducci",
     role: "Otorinolaringoiatra",

@@ -1,0 +1,416 @@
+[
+  {
+    "path": "404.html",
+    "status": 200,
+    "sha256": "bf184b1e83d6f2825212dd2fc4e878b289e980070b1df40717376df05fe4ab77",
+    "match": true
+  },
+  {
+    "path": "altri-professionisti/index.html",
+    "status": 200,
+    "sha256": "87f1b876e0c39be436fac50ad3bf7aad8b48ba47508cd7f033061326e3a724a8",
+    "match": true
+  },
+  {
+    "path": "carta-dei-servizi/index.html",
+    "status": 200,
+    "sha256": "e15a009c2749221bc2b0076f1195d9f72bcab987181c755856e073ed9fa47255",
+    "match": true
+  },
+  {
+    "path": "collaborazioni/index.html",
+    "status": 200,
+    "sha256": "7ead7dd62cc7e85b5c09522c3e0089548e00f46c6d9d10c4c162cfab38b2bacf",
+    "match": true
+  },
+  {
+    "path": "contatti/index.html",
+    "status": 200,
+    "sha256": "28bf639e238bd41a5ee1ee88ee4bb473f87d5cedfb4b2c1e42363f3b4462279f",
+    "match": true
+  },
+  {
+    "path": "cookie-policy/index.html",
+    "status": 200,
+    "sha256": "1a49c3b959efd736fceca95cd0be0daa4bc4bcf20ab89b0b1627e1cb86ead14f",
+    "match": true
+  },
+  {
+    "path": "dove-siamo/index.html",
+    "status": 200,
+    "sha256": "c1462708a7492765e63ec572974f15b9ccf85406bf98e3ea0c3308a44f21a089",
+    "match": true
+  },
+  {
+    "path": "equipe-medica/index.html",
+    "status": 200,
+    "sha256": "6d3b4af13e62be99cb9b0ecab7ead0a9a4c7d4881371f867e2213779c216e86a",
+    "match": true
+  },
+  {
+    "path": "erika-voltan/index.html",
+    "status": 200,
+    "sha256": "a70c49dd5432bb7d5fe9b2a897ada7dd578d0a505a51e2e8f01b3e1b7354c592",
+    "match": true
+  },
+  {
+    "path": "index.html",
+    "status": 200,
+    "sha256": "70399378abfec321e1dcaf79cc8f84707d5bd60b44eeab24b37d89911320b19b",
+    "match": true
+  },
+  {
+    "path": "informazioni-paziente/index.html",
+    "status": 200,
+    "sha256": "61d5b79dcf5dcdb30ac396b210e5c41c9a41686a7c3e577ee89f132f7258b420",
+    "match": true
+  },
+  {
+    "path": "news/index.html",
+    "status": 200,
+    "sha256": "ba6fca97814499e5c25cfe1a2c19ec333669ec93f2b760750de63a0d2b99dcc5",
+    "match": true
+  },
+  {
+    "path": "privacy-policy/index.html",
+    "status": 200,
+    "sha256": "03a361e0b17db8e163bdcd2fae5bd4db44835c1c3dd169d6995cfd429a048ca2",
+    "match": true
+  },
+  {
+    "path": "servizi/area/fisiatria/index.html",
+    "status": 200,
+    "sha256": "93c3c280551ddd7f3fb24f5bb4b3a9003a3f1788fa597d8048a6818f39097e73",
+    "match": true
+  },
+  {
+    "path": "servizi/area/fisioterapia-riabilitazione/index.html",
+    "status": 200,
+    "sha256": "672edb0dc948b4be735233ceafb015122b2462bcb2ef593fc366c9339c48da8f",
+    "match": true
+  },
+  {
+    "path": "servizi/area/nutrizione-dieta/index.html",
+    "status": 200,
+    "sha256": "08d3ba5d2d9ba867de99146cd9d62eb227767b154df4e942517eda6e5de84879",
+    "match": true
+  },
+  {
+    "path": "servizi/area/ortopedia/index.html",
+    "status": 200,
+    "sha256": "596e408c28a07a1d20b18be4831ff003f3edf489ee660ae2387959250f0a350f",
+    "match": true
+  },
+  {
+    "path": "servizi/area/otorinolaringoiatria/index.html",
+    "status": 200,
+    "sha256": "20d307b5a806e9518146058ccf45a8077d89558d7ae2e05b11c137a89416a2b4",
+    "match": true
+  },
+  {
+    "path": "servizi/area/pilates-postura/index.html",
+    "status": 200,
+    "sha256": "b0fc1b43d6ef55b4b0c65611579e45a6c1ac2e865c2f11ccb35a431f69416cdd",
+    "match": true
+  },
+  {
+    "path": "servizi/area/salute-benessere-donna/index.html",
+    "status": 200,
+    "sha256": "769742c3046278852b249e0f60164c2e1c84d9294213084ccdfde09ebd0ac9a0",
+    "match": true
+  },
+  {
+    "path": "servizi/area/terapie-fisiche-infiltrative/index.html",
+    "status": 200,
+    "sha256": "c943b7994e72b4f6cd7017a3452ebbc15b3bf14914644edc02b5438d0c010347",
+    "match": true
+  },
+  {
+    "path": "servizi/area/urologia/index.html",
+    "status": 200,
+    "sha256": "627e6f245fb3043bf632636846b895bcdff1e2f69bf39085f62a84f1164a0a8d",
+    "match": true
+  },
+  {
+    "path": "servizi/articolazione-temporo-mandibolare/index.html",
+    "status": 200,
+    "sha256": "6856e72b1bc3ca9f7d77232a9c0169fddf18b34238e5a49850cb2e93d2681bf5",
+    "match": true
+  },
+  {
+    "path": "servizi/cefalee-muscolo-tensive/index.html",
+    "status": 200,
+    "sha256": "b7336c9d050f8897ee05b25ca33e3e43714c516fbd90e3ef10457269462a6a13",
+    "match": true
+  },
+  {
+    "path": "servizi/composizione-corporea/index.html",
+    "status": 200,
+    "sha256": "6eb72a7213374c96ba8a02d04d2549ae946903b8f4956afbc8c03a329b2ff0c7",
+    "match": true
+  },
+  {
+    "path": "servizi/diastasi-cicatrice-cesareo/index.html",
+    "status": 200,
+    "sha256": "b83af51262595349f253c42be86ea46b9e8522da2ef710c09a0c1fadbb989192",
+    "match": true
+  },
+  {
+    "path": "servizi/ecografia-urologica-femminile/index.html",
+    "status": 200,
+    "sha256": "91c22636d223ebda8e9e63f76029e2d0d7879ed9a5d26a5370b803f4a686b691",
+    "match": true
+  },
+  {
+    "path": "servizi/educazione-alimentare/index.html",
+    "status": 200,
+    "sha256": "1bbf2d1c8368c699a1721eeecb88e536ec68d61c07f7279bb1bd88d52e6db9b1",
+    "match": true
+  },
+  {
+    "path": "servizi/fisiatria/index.html",
+    "status": 200,
+    "sha256": "f7e33231262a2340137aad6961aeee89a5500f04b47975a214f2aa1a9e8693b9",
+    "match": true
+  },
+  {
+    "path": "servizi/fisiopilates-macchinari/index.html",
+    "status": 200,
+    "sha256": "26490ee1ed8c54ffa0b1ecbc555035306140848f91f3ca7a5f061c3238367d6f",
+    "match": true
+  },
+  {
+    "path": "servizi/fisioterapia-domiciliare/index.html",
+    "status": 200,
+    "sha256": "3f9587f8bdfcc77117d3260fd2167cf5b991ad3a064b48fa6c06d298be9d32c1",
+    "match": true
+  },
+  {
+    "path": "servizi/fisioterapia-muscoloscheletrica/index.html",
+    "status": 200,
+    "sha256": "ab4c0025823934288df034285f02a1dc91e2fb2e776367a29216da0c7eb3ce9e",
+    "match": true
+  },
+  {
+    "path": "servizi/fisioterapia-neurologica/index.html",
+    "status": 200,
+    "sha256": "8be9302e553b6e27cb136ec299a2320e346f93478651b49ff57e26bda2c291d2",
+    "match": true
+  },
+  {
+    "path": "servizi/fisioterapia-prevenzione/index.html",
+    "status": 200,
+    "sha256": "2d1ff1e9917fed20945244a5f64596c453fdbf05cb2a2aa5d85c41c123eec83c",
+    "match": true
+  },
+  {
+    "path": "servizi/fisioterapia-reumatologica/index.html",
+    "status": 200,
+    "sha256": "64e3fea30a52517a2f7c4c364032b098ecf4b7b972c3ceb0baa4316c1de60dab",
+    "match": true
+  },
+  {
+    "path": "servizi/fisioterapia-sportiva/index.html",
+    "status": 200,
+    "sha256": "0b899e7033108cf66a6e2c4dcf9d383fa38f5eeeda33250b0bfb6d20a6a6b8a8",
+    "match": true
+  },
+  {
+    "path": "servizi/idrokinesiterapia/index.html",
+    "status": 200,
+    "sha256": "daa8e806ce68ecbb088cae9b17cfd8b894d9892a1ad8cb1ca25ad41b66bb17e5",
+    "match": true
+  },
+  {
+    "path": "servizi/index.html",
+    "status": 200,
+    "sha256": "56bfd95c6a314db62cbf01cbf97ea3e4b97c2f8b67aaa177b7782a9869def3b8",
+    "match": true
+  },
+  {
+    "path": "servizi/laserterapia/index.html",
+    "status": 200,
+    "sha256": "2dea66c205ad4d806eb363732bc4eb8e4ffa713aed2b65f2f68cbf74a1af5187",
+    "match": true
+  },
+  {
+    "path": "servizi/linfodrenaggio/index.html",
+    "status": 200,
+    "sha256": "4f99ec88bd74fbe0050d57b21abe1c2b04515fe5e398b68c3b2fe980e9e1b56c",
+    "match": true
+  },
+  {
+    "path": "servizi/movimento-benessere-femminile/index.html",
+    "status": 200,
+    "sha256": "8f215268c939628442f51ce1aab25bc040b433a4ac6d14d07eb4162e80f0357f",
+    "match": true
+  },
+  {
+    "path": "servizi/nutrizione-condizioni-fisiologiche/index.html",
+    "status": 200,
+    "sha256": "f744a8be81b4c01868a02e6170245a162912492abd09dfef6ef7e4a1fd044833",
+    "match": true
+  },
+  {
+    "path": "servizi/nutrizione-gastrointestinale/index.html",
+    "status": 200,
+    "sha256": "b8334da78784ac11d14e1bf0fc9b46cbb5a32fc312d3dd1b8c6d688126b51f2d",
+    "match": true
+  },
+  {
+    "path": "servizi/nutrizione-patologie/index.html",
+    "status": 200,
+    "sha256": "a7e2ac289eda5fed794b704d232b1b8ba55c8f9d76ba82101420d022ff3f089a",
+    "match": true
+  },
+  {
+    "path": "servizi/nutrizione-sportiva/index.html",
+    "status": 200,
+    "sha256": "fc111e82863e89e62c4963f19a9643e53c50c18e2f4dd1903331c21b539f9fc8",
+    "match": true
+  },
+  {
+    "path": "servizi/ortopedia/index.html",
+    "status": 200,
+    "sha256": "2e35d7489156e2bf9b3f8ccb40b735d7acbb17292b3825f21794fdd7583cc170",
+    "match": true
+  },
+  {
+    "path": "servizi/otorinolaringoiatria/index.html",
+    "status": 200,
+    "sha256": "97720637b37885cea52a0d1d45882879729c2807db9c336045b9e0223ceb802c",
+    "match": true
+  },
+  {
+    "path": "servizi/pavimento-pelvico/index.html",
+    "status": 200,
+    "sha256": "f0c8332bd5771d68931bda22c00010165fa3990dd8bd749c1ae21723cb5eb7bb",
+    "match": true
+  },
+  {
+    "path": "servizi/percorso-nutrizionale/index.html",
+    "status": 200,
+    "sha256": "5ec18df4074125e64638fa4f81ac59e81e1fc762ee4ea7e81102b34f83f9eb4a",
+    "match": true
+  },
+  {
+    "path": "servizi/pilates-clinico/index.html",
+    "status": 200,
+    "sha256": "1546d8c1950b98afebe1139a4588c65dcb2e420803b456e4a27377cccc041af4",
+    "match": true
+  },
+  {
+    "path": "servizi/pilates-clinico-aperto/index.html",
+    "status": 200,
+    "sha256": "add0dbf6d4633a03a7245b0ad6e0422072602ac172bdafa2e038ede862cfa90a",
+    "match": true
+  },
+  {
+    "path": "servizi/preparazione-parto/index.html",
+    "status": 200,
+    "sha256": "30378518e40f47359fba40e8cc077e0c86cf2f2f66dd448b00dbd4f0b31d833d",
+    "match": true
+  },
+  {
+    "path": "servizi/pressoterapia/index.html",
+    "status": 200,
+    "sha256": "3b2f1945830ccf7e077f0a2cd9d4b149a945538d52caf7ad41ca33409eabb5e4",
+    "match": true
+  },
+  {
+    "path": "servizi/prevenzione-pavimento-pelvico/index.html",
+    "status": 200,
+    "sha256": "b8282effe34861613f6f93ff13c741432dfda2f1dca137763818342201972bc4",
+    "match": true
+  },
+  {
+    "path": "servizi/recupero-post-partum/index.html",
+    "status": 200,
+    "sha256": "dd60213c3bbfc0ae19743480b27f1c1380bd30f9ba660678df666dcf16299c74",
+    "match": true
+  },
+  {
+    "path": "servizi/riabilitazione/index.html",
+    "status": 200,
+    "sha256": "832581009b4850e50c3775829bc142950fa32bd4f7a58f20456c5ac2dbedf48f",
+    "match": true
+  },
+  {
+    "path": "servizi/riabilitazione-post-oncologica/index.html",
+    "status": 200,
+    "sha256": "a9a864051719d3c9cbf6bac2e880fce336308ee3c8b6ced750892824f2bd3827",
+    "match": true
+  },
+  {
+    "path": "servizi/riatletizzazione-esercizio-specifico/index.html",
+    "status": 200,
+    "sha256": "ee6703cd013322eed9e8e907f154b046394088f854c775935b5b907c0285f62e",
+    "match": true
+  },
+  {
+    "path": "servizi/rieducazione-posturale/index.html",
+    "status": 200,
+    "sha256": "9e867660e8b20686a6088a85a060d2087a88cb017865e85885bc6bf7816dcbf8",
+    "match": true
+  },
+  {
+    "path": "servizi/salute-donna-fasi-vita/index.html",
+    "status": 200,
+    "sha256": "1e28f805ad64f6698ce5eb2eb987713f7ba581b5c6b22b7b3187f72bde292e2e",
+    "match": true
+  },
+  {
+    "path": "servizi/sindromi-vertiginose/index.html",
+    "status": 200,
+    "sha256": "d385b2db4b70e0cd3b19cfb88c91e1527f752e07b8b05181602efa4f8ab4d9d1",
+    "match": true
+  },
+  {
+    "path": "servizi/tecarterapia/index.html",
+    "status": 200,
+    "sha256": "80101add17ad358acfc67410223643b4220551c537426a7f1f9c93a2697487d2",
+    "match": true
+  },
+  {
+    "path": "servizi/terapie-infiltrative/index.html",
+    "status": 200,
+    "sha256": "a800b96bb37d1c6bcbbd39865af860fcda68676cb6eb3322c535347d3a881a04",
+    "match": true
+  },
+  {
+    "path": "servizi/visita-dietistica/index.html",
+    "status": 200,
+    "sha256": "b266abbc51e4f66a79ee2f7a119c4fb48d6a9179383d9ff323af4665f8c9e121",
+    "match": true
+  },
+  {
+    "path": "servizi/visita-urologica/index.html",
+    "status": 200,
+    "sha256": "020d8b157009081c9e4d8f43676e53be366ef546ce39f1521e4bba59340ea2c0",
+    "match": true
+  },
+  {
+    "path": "staff/index.html",
+    "status": 200,
+    "sha256": "858862580ca55a17625d1c5ac857730e3774725af45388bc90b48cc75d8e544e",
+    "match": true
+  },
+  {
+    "path": "_astro/Footer.BDct2n84.css",
+    "status": 200,
+    "sha256": "d5997bedfcbfe93ce7ae117b53a539fdbbb30e9235d6d590c7080c20359c6649",
+    "match": true
+  },
+  {
+    "path": "_astro/equipe-medica.8uOqH5zH.css",
+    "status": 200,
+    "sha256": "561647bcd53797fa91c2251c08605f50e3123bae9035e004da2a4bc94e32984c",
+    "match": true
+  },
+  {
+    "path": "Favicon.png",
+    "status": 200,
+    "sha256": "f14ab5dd94eb3412a6c840277cf8a13a53f00a23c76c6a778f41c6b1877158eb",
+    "match": true
+  }
+]

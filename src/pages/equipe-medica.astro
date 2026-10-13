@@ -7,6 +7,7 @@ import Footer from "../components/Footer.astro";
 import { medicalSpecialists, medicalSpecialtyOptions } from "../data/medical-specialists";
 
 const specialties = [
+  ["Urologia", "Per disturbi urinari, salute prostatica e valutazione delle patologie dell’apparato urinario femminile e maschile.", "/servizi/area/urologia/"],
   ["Fisiatria", "Per l’inquadramento dei disturbi muscoloscheletrici e la definizione del progetto riabilitativo.", "/servizi/area/fisiatria/"],
   ["Ortopedia", "Per patologie articolari, indicazioni infiltrative e percorsi prima o dopo un intervento.", "/servizi/area/ortopedia/"],
   ["Terapie infiltrative", "Prestazioni eseguite dallo specialista quando indicate nel percorso clinico.", "/servizi/terapie-infiltrative/"],
@@ -287,6 +288,11 @@ const specialties = [
     transform-origin: 50% 0;
   }
 
+  #alberta-paiusco .medical-card-image img {
+    transform: scale(1.25);
+    transform-origin: 50% 86%;
+  }
+
   .medical-card-image > span {
     position: absolute;
     top: 20px;
@@ -405,7 +411,7 @@ const specialties = [
 
   .medical-specialties .specialty-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1px;
     margin: 0;
   }
@@ -472,6 +478,11 @@ const specialties = [
 
     #alberto-giuffrida .medical-card-image img {
       transform: scale(1.15);
+    }
+
+    #alberta-paiusco .medical-card-image img {
+      transform: scale(1.15);
+      transform-origin: 50% 72%;
     }
 
   }

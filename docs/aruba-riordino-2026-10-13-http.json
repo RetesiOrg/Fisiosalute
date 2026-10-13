@@ -1,0 +1,30 @@
+[
+  {
+    "path": "/",
+    "status": 200
+  },
+  {
+    "path": "/servizi/area/urologia/",
+    "status": 200
+  },
+  {
+    "path": "/equipe-medica/",
+    "status": 200
+  },
+  {
+    "path": "/Favicon.png?v=20261013",
+    "status": 200
+  },
+  {
+    "path": "/api/instagram.json",
+    "status": 200
+  },
+  {
+    "path": "/api/google-reviews.php",
+    "status": 503
+  },
+  {
+    "path": "/vecchi%20file/LEGGIMI.txt",
+    "status": 403
+  }
+]

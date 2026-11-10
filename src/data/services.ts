@@ -1,9 +1,11 @@
 import { medicalSpecialistRefs } from "./medical-specialists";
+import { psychologyArea } from "./psychology";
 
 export type Specialist = { name: string; role: string; href?: string };
 export type ServiceImage = { src: string; alt: string };
-export type Service = { slug: string; title: string; summary: string; paragraphs?: string[]; sections?: { title: string; items: string[] }[]; specialists?: Specialist[]; images?: ServiceImage[] };
-export type ServiceArea = { slug: string; number: string; title: string; shortTitle: string; lead: string; paragraphs?: string[]; sections?: { title: string; items?: string[]; paragraphs?: string[] }[]; services: Service[] };
+export type PageSeo = { title: string; description: string; heading?: string };
+export type Service = { slug: string; title: string; summary: string; seo?: PageSeo; paragraphs?: string[]; sections?: { title: string; items: string[] }[]; specialists?: Specialist[]; images?: ServiceImage[]; relatedServices?: { title: string; href: string }[] };
+export type ServiceArea = { slug: string; number: string; title: string; shortTitle: string; lead: string; seo?: PageSeo; paragraphs?: string[]; sections?: { title: string; items?: string[]; paragraphs?: string[] }[]; specialists?: Specialist[]; services: Service[] };
 
 const physios: Specialist[] = [
   { name: "Erika Voltan", role: "Fisioterapista", href: "/erika-voltan/" },
@@ -36,7 +38,17 @@ export const serviceAreas: ServiceArea[] = [
     { slug: "riabilitazione", title: "Riabilitazione ed esercizio terapeutico", summary: "Programmi personalizzati per recuperare movimento, forza e funzionalità e ridurre il rischio di recidive.", sections: [{ title: "Ambiti di intervento", items: ["Riabilitazione pre e post intervento chirurgico", "Riabilitazione post infortunio e post traumatica", "Riabilitazione motoria", "Esercizio terapeutico e Pilates"] }], specialists: physios },
     { slug: "articolazione-temporo-mandibolare", title: "Riabilitazione temporo-mandibolare", summary: "Valutazione e trattamento dei disturbi dell’articolazione della mandibola e dei sintomi collegati.", sections: [{ title: "Quando può essere indicata", items: ["Dolore peri-mandibolare o durante la masticazione", "Limitazione dell’apertura della bocca", "Click, scrosci o deviazioni", "Cefalee, bruxismo e serramento", "Percorsi pre e post bite o chirurgia maxillo-facciale"] }], specialists: physios },
     { slug: "pavimento-pelvico", title: "Riabilitazione del pavimento pelvico", summary: "Un trattamento specialistico rivolto a donne e uomini per recuperare la funzionalità del pavimento pelvico.", paragraphs: ["Il percorso viene costruito sulla persona e può intervenire su incontinenza, dolore pelvico, disfunzioni sessuali, problematiche post-partum o post-chirurgiche e alterazioni della funzione intestinale.", "La valutazione iniziale permette di definire obiettivi e strumenti adatti alla specifica condizione."], sections: [{ title: "Il trattamento può combinare", items: ["Terapia manuale", "Esercizi di rinforzo o rilassamento", "Biofeedback e radiofrequenza", "Educazione comportamentale", "Tecniche di respirazione e rilassamento"] }], specialists: [{ name: "Erika Voltan", role: "Fisioterapista", href: "/erika-voltan/" }] },
-    { slug: "sindromi-vertiginose", title: "Riabilitazione delle sindromi vertiginose", summary: "Valutazione specialistica e programma personalizzato per vertigini vestibolari e cervicogeniche.", paragraphs: ["La riabilitazione mira a ridurre i sintomi, migliorare equilibrio e orientamento e recuperare sicurezza nelle attività quotidiane.", "Le componenti vestibolare e cervicale possono coesistere: per questo il percorso parte sempre da una valutazione globale."], sections: [{ title: "Il percorso può comprendere", items: ["Manovre di riposizionamento quando indicate", "Esercizi vestibolari e di stabilizzazione dello sguardo", "Terapia manuale cervicale", "Esercizi di equilibrio e controllo motorio", "Programma domiciliare personalizzato"] }], specialists: physios },
+    {
+      slug: "sindromi-vertiginose", title: "Trattamento delle vertigini e riabilitazione vestibolare",
+      summary: "Riabilitazione vestibolare: valutazione fisioterapica e percorso personalizzato per vertigini e disturbi dell’equilibrio, in collaborazione con l’otorinolaringoiatra quando indicato.",
+      seo: {
+        title: "Trattamento vertigini a Sondrio | FisioSalute",
+        description: "Trattamento delle vertigini a Sondrio: riabilitazione vestibolare, esercizi per l’equilibrio e percorso personalizzato con fisioterapista e collaborazione ORL.",
+        heading: "Trattamento delle vertigini",
+      },
+      relatedServices: [{ title: "Visita otorinolaringoiatrica", href: "/servizi/otorinolaringoiatria/" }],
+      specialists: physios,
+    },
     { slug: "cefalee-muscolo-tensive", title: "Riabilitazione delle cefalee muscolo-tensive", summary: "Un percorso sui fattori muscoloscheletrici e funzionali che possono contribuire al mal di testa ricorrente.", paragraphs: ["Le cefalee sono spesso multifattoriali. La valutazione considera la regione cervicale, le tensioni muscolari, l’articolazione temporo-mandibolare, il movimento e le abitudini quotidiane."], sections: [{ title: "Come può aiutare la fisioterapia", items: ["Terapia manuale cervicale e dei tessuti molli", "Recupero della mobilità e del controllo motorio", "Valutazione e trattamento dell’ATM quando indicato", "Educazione alla gestione dei fattori modificabili", "Esercizi domiciliari personalizzati"] }], specialists: physios },
     { slug: "linfodrenaggio", title: "Linfodrenaggio manuale", summary: "Gestione specialistica di linfedema, lipedema e condizioni correlate.", paragraphs: ["Dopo una valutazione fisioterapica viene definito un percorso per ridurre il gonfiore, favorire il drenaggio e migliorare funzionalità e benessere."], sections: [{ title: "Possibili strumenti", items: ["Linfodrenaggio manuale", "Educazione all’autogestione", "Esercizio terapeutico", "Bendaggio elastocompressivo e linfotaping", "Pressoterapia terapeutica"] }], specialists: physios },
     { slug: "riabilitazione-post-oncologica", title: "Riabilitazione post oncologica", summary: "Un percorso attento e progressivo per accompagnare il recupero dopo le terapie oncologiche.", specialists: physios },
@@ -70,9 +82,40 @@ export const serviceAreas: ServiceArea[] = [
   { slug: "ortopedia", number: "06", title: "Ortopedia", shortTitle: "Ortopedia", lead: "Valutazione specialistica dell’apparato muscoloscheletrico e integrazione con il percorso riabilitativo.", services: [
     { slug: "ortopedia", title: "Ortopedia e traumatologia", summary: "Diagnosi e trattamento delle problematiche di ossa, articolazioni, muscoli, tendini e legamenti.", paragraphs: ["La valutazione ortopedica è importante per inquadrare una problematica strutturale, gli esiti di un trauma o un dolore persistente e stabilire se sia indicato un trattamento conservativo o chirurgico.", "FisioSalute favorisce un’équipe di ortopedici con competenze nei diversi distretti corporei, per indirizzare ogni paziente verso il professionista più indicato."], sections: [{ title: "Ambiti principali", items: ["Traumi, fratture, distorsioni e instabilità", "Artrosi e problematiche degenerative", "Lesioni muscolari, tendinee, meniscali e legamentose", "Problematiche della colonna", "Dolore di spalla, gomito, mano, anca, ginocchio, caviglia e piede", "Percorsi pre e post operatori"] }], specialists: [medicalSpecialistRefs.giuffrida] },
   ]},
-  { slug: "otorinolaringoiatria", number: "07", title: "Otorinolaringoiatria", shortTitle: "ORL", lead: "Valutazione di orecchio, naso, gola, equilibrio, voce e deglutizione.", services: [
-    { slug: "otorinolaringoiatria", title: "Visita otorinolaringoiatrica", summary: "Valutazione specialistica delle funzioni di udito, equilibrio, respirazione, voce e deglutizione.", paragraphs: ["La visita analizza sintomi e storia clinica per individuare il percorso più appropriato e gli eventuali approfondimenti.", "Nelle vertigini e nei disturbi dell’equilibrio, la valutazione medica può integrarsi con la riabilitazione vestibolare svolta da fisioterapisti specializzati."], sections: [{ title: "Quando rivolgersi allo specialista", items: ["Disturbi dell’udito, acufeni e sensazione di orecchio chiuso", "Vertigini e instabilità", "Otiti, riniti, sinusiti e poliposi", "Russamento e apnee del sonno", "Disturbi di voce e deglutizione", "Problematiche del distretto testa-collo"] }], specialists: [medicalSpecialistRefs.narducci] },
-  ]},
+  {
+    slug: "otorinolaringoiatria", number: "07", title: "Otorinolaringoiatria", shortTitle: "ORL",
+    lead: "Visite con l’otorinolaringoiatra per orecchio, naso, gola, udito ed equilibrio.",
+    seo: {
+      title: "Otorinolaringoiatra a Sondrio | FisioSalute",
+      description: "Cerchi un otorinolaringoiatra a Sondrio? Visite ORL con il Dott. Elio Basso Narducci da FisioSalute per disturbi di orecchio, naso, gola ed equilibrio.",
+      heading: "Otorinolaringoiatria",
+    },
+    paragraphs: [
+      "Presso FisioSalute a Sondrio è possibile prenotare una visita otorinolaringoiatrica con il Dott. Elio Basso Narducci, medico chirurgo specialista in Otorinolaringoiatria e direttore sanitario del centro.",
+      "L’otorinolaringoiatra, spesso chiamato otorino, valuta le problematiche di orecchio, naso, gola e del distretto cervico-facciale, con attenzione a udito, equilibrio, respirazione e voce. La visita parte dai sintomi e dalla storia clinica per individuare il percorso più appropriato.",
+    ],
+    sections: [{
+      title: "Dove prenotare una visita ORL",
+      paragraphs: ["FisioSalute si trova in Via Brigata Alpina Orobica 41/C, a Sondrio, in Valtellina. Per informazioni sulle visite e per concordare un appuntamento è possibile contattare la segreteria al 349 4011847 o scrivere a info@fisiosalute.it."],
+    }],
+    services: [{
+      slug: "otorinolaringoiatria", title: "Visita otorinolaringoiatrica",
+      summary: "Visita ORL con il Dott. Elio Basso Narducci per valutare udito, equilibrio, respirazione, voce e deglutizione.",
+      seo: {
+        title: "Visita otorinolaringoiatrica a Sondrio | FisioSalute",
+        description: "Prenota una visita otorinolaringoiatrica a Sondrio con il Dott. Elio Basso Narducci. Valutazione ORL di orecchio, naso e gola presso FisioSalute.",
+        heading: "Visita otorinolaringoiatrica",
+      },
+      paragraphs: [
+        "La visita con l’otorinolaringoiatra presso FisioSalute a Sondrio viene effettuata dal Dott. Elio Basso Narducci, specialista in Otorinolaringoiatria e direttore sanitario del centro.",
+        "La visita analizza sintomi e storia clinica per individuare il percorso più appropriato e gli eventuali approfondimenti.",
+        "Nelle vertigini e nei disturbi dell’equilibrio, la valutazione medica può integrarsi con la riabilitazione vestibolare svolta da fisioterapisti specializzati.",
+      ],
+      sections: [{ title: "Quando rivolgersi all’otorinolaringoiatra", items: ["Disturbi dell’udito, acufeni e sensazione di orecchio chiuso", "Vertigini e instabilità", "Otiti, riniti, sinusiti e poliposi", "Russamento e apnee del sonno", "Disturbi di voce e deglutizione", "Problematiche del distretto testa-collo"] }],
+      relatedServices: [{ title: "Trattamento delle vertigini", href: "/servizi/sindromi-vertiginose/" }],
+      specialists: [medicalSpecialistRefs.narducci],
+    }],
+  },
   { slug: "nutrizione-dieta", number: "08", title: "Nutrizione e dieta", shortTitle: "Nutrizione e dieta", lead: "Un supporto nutrizionale personalizzato, integrato agli obiettivi di salute e benessere.", services: [
     { slug: "visita-dietistica", title: "Visita dietistica e valutazione nutrizionale", summary: "Anamnesi clinica, alimentare e dello stile di vita per comprendere bisogni e obiettivi della persona.", specialists: [dietista] },
     { slug: "educazione-alimentare", title: "Educazione alimentare", summary: "Strumenti concreti per costruire un’alimentazione equilibrata, varia e sostenibile nel tempo.", specialists: [dietista], images: [{ src: "/images/services-generated/educazione-alimentare-1.webp", alt: "Dietista insegna a comporre un piatto equilibrato" }, { src: "/images/services-generated/educazione-alimentare-2.webp", alt: "Confronto pratico delle porzioni alimentari" }] },
@@ -125,6 +168,7 @@ export const serviceAreas: ServiceArea[] = [
       },
     ],
   },
+  psychologyArea,
 ];
 
 const areaDetails: Record<string, { paragraphs: string[]; section: { title: string; items: string[] }; images: ServiceImage[] }> = {
@@ -254,8 +298,10 @@ const serviceEnhancements: Record<string, Partial<Pick<Service, "paragraphs" | "
   },
   "sindromi-vertiginose": {
     paragraphs: [
-      "La valutazione distingue e mette in relazione possibili componenti vestibolari e cervicogeniche. Le due condizioni possono coesistere e richiedere un programma integrato e progressivo.",
-      "Oltre ai sintomi fisici, vertigini e instabilità possono generare paura del movimento. Il percorso aiuta a recuperare fiducia, equilibrio e autonomia nelle attività quotidiane.",
+      "Presso FisioSalute a Sondrio, il trattamento riabilitativo delle vertigini parte da una valutazione fisioterapica delle difficoltà di equilibrio e di movimento. La riabilitazione delle sindromi vertiginose viene adattata ai sintomi, alla storia clinica e alle attività che la persona desidera recuperare.",
+      "Il percorso può comprendere riabilitazione vestibolare e lavoro sulla componente cervicale, quando rilevante. La collaborazione con l’otorinolaringoiatra permette di integrare la valutazione medica e il programma fisioterapico quando indicato.",
+      "Gli obiettivi sono ridurre i sintomi e migliorare equilibrio, orientamento e sicurezza nelle attività quotidiane. Esercizi e progressione del trattamento vengono concordati sulla base della valutazione individuale.",
+      "Il centro si trova in Via Brigata Alpina Orobica 41/C, a Sondrio, in Valtellina. Per informazioni sul percorso per le vertigini e per concordare una prima valutazione, contatta la segreteria al 349 4011847 o scrivi a info@fisiosalute.it.",
     ],
     sections: [
       { title: "Riabilitazione vestibolare", items: ["Manovre di riposizionamento quando indicate", "Esercizi di adattamento e compensazione", "Stabilizzazione dello sguardo", "Lavoro sull’equilibrio", "Educazione e programma domiciliare", "Collaborazione con l’otorinolaringoiatra"] },

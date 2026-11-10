@@ -1,0 +1,95 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+const descriptions = [
+  'Le fisioterapiste di FisioSalute',
+  'Erika Voltan durante un trattamento manuale alla schiena',
+  'Dettaglio di un trattamento manuale alla schiena',
+  'Trattamento fisioterapico assistito da Erika Voltan',
+  'Esercizio guidato con la fitball',
+  'Esercizio con piccoli pesi e assistenza della fisioterapista',
+  'Esercizio da seduta con bastone e fitball',
+  'Movimento delle braccia con bastone sotto la guida della fisioterapista',
+  'Esercizio guidato con pesi davanti allo specchio posturale',
+  'Fisioterapista e paziente durante un esercizio con bastone',
+  'Erika Voltan guida un esercizio sul Reformer',
+  'Esercizio per le gambe sul Reformer con assistenza di Erika Voltan',
+  'Movimento guidato sul Reformer',
+];
+const photos = descriptions.map((alt, index) => ({src: `/images/gallery/fisiosalute-${String(index + 1).padStart(2, '0')}.webp`, alt}));
+---
+<section class="section home-gallery" id="galleria" aria-labelledby="gallery-title">
+  <div class="gallery-heading">
+    <div><p class="eyebrow">La nostra quotidianità</p><h2 id="gallery-title">FisioSalute, da vicino.</h2><p>Persone, gesti e movimento: il nostro lavoro, ogni giorno.</p></div>
+    <div class="gallery-controls" aria-label="Scorri la galleria">
+      <button type="button" data-scroll="-1" aria-label="Scorri alle foto precedenti">←</button>
+      <button type="button" data-scroll="1" aria-label="Scorri alle foto successive">→</button>
+    </div>
+  </div>
+  <div class="gallery-track" role="list" aria-label="Foto di FisioSalute">
+    {photos.map((photo, index) => <div role="listitem" class="gallery-item"><a href={photo.src} data-gallery-index={index} aria-label={`Ingrandisci foto ${index + 1}: ${photo.alt}`}><ResponsiveImage src={photo.src} alt={photo.alt} sizes="(max-width: 600px) 75vw, (max-width: 900px) 42vw, 25vw" loading="lazy" /><span class="gallery-enlarge" aria-hidden="true">↗</span></a></div>)}
+  </div>
+  <p class="gallery-hint">Scorri le foto e selezionane una per ingrandirla.</p>
+  <dialog class="gallery-dialog" aria-label="Galleria fotografica FisioSalute">
+    <button type="button" class="gallery-close" aria-label="Chiudi la foto">×</button>
+    <div class="gallery-viewer"><button type="button" data-photo="-1" aria-label="Foto precedente">←</button><figure><img alt="" /><figcaption aria-live="polite"></figcaption></figure><button type="button" data-photo="1" aria-label="Foto successiva">→</button></div>
+  </dialog>
+</section>
+<script>
+  const gallery = document.querySelector<HTMLElement>('.home-gallery');
+  if (gallery) {
+    const track = gallery.querySelector<HTMLElement>('.gallery-track')!;
+    const links = [...gallery.querySelectorAll<HTMLAnchorElement>('[data-gallery-index]')];
+    const dialog = gallery.querySelector<HTMLDialogElement>('dialog')!;
+    const image = dialog.querySelector<HTMLImageElement>('img')!;
+    const caption = dialog.querySelector('figcaption')!;
+    let current = 0;
+    function showPhoto(index: number) {
+      current = (index + links.length) % links.length;
+      const link = links[current];
+      image.src = link.href;
+      image.alt = link.querySelector('img')!.alt;
+      caption.textContent = `${current + 1} / ${links.length} — ${image.alt}`;
+    }
+    gallery.querySelectorAll<HTMLButtonElement>('[data-scroll]').forEach(button => button.addEventListener('click', () => {
+      track.scrollBy({left: Number(button.dataset.scroll) * track.clientWidth * .85, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+    }));
+    links.forEach((link, index) => link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault(); showPhoto(index); dialog.showModal();
+    }));
+    dialog.querySelector('.gallery-close')!.addEventListener('click', () => dialog.close());
+    dialog.querySelectorAll<HTMLButtonElement>('[data-photo]').forEach(button => button.addEventListener('click', () => showPhoto(current + Number(button.dataset.photo))));
+    dialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {event.preventDefault();showPhoto(current + (event.key === 'ArrowRight' ? 1 : -1));}
+    });
+    dialog.addEventListener('click', event => {if (event.target === dialog) dialog.close();});
+    dialog.addEventListener('close', () => links[current].focus({preventScroll: true}));
+  }
+</script>
+<style>
+  .home-gallery{background:#fff;min-width:0}
+  .gallery-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px}
+  .gallery-heading h2{margin-bottom:16px}.gallery-heading p:last-child{margin-bottom:0;color:#596863}
+  .gallery-controls{display:flex;gap:10px;flex-shrink:0}
+  .gallery-controls button{width:48px;height:48px;border:1px solid var(--petrol);background:transparent;color:var(--deep);font-size:24px;cursor:pointer}
+  .gallery-controls button:hover{background:var(--ivory)}
+  .gallery-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 54px)/4);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--sage) var(--ivory);padding-bottom:18px}
+  .gallery-item{min-width:0;scroll-snap-align:start}
+  .gallery-item a{position:relative;display:block;background:var(--ivory);aspect-ratio:3/5}
+  .gallery-item img{display:block;width:100%;height:100%;object-fit:contain}
+  .gallery-enlarge{position:absolute;right:10px;bottom:10px;display:grid;place-items:center;width:34px;height:34px;background:var(--ivory);color:var(--deep);font-size:22px}
+  .gallery-hint{margin:12px 0 0;font-size:13px;color:#596863}
+  button:focus-visible,a:focus-visible{outline:3px solid var(--petrol);outline-offset:3px}
+  .gallery-dialog{position:fixed;inset:0;width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;border:0;padding:64px 20px 20px;background:#102b29f5;color:#fff}
+  .gallery-dialog::backdrop{background:#102b29}
+  .gallery-dialog button{border:1px solid #ffffff70;color:#fff;background:transparent;cursor:pointer;width:44px;height:44px;font-size:26px;flex-shrink:0}
+  .gallery-dialog button:focus-visible{outline-color:var(--sand)}
+  .gallery-close{position:absolute;top:12px;right:20px}
+  .gallery-viewer{display:flex;align-items:center;justify-content:center;gap:20px;height:100%;pointer-events:none}
+  .gallery-viewer>*{pointer-events:auto}
+  .gallery-viewer figure{margin:0;min-width:0;display:flex;flex-direction:column;align-items:center;max-width:1100px;height:100%;gap:14px}
+  .gallery-viewer img{display:block;min-height:0;flex:1;width:100%;object-fit:contain}
+  .gallery-viewer figcaption{flex-shrink:0;text-align:center;font-size:14px;line-height:1.4}
+  @media(max-width:900px){.gallery-track{grid-auto-columns:calc((100% - 18px)/2)}}
+  @media(max-width:600px){.gallery-heading{align-items:start;flex-direction:column}.gallery-track{grid-auto-columns:82%;gap:14px}.gallery-dialog{padding:64px 10px 16px}.gallery-viewer{gap:6px}.gallery-viewer>button{width:32px;height:40px;font-size:20px}.gallery-viewer figcaption{font-size:12px}.gallery-close{right:12px}}
+</style>

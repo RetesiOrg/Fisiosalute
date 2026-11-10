@@ -41,7 +41,7 @@ const specialties = [
         <p>Consulta i profili, cerca un medico per nome oppure filtra l’équipe in base alla specialità.</p>
       </div>
 
-      <div class="medical-filters" aria-label="Ricerca medici specialisti">
+      <div class="medical-filters" role="search" aria-label="Ricerca medici specialisti">
         <label>
           <span>Cerca per medico o specialità</span>
           <input id="medical-search" type="search" placeholder="Es. ortopedia, vertigini…" autocomplete="off" />
@@ -72,7 +72,7 @@ const specialties = [
             </div>
             <div class="medical-card-content">
               <p class="eyebrow">{doctor.specialties[0]}</p>
-              <h2>{doctor.name}</h2>
+              <h3>{doctor.name}</h3>
               <p class="medical-role">{doctor.role}</p>
               <p>{doctor.summary}</p>
               <div class="medical-tags" aria-label={`Specialità di ${doctor.name}`}>
@@ -80,11 +80,11 @@ const specialties = [
               </div>
               <div class="medical-cv">
                 <div>
-                  <h3>Formazione e ruolo</h3>
+                  <h4>Formazione e ruolo</h4>
                   <ul>{doctor.education.map((item) => <li>{item}</li>)}</ul>
                 </div>
                 <div>
-                  <h3>Competenze</h3>
+                  <h4>Competenze</h4>
                   <ul>{doctor.expertise.map((item) => <li>{item}</li>)}</ul>
                 </div>
               </div>
@@ -107,7 +107,7 @@ const specialties = [
         {specialties.map(([title, copy, href], i) => (
           <article>
             <span>0{i + 1}</span>
-            <h2>{title}</h2>
+            <h3>{title}</h3>
             <p>{copy}</p>
             <a href={href}>Approfondisci l’area →</a>
           </article>
@@ -125,8 +125,7 @@ const specialties = [
         <a class="button button-sand" href="/#contatti">Richiedi informazioni</a>
       </div>
     </section>
-    <Footer />
-  </main>
+    </main><Footer />
 </BaseLayout>
 
 <script>
@@ -314,7 +313,7 @@ const specialties = [
     padding: 38px clamp(22px, 3vw, 42px);
   }
 
-  .medical-card-content h2 {
+  .medical-card-content h3 {
     margin: 8px 0 12px;
     color: var(--deep);
     font-size: clamp(26px, 2.2vw, 36px);
@@ -357,7 +356,7 @@ const specialties = [
     border-top: 1px solid #d5ddd8;
   }
 
-  .medical-cv h3 {
+  .medical-cv h4 {
     margin-bottom: 8px;
     color: var(--deep);
     font: 700 12px "Montserrat", sans-serif;

@@ -1,6 +1,9 @@
 <?php
 require dirname(__DIR__) . '/aruba/api/_private/google-reviews-lib.php';
 function check($value, $message) { if (!$value) throw new RuntimeException($message); }
+foreach (json_decode(file_get_contents(__DIR__ . '/google-review-text-cases.json'), true) as $case) {
+    check(gr_original_text($case['input']) === $case['expected'], 'Original review text mismatch');
+}
 $directory = sys_get_temp_dir() . '/gr-test-' . bin2hex(random_bytes(6));
 mkdir($directory, 0700);
 $config = ['client_id'=>'test-client', 'client_secret'=>'test-secret', 'refresh_token'=>'test-refresh',

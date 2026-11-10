@@ -10,6 +10,17 @@ function gr_json($value) {
 function gr_decode($bytes) {
     return json_decode($bytes, true, 512, JSON_THROW_ON_ERROR);
 }
+function gr_original_text($comment) {
+    // Preserve the author's language; remove only Google's marked translation.
+    if (preg_match('~(?:^|\n\s*\n)\(Original(?:e)?\)\s*\n~i', $comment, $match, PREG_OFFSET_CAPTURE)) {
+        $comment = trim(substr($comment, $match[0][1] + strlen($match[0][0])));
+    }
+    if (preg_match('~\n\s*\n\(Translated by Google\)\s*\n~i', $comment, $match, PREG_OFFSET_CAPTURE)) {
+        $original = trim(substr($comment, 0, $match[0][1]));
+        if ($original !== '') return $original;
+    }
+    return $comment;
+}
 function gr_atomic($file, $bytes) {
     $temp = tempnam(dirname($file), '.gr-');
     if ($temp === false) throw new RuntimeException('write');
@@ -93,7 +104,7 @@ function gr_fetch($config, $http = 'gr_http', $now = null) {
     usort($reviews, function ($a, $b) { return strtotime($b['createTime']) <=> strtotime($a['createTime']); });
     $items = array_map(function ($review) use ($stars) {
         return ['rating' => $stars[$review['starRating']], 'publishTime' => $review['createTime'],
-            'text' => $review['comment'], 'author' => $review['reviewer']['displayName'] ?? 'Utente Google'];
+            'text' => gr_original_text($review['comment']), 'author' => $review['reviewer']['displayName'] ?? 'Utente Google'];
     }, array_slice($reviews, 0, 4));
     return ['version'=>1, 'updatedAt'=>gmdate('c', $now), 'rating'=>(float) $rating,
         'userRatingCount'=>$count, 'mapsUrl'=>$mapsUrl, 'reviews'=>$items];

@@ -1,8 +1,10 @@
 ---
 import { navigation, professionalNavigation as professionals, mainNavigation } from "../data/navigation";
-import { allServices } from "../data/services";
+import { allServices, serviceAreas } from "../data/services";
+import { psychologistProfile } from "../data/psychology";
 const searchIndex = [
   ...navigation.filter(({ href }) => !href.startsWith("/#")).map(({ label, href }) => ({ title: label, text: label, href })),
+  ...serviceAreas.map(area => ({ title: area.title, text: `${area.title} ${area.lead}`, href: `/servizi/area/${area.slug}/` })),
   ...allServices.map((service) => ({
     title: service.title,
     text: `${service.title} ${service.summary} ${service.paragraphs.join(" ")} ${service.sections.map((section) => `${section.title} ${section.items.join(" ")}`).join(" ")}`,
@@ -10,6 +12,7 @@ const searchIndex = [
   })),
   { title: "Erika Voltan — Gestione del runner", text: "runner running corsa videoanalisi biomeccanica tecnica performance infortuni", href: "/erika-voltan/" },
   { title: "Silvia Simonini — Fisioterapista", text: "runner running corsa videoanalisi biomeccanica prevenzione recupero infortuni", href: "/staff/#silvia-simonini" },
+  { title: `${psychologistProfile.name} — ${psychologistProfile.role}`, text: psychologistProfile.paragraphs.join(" "), href: psychologistProfile.href },
 ];
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isCurrent = (href: string) => !href.includes("#") && currentPath === (href.replace(/\/$/, "") || "/");
@@ -42,7 +45,7 @@ const isCurrent = (href: string) => !href.includes("#") && currentPath === (href
     <button class="search-close" type="button" aria-label="Chiudi la ricerca">×</button>
     <p class="eyebrow">FisioSalute</p>
     <h2 id="site-search-title">Cerca nel sito.</h2>
-    <form class="search-form" method="dialog">
+    <form class="search-form" role="search" method="dialog">
       <label for="site-search-input">Cosa stai cercando?</label>
       <div><input id="site-search-input" type="search" autofocus placeholder="Es. pavimento pelvico" autocomplete="off" /><button type="submit">Cerca</button></div>
     </form>

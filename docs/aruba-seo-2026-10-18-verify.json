@@ -1,0 +1,267 @@
+{
+  "index.html": {
+    "status": 200,
+    "sha256": "17684c2548d7c444e98049998aa710d1e229c2f6b2c8752273c331d3244a7e8c",
+    "seo_verified": true
+  },
+  "servizi/index.html": {
+    "status": 200,
+    "sha256": "ecb1598b7366ca7b1b4a014d759691a34237e6ae598c743f4a10c85c12d6e0aa",
+    "seo_verified": true
+  },
+  "servizi/salute-donna-fasi-vita/index.html": {
+    "status": 200,
+    "sha256": "ac0695377624545c59e7cb00df0b7f7df523393a483b4af56c97d0c5fdce0b40",
+    "seo_verified": true
+  },
+  "servizi/articolazione-temporo-mandibolare/index.html": {
+    "status": 200,
+    "sha256": "4431a18fb61ed3b50a8671a7c132c6635ec575637a9dbb689d83e30e05e2a5df",
+    "seo_verified": true
+  },
+  "servizi/visita-dietistica/index.html": {
+    "status": 200,
+    "sha256": "6143ce7f611f92f236bcb98eb1085e8433a3486c10285668cf24fc394c6080c1",
+    "seo_verified": true
+  },
+  "servizi/riatletizzazione-esercizio-specifico/index.html": {
+    "status": 200,
+    "sha256": "531e48f7562c0c7346c2e9c4524929742754a646b1c4156119c0a55cb3dd87ef",
+    "seo_verified": true
+  },
+  "servizi/nutrizione-gastrointestinale/index.html": {
+    "status": 200,
+    "sha256": "e02fb631d7869d94ed87fc8e08f66e7174d914f6e57c00a94c672a94f6734c49",
+    "seo_verified": true
+  },
+  "servizi/percorso-nutrizionale/index.html": {
+    "status": 200,
+    "sha256": "5f78a9c1da564668806564dfa10cc8ed39fc6692b7fd96a91532572098349378",
+    "seo_verified": true
+  },
+  "servizi/fisiatria/index.html": {
+    "status": 200,
+    "sha256": "c9aa222a7197952c07f977877585beaaed999acfb9e13adc13ee9668e2a14e79",
+    "seo_verified": true
+  },
+  "servizi/recupero-post-partum/index.html": {
+    "status": 200,
+    "sha256": "71c15ae235f9eaafa79cd152a708059f11f9c46ccf929c78e7344113410cc016",
+    "seo_verified": true
+  },
+  "servizi/ecografia-urologica-femminile/index.html": {
+    "status": 200,
+    "sha256": "5a6e3e66104ebf9fec283e3b407aa10f74ab08d69953f93f2684eed854931241",
+    "seo_verified": true
+  },
+  "servizi/riabilitazione-post-oncologica/index.html": {
+    "status": 200,
+    "sha256": "53b1ef6fcc34f2ea0f1bb71180348744da0cf1cb27d5c83e3fb4a61ec6b1e779",
+    "seo_verified": true
+  },
+  "servizi/composizione-corporea/index.html": {
+    "status": 200,
+    "sha256": "290b3e5c35fa0f327f39b13b05695fc79adbc711e2d765a69d1bb1d53ac7fd4e",
+    "seo_verified": true
+  },
+  "servizi/preparazione-parto/index.html": {
+    "status": 200,
+    "sha256": "7ca43c4c2191f03160b261d46570de11dcc24b521ce7033bb832d2fcf13fd07f",
+    "seo_verified": true
+  },
+  "servizi/ortopedia/index.html": {
+    "status": 200,
+    "sha256": "b1c745106803cdd5ba074234a5740ab7789bbd180d81f2375b6ea75d9784969f",
+    "seo_verified": true
+  },
+  "servizi/terapie-infiltrative/index.html": {
+    "status": 200,
+    "sha256": "9b0ca18c58a90457fbd80b9b935cbe238b9e7a8c44c169d20b16e2f4e16f4260",
+    "seo_verified": true
+  },
+  "servizi/prevenzione-pavimento-pelvico/index.html": {
+    "status": 200,
+    "sha256": "f7d26b265b7260c2625e4dd3fe321363e1ce6950c89060019127b1bb54772daa",
+    "seo_verified": true
+  },
+  "servizi/educazione-alimentare/index.html": {
+    "status": 200,
+    "sha256": "4b13c775679605e7710f669fd6a3cf7c86cc6e19c5af5965372a167962d82874",
+    "seo_verified": true
+  },
+  "servizi/fisioterapia-muscoloscheletrica/index.html": {
+    "status": 200,
+    "sha256": "5db1a3f2955d051374bfef60160e352d1c2acc863c25c1ea31ab57ff7f0162b6",
+    "seo_verified": true
+  },
+  "servizi/riabilitazione/index.html": {
+    "status": 200,
+    "sha256": "4c520449d343231355aee63b7a5a2c28ef558d93f7d52262a571ce4e296bf0d5",
+    "seo_verified": true
+  },
+  "servizi/fisioterapia-neurologica/index.html": {
+    "status": 200,
+    "sha256": "b15b52184b8739a9162130953a3b7f9516d115d97d953c872032548c49847f3b",
+    "seo_verified": true
+  },
+  "servizi/fisioterapia-reumatologica/index.html": {
+    "status": 200,
+    "sha256": "11cf89462d743ace22ebb206edd930eb36c22b348ddec746cfb77ba8e2529cf7",
+    "seo_verified": true
+  },
+  "servizi/pavimento-pelvico/index.html": {
+    "status": 200,
+    "sha256": "c9aedac2c7fab38a08eebb729938b5df7b9fea4a6e7549d2f20d50a74d5b6e26",
+    "seo_verified": true
+  },
+  "servizi/nutrizione-sportiva/index.html": {
+    "status": 200,
+    "sha256": "1c574b2363e3dd7018bd3fe8a8b19228b13fa111f0822c43b6b083dce343d487",
+    "seo_verified": true
+  },
+  "servizi/fisioterapia-prevenzione/index.html": {
+    "status": 200,
+    "sha256": "0951f1cb0624fe4064763f13c37ba0611d98118abdf532746217093d295538eb",
+    "seo_verified": true
+  },
+  "servizi/diastasi-cicatrice-cesareo/index.html": {
+    "status": 200,
+    "sha256": "5ceec4f064f46037bf01356dd6a09f46d7c50bde3822f090b4b2933f1dc7e6a3",
+    "seo_verified": true
+  },
+  "servizi/pressoterapia/index.html": {
+    "status": 200,
+    "sha256": "2ce756f7e9fcbff42488d86f18dcbbb6572b906ef0c806814cc6064565320f17",
+    "seo_verified": true
+  },
+  "servizi/fisioterapia-domiciliare/index.html": {
+    "status": 200,
+    "sha256": "489922b369c8463d79f2961da0330dbf86420be3b0d5c4a443a431063c647930",
+    "seo_verified": true
+  },
+  "servizi/pilates-clinico/index.html": {
+    "status": 200,
+    "sha256": "97576cd8d333e33603ef7e1e3b1cf47355a56989c888c33aeab09659e301e5a6",
+    "seo_verified": true
+  },
+  "servizi/otorinolaringoiatria/index.html": {
+    "status": 200,
+    "sha256": "1257bbebaac1c391986575da4e5e47a69191dc6ee399829920e0a6e02b86b197",
+    "seo_verified": true
+  },
+  "servizi/fisiopilates-macchinari/index.html": {
+    "status": 200,
+    "sha256": "08f799e13f23232b4c77a2f8acd13ff06bdb372e090b615c0adba77d932b5785",
+    "seo_verified": true
+  },
+  "servizi/tecarterapia/index.html": {
+    "status": 200,
+    "sha256": "525cb72d49ac0f6a0616ebcf0f878585750f1ea4d594ad8b5bb3becf5ce8f0aa",
+    "seo_verified": true
+  },
+  "servizi/nutrizione-patologie/index.html": {
+    "status": 200,
+    "sha256": "6fea515db04e818389cb78171b92d2e6d6df2b369a2e2d9f4544785b31504f93",
+    "seo_verified": true
+  },
+  "servizi/cefalee-muscolo-tensive/index.html": {
+    "status": 200,
+    "sha256": "5b65bf238515d2fa8be191a5ed9d3c346dec87e68ac81c0717d53581bfc3b8bd",
+    "seo_verified": true
+  },
+  "servizi/linfodrenaggio/index.html": {
+    "status": 200,
+    "sha256": "80a1c70e89f25dcf2465a944626a1de1293066dfc4d86a576b6ebe89911e3428",
+    "seo_verified": true
+  },
+  "servizi/sindromi-vertiginose/index.html": {
+    "status": 200,
+    "sha256": "d3c05ab120509ad8dc8aeeed01629043cd94f12a426017939232249c2e62c2df",
+    "seo_verified": true
+  },
+  "servizi/movimento-benessere-femminile/index.html": {
+    "status": 200,
+    "sha256": "3df6056a769ce8a22210313655741c95ff206822dd59a690d39035f82fa839ea",
+    "seo_verified": true
+  },
+  "servizi/fisioterapia-sportiva/index.html": {
+    "status": 200,
+    "sha256": "6c0e3acd7c7e62acf013ab5bdc7ca5569675b3527a4ba5bc868d9ca62325a84f",
+    "seo_verified": true
+  },
+  "servizi/laserterapia/index.html": {
+    "status": 200,
+    "sha256": "d6dd87b88db0157baea3b042a2cbd5877e30791c4752663ab267e3751fbc8948",
+    "seo_verified": true
+  },
+  "servizi/visita-urologica/index.html": {
+    "status": 200,
+    "sha256": "6dc24e1129d2a6aaeef463c1148cee405b1b91104859e4b52364412f5c55b55c",
+    "seo_verified": true
+  },
+  "servizi/idrokinesiterapia/index.html": {
+    "status": 200,
+    "sha256": "03a1c4bd09bdf1f83675cae62b756c8bed7eaef5f364b443b56fac01ba789fa4",
+    "seo_verified": true
+  },
+  "servizi/pilates-clinico-aperto/index.html": {
+    "status": 200,
+    "sha256": "7ff17a285297ba0ac2e82622947b1996962a51ab1b394713ba8ec268203d98f2",
+    "seo_verified": true
+  },
+  "servizi/nutrizione-condizioni-fisiologiche/index.html": {
+    "status": 200,
+    "sha256": "a20480880433842d7b35311f1d3422cea858d684b45b3596873b2b6228d8d440",
+    "seo_verified": true
+  },
+  "servizi/rieducazione-posturale/index.html": {
+    "status": 200,
+    "sha256": "3ffcc3d94e947bfbaaac92149e17c44ca3ce6ef78d765d8e639039fe3205b50e",
+    "seo_verified": true
+  },
+  "servizi/area/salute-benessere-donna/index.html": {
+    "status": 200,
+    "sha256": "4f0fb043b5fccfa2b890eb2e89524d0593705bd7c1b9d5ac35d25ad1579c5374",
+    "seo_verified": true
+  },
+  "servizi/area/fisiatria/index.html": {
+    "status": 200,
+    "sha256": "46495d035f56caafa67bee0724496fa9e11f5f249e8c82245eb0cab855e3f496",
+    "seo_verified": true
+  },
+  "servizi/area/nutrizione-dieta/index.html": {
+    "status": 200,
+    "sha256": "ebc51d4fd39d57cdaa04ac5d10d91532269a4be37d210191c1f828339fffbd1c",
+    "seo_verified": true
+  },
+  "servizi/area/ortopedia/index.html": {
+    "status": 200,
+    "sha256": "0bf68ce6cd1b860bb0015d81d1489dbec5f932b161c0965f4e3f8395523510aa",
+    "seo_verified": true
+  },
+  "servizi/area/urologia/index.html": {
+    "status": 200,
+    "sha256": "9234c3b6f5df7caf0e72c0c429dc017b582194f4bb165caf5961ca2733f2396c",
+    "seo_verified": true
+  },
+  "servizi/area/pilates-postura/index.html": {
+    "status": 200,
+    "sha256": "b613676d7393af98de451103aaf04a5b8bd73cb87b17b3da3dac79970aa5b911",
+    "seo_verified": true
+  },
+  "servizi/area/fisioterapia-riabilitazione/index.html": {
+    "status": 200,
+    "sha256": "54283180361937a4861957fd66d32b2516e0c8217c38ec30a4f534d04b127909",
+    "seo_verified": true
+  },
+  "servizi/area/otorinolaringoiatria/index.html": {
+    "status": 200,
+    "sha256": "c17bef3d9948af4009cad5ca5a9ddf7c156327d68b0609177eab5ff03186fc1e",
+    "seo_verified": true
+  },
+  "servizi/area/terapie-fisiche-infiltrative/index.html": {
+    "status": 200,
+    "sha256": "4509b95ca315392d5f24c9d143eb834ec9102047fe22fe44b765989e68c2a968",
+    "seo_verified": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-22",
+  "project": "northern-gasket-509613-j8",
+  "projectNumber": "720933842268",
+  "accountManagementQuotaPerMinute": 300,
+  "oauthStatus": "production_authorized",
+  "privateConfigHttp": 403,
+  "unauthenticatedUpdateHttp": 403,
+  "authenticatedUpdateHttp": 200,
+  "feedHttp": 200,
+  "feedUpdatedAt": "2026-10-22T13:00:31+00:00",
+  "rating": 5,
+  "reviewCount": 208,
+  "displayedAuthors": [
+    "Matteo Galli",
+    "Sara Muffatti",
+    "Davide Pozzoni",
+    "valentina contrio"
+  ],
+  "homepageBrowserVerified": true,
+  "cron": {
+    "name": "Aggiorna recensioni Google FisioSalute",
+    "type": "PHP",
+    "command": "./api/update-google-reviews.php",
+    "schedule": "0 */6 * * *",
+    "timezone": "UTC",
+    "savedInArubaPanel": true,
+    "firstScheduledExecutionVerified": false
+  }
+}

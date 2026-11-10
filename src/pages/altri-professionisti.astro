@@ -1,12 +1,13 @@
 ---
 import ResponsiveImage from "../components/ResponsiveImage.astro";
-import { dietitianTags } from "../data/professional-tags";
+import { dietitianTags, psychologistTags } from "../data/professional-tags";
+import { psychologistProfile } from "../data/psychology";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout keywords={dietitianTags} title="Altri professionisti | FisioSalute Sondrio" description="Gli altri professionisti che collaborano con FisioSalute a Sondrio.">
+<BaseLayout keywords={[...dietitianTags, ...psychologistTags]} title="Altri professionisti | FisioSalute Sondrio" description="Conosci Elisa Pedrolini, dietista, ed Enrico Francesco Pillitteri, psicologo: i professionisti che collaborano con FisioSalute a Sondrio.">
   <Header /><main id="main-content" tabindex="-1">
     <section class="other-hero">
       <p class="eyebrow light">Competenze che completano il percorso</p>
@@ -22,7 +23,7 @@ import Footer from "../components/Footer.astro";
         <div class="other-card-image"><ResponsiveImage src="/images/Pedrolini.webp" alt="Dott.ssa Elisa Pedrolini, dietista" width="941" height="1672" /></div>
         <div class="other-card-content">
           <p class="eyebrow">Dietista</p>
-          <h2>Elisa Pedrolini</h2>
+          <h3>Elisa Pedrolini</h3>
           <p class="other-role">Dietista</p>
           <p>La dott.ssa Elisa Pedrolini entra a far parte dell’équipe FisioSalute.</p>
           <p>Elisa è specializzata in:</p>
@@ -35,14 +36,30 @@ import Footer from "../components/Footer.astro";
           <a class="text-link" href="/servizi/area/nutrizione-dieta/">Area Nutrizione e dieta <span aria-hidden="true">→</span></a>
         </div>
       </article>
+      <article class="other-card other-card-profile" id={psychologistProfile.id}>
+        <div class="other-card-image"><ResponsiveImage src="/images/enrico-francesco-pillitteri-grigio.webp" alt="Dott. Enrico Francesco Pillitteri, psicologo" width="941" height="1672" /></div>
+        <div class="other-card-content">
+          <p class="eyebrow">Psicologia</p>
+          <h3>{psychologistProfile.name}</h3>
+          <p class="other-role">{psychologistProfile.role}</p>
+          {psychologistProfile.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+          <blockquote class="other-profile-quote">«{psychologistProfile.quote}»</blockquote>
+          <div class="other-profile-links">
+            <a class="text-link" href="/servizi/area/psicologia/">Esplora l’area Psicologia <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="/servizi/primo-colloquio-psicologico/">Il primo colloquio psicologico <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
     </section>
-    <section class="staff-cta"><div><p class="eyebrow light">Un percorso su misura</p><h2>Ogni competenza al servizio della persona.</h2></div><div><p>Contattaci per conoscere la professionista più indicata per le tue esigenze.</p><a class="button button-sand" href="/#contatti">Richiedi informazioni</a></div></section>
-    <Footer />
-  </main>
+    <section class="staff-cta"><div><p class="eyebrow light">Un percorso su misura</p><h2>Ogni competenza al servizio della persona.</h2></div><div><p>Contattaci per conoscere il professionista più indicato per le tue esigenze.</p><a class="button button-sand" href="/#contatti">Richiedi informazioni</a></div></section>
+    </main><Footer />
 </BaseLayout>
 
 <style>
   .other-hero{padding:120px clamp(24px,8vw,128px);background:var(--deep);color:#fff}.other-hero h1{margin:0 0 24px;font-size:clamp(48px,6vw,82px);line-height:1.02}.other-hero>p:last-child{max-width:650px;color:#d5e1de;font-size:19px}
-  .other-directory{padding:110px clamp(24px,8vw,128px);background:var(--ivory)}.other-heading{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end;margin-bottom:45px}.other-heading h2{margin:0;color:var(--deep);font-size:clamp(38px,4.5vw,62px)}.other-heading>p{color:#56635f;font-size:18px}.other-card{display:grid;grid-template-columns:1fr 1fr;max-width:1100px;margin:auto;background:#fff}.other-card-image{min-height:650px;background:#e8e0dc}.other-card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}.other-card-content{padding:70px clamp(32px,6vw,85px);align-self:center}.other-card-content h2{margin:0 0 12px;color:var(--deep);font-size:clamp(38px,4vw,58px)}.other-role{color:var(--petrol);font-weight:700}.other-card-content>p{color:#56635f}.other-card-content ul{padding-left:20px;color:#56635f;line-height:1.55}.other-card-content li{margin:10px 0}
+  .other-directory{padding:110px clamp(24px,8vw,128px);background:var(--ivory)}.other-heading{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end;margin-bottom:45px}.other-heading h2{margin:0;color:var(--deep);font-size:clamp(38px,4.5vw,62px)}.other-heading>p{color:#56635f;font-size:18px}.other-card{display:grid;grid-template-columns:1fr 1fr;max-width:1100px;margin:auto;background:#fff}.other-card-image{min-height:650px;background:#e8e0dc}.other-card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}.other-card-content{padding:70px clamp(32px,6vw,85px);align-self:center}.other-card-content h3{margin:0 0 12px;color:var(--deep);font-size:clamp(38px,4vw,58px)}.other-role{color:var(--petrol);font-weight:700}.other-card-content>p{color:#56635f}.other-card-content ul{padding-left:20px;color:#56635f;line-height:1.55}.other-card-content li{margin:10px 0}
   @media(max-width:900px){.other-heading,.other-card{grid-template-columns:1fr;gap:28px}.other-card-image{min-height:520px}.other-card-content{padding:55px 28px}}
+  .other-card-profile{margin-top:60px;scroll-margin-top:140px}
+  .other-profile-quote{margin:30px 0;padding-left:20px;border-left:3px solid var(--sand);color:var(--petrol);font-size:21px;line-height:1.5}
+  .other-profile-links{display:grid;gap:16px}
 </style>

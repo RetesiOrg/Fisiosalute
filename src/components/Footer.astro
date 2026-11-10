@@ -1,13 +1,20 @@
 ---
 import { professionalNavigation, mainNavigation } from "../data/navigation";
+import { version } from "../../package.json";
 
-const year = new Date().getFullYear();
+const buildDate = new Date();
+const year = buildDate.getFullYear();
+const updatedIso = buildDate.toLocaleDateString("sv-SE", { timeZone: "Europe/Rome" });
+const updatedLabel = buildDate.toLocaleDateString("it-IT", { timeZone: "Europe/Rome", day: "numeric", month: "long", year: "numeric" });
 ---
 <footer>
   <a class="footer-brand" href="/#inizio" aria-label="FisioSalute, torna alla pagina iniziale">
     <img src="/brand/FisioSalute_logo-1.webp" alt="FisioSalute di Erika Voltan" width="499" height="291" />
   </a>
-  <p><strong>FisioSalute di Erika Voltan S.r.l. unipersonale</strong><br />Poliambulatorio multidisciplinare<br />Via Brigata Alpina Orobica 41/C · Sondrio<br />Capitale sociale: 10.000 euro i.v.<br /><a href="tel:+393494011847">349 4011847</a> · <a href="mailto:info@fisiosalute.it">info@fisiosalute.it</a><br />Lun–Ven 8:00–20:30<br />Sab 8:00–13:00 — solo su appuntamento</p>
+  <div class="footer-contact">
+    <address><strong>FisioSalute di Erika Voltan S.r.l. unipersonale</strong><br />Poliambulatorio multidisciplinare<br />Via Brigata Alpina Orobica 41/C · Sondrio<br /><a href="tel:+393494011847">349 4011847</a> · <a href="mailto:info@fisiosalute.it">info@fisiosalute.it</a></address>
+    <p>Capitale sociale: 10.000 euro i.v.<br />Lun–Ven <time datetime="08:00">8:00</time>–<time datetime="20:30">20:30</time><br />Sab <time datetime="08:00">8:00</time>–<time datetime="13:00">13:00</time> — solo su appuntamento</p>
+  </div>
   <nav aria-label="Navigazione a piè di pagina">
     <div class="footer-nav-group">
       <span class="footer-nav-title">Professionisti</span>
@@ -19,12 +26,16 @@ const year = new Date().getFullYear();
     </div>
   </nav>
   <div class="footer-documents"><a href="/informazioni-paziente/">Informazioni per il paziente</a><a href="/carta-dei-servizi/">Carta dei servizi</a><a href="/privacy-policy/">Privacy Policy</a><a href="/cookie-policy/">Cookie Policy</a><button type="button" class="cookie-settings-button" data-cookie-settings>Preferenze cookie</button></div>
-  <small>© {year} FisioSalute di Erika Voltan S.r.l. unipersonale · P.IVA/C.F. 01107050146 · REA SO-83328 · PEC fisiosalutesrl@pec.it</small>
+  <small>© {year} FisioSalute di Erika Voltan S.r.l. unipersonale · P.IVA/C.F. 01107050146 · REA SO-83328 · PEC fisiosalutesrl@pec.it · Versione {version} · Aggiornato il <time datetime={updatedIso}>{updatedLabel}</time></small>
 </footer>
 
 <style>.cookie-settings-button{padding:0;border:0;border-bottom:1px solid rgba(255,255,255,.45);background:none;color:inherit;font:inherit;cursor:pointer}</style>
 
 <style>
+  .footer-contact{grid-column:2;font-size:14px;color:#fff}
+  .footer-contact address{font-style:normal}
+  .footer-contact p{margin:0 0 14px}
+  @media(max-width:520px){.footer-contact{grid-column:1}}
   footer nav { gap: 24px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .footer-nav-group { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
   .footer-nav-title { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #d5e1de; margin-bottom: 6px; }

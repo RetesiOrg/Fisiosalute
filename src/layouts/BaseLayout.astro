@@ -1,39 +1,61 @@
 ---
 import "../styles/global.css";
 import CookieConsent from "../components/CookieConsent.astro";
+import { pageStructuredData, siteName, siteUrl, socialImage, type Breadcrumb, type ServiceMetadata } from "../data/site-seo";
 
 interface Props {
   title?: string;
   description?: string;
   keywords?: string[];
+  noindex?: boolean;
+  breadcrumbs?: Breadcrumb[];
+  service?: ServiceMetadata;
+  canonicalPath?: string;
 }
 
 const {
   keywords = [],
   title = "FisioSalute di Erika Voltan | Fisioterapia e Riabilitazione",
   description = "FisioSalute di Erika Voltan: fisioterapia, terapia manuale, riabilitazione e prevenzione con percorsi personalizzati.",
+  noindex = false,
+  breadcrumbs = [],
+  service,
+  canonicalPath = Astro.url.pathname,
 } = Astro.props;
-const pathname = Astro.url.pathname;
-const canonical = new URL(pathname === "/" || /\.[a-z0-9]+$/i.test(pathname) ? pathname : `${pathname.replace(/\/$/, "")}/`, "https://www.fisiosalute.it").href;
+const pathname = canonicalPath;
+const canonical = new URL(pathname === "/" || /\.[a-z0-9]+$/i.test(pathname) ? pathname : `${pathname.replace(/\/$/, "")}/`, siteUrl).href;
+const structuredData = JSON.stringify(pageStructuredData({ canonical, title, description, breadcrumbs, service })).replace(/</g, "\\u003c");
 ---
 
 <!doctype html>
-<html lang="it">
+<html lang="it" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
     {keywords.length > 0 && <meta name="keywords" content={keywords.join(", ")} />}
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#164c4a" />
     <link rel="icon" type="image/png" sizes="291x291" href="/Favicon.png?v=20261013" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/og.webp" />
+    <meta property="og:image" content={socialImage.url} />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content={String(socialImage.width)} />
+    <meta property="og:image:height" content={String(socialImage.height)} />
+    <meta property="og:image:alt" content={socialImage.alt} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage.url} />
+    <meta name="twitter:image:alt" content={socialImage.alt} />
     <title>{title}</title>
+    {!noindex && <script type="application/ld+json" is:inline set:html={structuredData} />}
   </head>
   <body><a class="skip-link" href="#main-content">Salta al contenuto</a><slot /><a class="whatsapp-button" href="https://wa.me/393494011847" target="_blank" rel="noreferrer" aria-label="Scrivi a FisioSalute su WhatsApp"><span aria-hidden="true">WhatsApp</span></a><CookieConsent /></body>
 </html>

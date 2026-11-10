@@ -19,8 +19,7 @@ const partners = [
     <section class="collab-directory" aria-labelledby="collab-title"><p class="eyebrow">Collaborazioni</p><h2 id="collab-title">I nostri partner.</h2><div class="collab-grid">
       {partners.map((partner) => <a class:list={["collab-card", partner.className]} href={partner.href} target={partner.href.startsWith("http") ? "_blank" : undefined} rel={partner.href.startsWith("http") ? "noreferrer" : undefined}><div class="partner-logo">{partner.className === "self-defense" ? <ResponsiveImage src="/images/self-defense-logo.webp" alt={`Logo ${partner.name}`} /> : partner.className === "medisan" ? <ResponsiveImage src="/brand/ortopedia-medisan.svg" alt={`Logo ${partner.name}`} /> : <span>{partner.label}</span>}</div><div><h3>{partner.name}</h3><p>{partner.description}</p><span class="collab-link">Visita il sito o la pagina <span aria-hidden="true">↗</span></span></div></a>)}
     </div></section>
-    <Footer />
-  </main>
+    </main><Footer />
 </BaseLayout>
 
 <style>

@@ -10,4 +10,5 @@ export const doctorTags = [
   "Alberta Paiusco (urologa)",
 ];
 export const dietitianTags = ["Dietista", "Pedrolini Elisa"];
-export const allProfessionalTags = [...physiotherapistTags, ...doctorTags, ...dietitianTags];
+export const psychologistTags = ["Psicologo", "Psicologia", "Enrico Francesco Pillitteri"];
+export const allProfessionalTags = [...physiotherapistTags, ...doctorTags, ...dietitianTags, ...psychologistTags];

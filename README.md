@@ -17,6 +17,8 @@ npm run build
 
 Il risultato statico viene generato nella cartella `dist/`. Le chiamate Google avvengono durante la build; le credenziali non vengono inviate al browser.
 
+Dopo la build, `npm run audit:html` controlla su tutte le pagine metadati SEO e social, dati strutturati, titoli, struttura semantica, etichette dei moduli, immagini e collegamenti locali. Il comando termina con errore se trova problemi. Per un report JSON dettagliato: `npm run audit:html -- --report /private/tmp/fisiosalute-html-audit.json`.
+
 ## Google Maps e recensioni
 
 I collegamenti Maps e la mappa incorporata non usano la chiave Places. La mappa viene caricata solo dopo il consenso.

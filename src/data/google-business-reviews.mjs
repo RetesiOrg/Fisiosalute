@@ -1,4 +1,5 @@
 // Solo server/build: le credenziali OAuth non devono arrivare al browser.
+import { originalReviewText } from './google-review-text.mjs';
 const stars = { ONE: 1, TWO: 2, THREE: 3, FOUR: 4, FIVE: 5 };
 
 /**
@@ -63,7 +64,7 @@ export async function loadBusinessReviews(env, request = fetch) {
         rating: stars[review.starRating],
         publishTime: review.createTime,
         relativePublishTimeDescription: dateFormat.format(new Date(review.createTime)),
-        text: { text: review.comment },
+        text: { text: originalReviewText(review.comment) },
         authorAttribution: { displayName: review.reviewer?.displayName ?? 'Utente Google' },
       })),
   };

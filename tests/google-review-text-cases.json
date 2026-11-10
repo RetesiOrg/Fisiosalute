@@ -1,0 +1,12 @@
+[
+  {"input":"Testo italiano.\n\n(Translated by Google)\nEnglish translation.","expected":"Testo italiano."},
+  {"input":"English translation.\n\n(Original)\nTesto italiano.","expected":"Testo italiano."},
+  {"input":"(Original)\nTesto italiano.\n\n(Translated by Google)\nEnglish translation.","expected":"Testo italiano."},
+  {"input":"English original.\n\n(Translated by Google)\nTraduzione italiana.","expected":"English original."},
+  {"input":"Traduzione.\r\n\r\n(Original)\r\nOriginal français.","expected":"Original français."},
+  {"input":"Prima riga.\n\nSecondo paragrafo con accenti: è, à.\n\n(Translated by Google)\nTranslation.","expected":"Prima riga.\n\nSecondo paragrafo con accenti: è, à."},
+  {"input":"Una recensione semplice, senza traduzione.","expected":"Una recensione semplice, senza traduzione."},
+  {"input":"English review without translation.","expected":"English review without translation."},
+  {"input":"Il testo cita (Translated by Google) senza essere una traduzione.","expected":"Il testo cita (Translated by Google) senza essere una traduzione."},
+  {"input":"(Translated by Google)\nNo original supplied.","expected":"(Translated by Google)\nNo original supplied."}
+]

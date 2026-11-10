@@ -6,12 +6,28 @@ import Footer from "../../components/Footer.astro";
 import { allServices } from "../../data/services";
 export function getStaticPaths() { return allServices.map((service) => ({ params: { servizio: service.slug }, props: { service } })); }
 const { service } = Astro.props;
+const pageTitle = service.seo?.title ?? `${service.title} a Sondrio, Valtellina | FisioSalute`;
+const pageDescription = service.seo?.description ?? `${service.title} presso FisioSalute a Sondrio, in Valtellina. ${service.summary}`;
+const heading = service.seo?.heading ?? service.title;
+const breadcrumbs = [
+  { name: "Servizi", path: "/servizi/" },
+  { name: service.area.title, path: `/servizi/area/${service.area.slug}/` },
+  { name: service.title, path: `/servizi/${service.slug}/` },
+];
 ---
-<BaseLayout title={`${service.title} | FisioSalute`} description={service.summary}><Header /><main id="main-content" tabindex="-1">
-  <section class="service-detail-hero"><div class="breadcrumbs"><a href="/servizi/">Servizi</a><span>/</span><a href={`/servizi/area/${service.area.slug}`}>{service.area.title}</a></div><p class="eyebrow light">{service.area.shortTitle}</p><h1>{service.title}</h1><p>{service.summary}</p></section>
-  <article class="service-detail"><div class="service-detail-main"><p class="eyebrow">Il servizio</p>{service.paragraphs.map((paragraph) => <p>{paragraph}</p>)}{service.sections?.map(section => <section><h2>{section.title}</h2><ul>{section.items.map(item => <li>{item}</li>)}</ul></section>)}</div>
+<BaseLayout breadcrumbs={breadcrumbs} service={{ name: heading, description: service.summary, category: service.area.title }} title={pageTitle} description={pageDescription}><Header /><main id="main-content" tabindex="-1">
+  <section class:list={["service-detail-hero", { "service-detail-hero-psychology": service.area.slug === "psicologia", "service-detail-hero-local": Boolean(service.seo) }]}><nav class="breadcrumbs" aria-label="Percorso di navigazione"><ol><li><a href="/servizi/">Servizi</a></li><li><span aria-hidden="true">/</span><a href={`/servizi/area/${service.area.slug}/`}>{service.area.title}</a></li><li class="visually-hidden" aria-current="page">{service.title}</li></ol></nav><p class="eyebrow light">{service.area.shortTitle}</p><h1 id="service-title">{heading}</h1><p>{service.summary}</p></section>
+  <article class="service-detail" aria-labelledby="service-title"><div class="service-detail-main"><p class="eyebrow">Il servizio</p>{service.paragraphs.map((paragraph) => <p>{paragraph}</p>)}{service.sections?.map(section => <section><h2>{section.title}</h2><ul>{section.items.map(item => <li>{item}</li>)}</ul></section>)}{service.relatedServices?.length && <nav class="related-services" aria-label="Percorsi collegati"><h2>Percorsi collegati</h2>{service.relatedServices.map(related => <a class="text-link" href={related.href}>{related.title} <span aria-hidden="true">→</span></a>)}</nav>}</div>
     <div class="service-detail-side"><div class="service-detail-gallery">{service.images?.slice(0, 1).map((image) => <figure class="service-photo-wide"><ResponsiveImage src={image.src} alt={image.alt} loading="lazy" /><figcaption>{service.title}</figcaption></figure>)}</div><aside><p class="eyebrow">Informazioni</p><h2>Vuoi capire se è il percorso giusto?</h2><p>Parlaci della tua esigenza. Ti aiuteremo a individuare il professionista e il primo passo più indicati.</p><a class="button" href="/#contatti">Richiedi informazioni</a></aside></div>
   </article>
   {service.area.slug !== "fisioterapia-riabilitazione" && service.specialists?.length && <section class="service-specialists"><div><p class="eyebrow">Professionisti</p><h2>Chi si occupa di questo servizio</h2></div><div class="specialist-list">{service.specialists.map(person => person.href ? <a href={person.href}><span>{person.name}</span><small>{person.role}</small><i>→</i></a> : <div><span>{person.name}</span><small>{person.role}</small></div>)}</div></section>}
-  <section class="staff-cta"><div><p class="eyebrow light">Percorso personalizzato</p><h2>Ogni persona parte da un punto diverso.</h2></div><div><p>La valutazione iniziale ci permette di costruire un percorso chiaro, proporzionato e condiviso.</p><a class="button button-sand" href="/#contatti">Prenota un primo incontro</a></div></section><Footer />
-</main></BaseLayout>
+  <section class="staff-cta"><div><p class="eyebrow light">Percorso personalizzato</p><h2>Ogni persona parte da un punto diverso.</h2></div><div><p>La valutazione iniziale ci permette di costruire un percorso chiaro, proporzionato e condiviso.</p><a class="button button-sand" href="/#contatti">Prenota un primo incontro</a></div></section></main><Footer /></BaseLayout>
+
+<style>
+  .related-services{margin-top:40px;padding-top:30px;border-top:1px solid #ced7d2}
+  .related-services a{display:inline-block;line-height:1.6}
+  .breadcrumbs ol{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+  .breadcrumbs li{display:flex;gap:10px}
+  @media(max-width:520px){.service-detail-hero-psychology h1{font-size:clamp(28px,8.7vw,44px);overflow-wrap:anywhere}}
+  @media(max-width:520px){.service-detail-hero-local h1{font-size:clamp(23px,6.9vw,36px);overflow-wrap:anywhere}}
+</style>

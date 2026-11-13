@@ -749,14 +749,14 @@
     "height": 1672,
     "srcset": "/images/responsive/enrico-francesco-pillitteri-grigio-480.webp 480w, /images/responsive/enrico-francesco-pillitteri-grigio-800.webp 800w, /images/enrico-francesco-pillitteri-grigio.webp 941w"
   },
-  "/images/medical-ortopedico-yg.webp": {
+  "/images/medical-ortopedico-asst-1.webp": {
     "width": 1200,
     "height": 1400,
-    "srcset": "/images/responsive/medical-ortopedico-yg-480.webp 480w, /images/responsive/medical-ortopedico-yg-800.webp 800w, /images/medical-ortopedico-yg.webp 1200w"
+    "srcset": "/images/responsive/medical-ortopedico-asst-1-480.webp 480w, /images/responsive/medical-ortopedico-asst-1-800.webp 800w, /images/medical-ortopedico-asst-1.webp 1200w"
   },
-  "/images/medical-ortopedico-mb.webp": {
+  "/images/medical-ortopedico-asst-2.webp": {
     "width": 1179,
     "height": 1376,
-    "srcset": "/images/responsive/medical-ortopedico-mb-480.webp 480w, /images/responsive/medical-ortopedico-mb-800.webp 800w, /images/medical-ortopedico-mb.webp 1179w"
+    "srcset": "/images/responsive/medical-ortopedico-asst-2-480.webp 480w, /images/responsive/medical-ortopedico-asst-2-800.webp 800w, /images/medical-ortopedico-asst-2.webp 1179w"
   }
 }

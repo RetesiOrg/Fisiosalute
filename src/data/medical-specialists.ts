@@ -11,7 +11,7 @@ export type MedicalSpecialist = MedicalSpecialistRef & {
   imageHeight: number;
   specialties: string[];
   summary: string;
-  /** Avviso mostrato in evidenza (es. medici in convenzione ASST, senza nome pubblicato). */
+  /** Avviso mostrato in evidenza (es. medici in convenzione ASST, senza nome né iniziali). */
   notice?: string;
   education: string[];
   expertise: string[];
@@ -71,10 +71,10 @@ export const medicalSpecialists: MedicalSpecialist[] = [
     href: "/equipe-medica/#alberto-giuffrida",
   },
   {
-    slug: "ortopedico-yg",
-    name: "Dott. Y. G.",
-    role: "Ortopedico ASST Valtellina e Alto Lario",
-    image: "/images/medical-ortopedico-yg.webp",
+    slug: "ortopedico-asst-1",
+    name: "Medico ortopedico",
+    role: "ASST Valtellina e Alto Lario",
+    image: "/images/medical-ortopedico-asst-1.webp",
     imageWidth: 1200,
     imageHeight: 1400,
     specialties: ["Ortopedia e traumatologia"],
@@ -86,13 +86,13 @@ export const medicalSpecialists: MedicalSpecialist[] = [
       { label: "Area Ortopedia", href: "/servizi/area/ortopedia/" },
       { label: "Contatta la segreteria", href: "/#contatti" },
     ],
-    href: "/equipe-medica/#ortopedico-yg",
+    href: "/equipe-medica/#ortopedico-asst-1",
   },
   {
-    slug: "ortopedico-mb",
-    name: "Dott. M. B.",
-    role: "Ortopedico ASST Valtellina e Alto Lario",
-    image: "/images/medical-ortopedico-mb.webp",
+    slug: "ortopedico-asst-2",
+    name: "Medico ortopedico",
+    role: "ASST Valtellina e Alto Lario",
+    image: "/images/medical-ortopedico-asst-2.webp",
     imageWidth: 1179,
     imageHeight: 1376,
     specialties: ["Ortopedia e traumatologia", "Chirurgia protesica", "Chirurgia della mano"],
@@ -109,7 +109,7 @@ export const medicalSpecialists: MedicalSpecialist[] = [
       { label: "Area Ortopedia", href: "/servizi/area/ortopedia/" },
       { label: "Contatta la segreteria", href: "/#contatti" },
     ],
-    href: "/equipe-medica/#ortopedico-mb",
+    href: "/equipe-medica/#ortopedico-asst-2",
   },
   {
     slug: "alberta-paiusco",

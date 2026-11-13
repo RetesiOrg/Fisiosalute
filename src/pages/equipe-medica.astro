@@ -75,18 +75,23 @@ const specialties = [
               <h3>{doctor.name}</h3>
               <p class="medical-role">{doctor.role}</p>
               <p>{doctor.summary}</p>
+              {doctor.notice && <p class="medical-notice">{doctor.notice}</p>}
               <div class="medical-tags" aria-label={`Specialità di ${doctor.name}`}>
                 {doctor.specialties.map((specialty) => <span>{specialty}</span>)}
               </div>
               <div class="medical-cv">
-                <div>
-                  <h4>Formazione e ruolo</h4>
-                  <ul>{doctor.education.map((item) => <li>{item}</li>)}</ul>
-                </div>
-                <div>
-                  <h4>Competenze</h4>
-                  <ul>{doctor.expertise.map((item) => <li>{item}</li>)}</ul>
-                </div>
+                {doctor.education.length > 0 && (
+                  <div>
+                    <h4>Formazione e ruolo</h4>
+                    <ul>{doctor.education.map((item) => <li>{item}</li>)}</ul>
+                  </div>
+                )}
+                {doctor.expertise.length > 0 && (
+                  <div>
+                    <h4>Competenze</h4>
+                    <ul>{doctor.expertise.map((item) => <li>{item}</li>)}</ul>
+                  </div>
+                )}
               </div>
               <div class="medical-links">
                 {doctor.serviceLinks.map((link) => <a href={link.href}>{link.label} <span aria-hidden="true">→</span></a>)}
@@ -287,8 +292,14 @@ const specialties = [
     transform-origin: 50% 0;
   }
 
-  #alberta-paiusco .medical-card-image img {
+  #alberta-paiusco .medical-card-image img,
+  #ortopedico-yg .medical-card-image img {
     transform: scale(1.25);
+    transform-origin: 50% 86%;
+  }
+
+  #ortopedico-mb .medical-card-image img {
+    transform: scale(1.17);
     transform-origin: 50% 86%;
   }
 
@@ -332,6 +343,16 @@ const specialties = [
   .medical-card-content > p:not(.eyebrow):not(.medical-role) {
     color: #56635f;
     font-size: 15px;
+  }
+
+  .medical-notice {
+    margin: 4px 0 20px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--sand);
+    background: var(--ivory, #f6f3ee);
+    color: var(--deep) !important;
+    font-size: 14px !important;
+    line-height: 1.5;
   }
 
   .medical-tags {
@@ -479,7 +500,9 @@ const specialties = [
       transform: scale(1.15);
     }
 
-    #alberta-paiusco .medical-card-image img {
+    #alberta-paiusco .medical-card-image img,
+    #ortopedico-mb .medical-card-image img,
+    #ortopedico-yg .medical-card-image img {
       transform: scale(1.15);
       transform-origin: 50% 72%;
     }

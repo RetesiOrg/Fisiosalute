@@ -6,6 +6,7 @@ Versioni ricostruite dalle note di pubblicazione in `docs/`.
 
 | Versione | Data | Tipo | Modifiche | Nota |
 | --- | --- | --- | --- | --- |
+| 1.6.0 | 13/11/2026 | maggiore | Due ortopedici ASST (iniziali e volto sfocato, contatto tramite segreteria); foto di tutti i medici su sfondo bianco | `docs/aruba-medici-asst-2026-11-13.md` |
 | 1.5.1 | 10/11/2026 | minore | Versione e data di aggiornamento nel footer | — |
 | 1.5.0 | 10/11/2026 | maggiore | Nuova pagina «Seduta di supporto psicologico per la coppia» | `docs/aruba-pubblicazione-2026-11-10.md` |
 | 1.4.3 | 06/11/2026 | minore | Foto di Enrico Francesco Pillitteri in «Altri professionisti» | `docs/aruba-pubblicazione-2026-11-06.md` |

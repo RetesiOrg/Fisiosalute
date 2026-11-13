@@ -11,6 +11,8 @@ export type MedicalSpecialist = MedicalSpecialistRef & {
   imageHeight: number;
   specialties: string[];
   summary: string;
+  /** Avviso mostrato in evidenza (es. medici in convenzione ASST, senza nome pubblicato). */
+  notice?: string;
   education: string[];
   expertise: string[];
   serviceLinks: { label: string; href: string }[];
@@ -67,6 +69,47 @@ export const medicalSpecialists: MedicalSpecialist[] = [
       { label: "Terapie infiltrative", href: "/servizi/terapie-infiltrative/" },
     ],
     href: "/equipe-medica/#alberto-giuffrida",
+  },
+  {
+    slug: "ortopedico-yg",
+    name: "Dott. Y. G.",
+    role: "Ortopedico ASST Valtellina e Alto Lario",
+    image: "/images/medical-ortopedico-yg.webp",
+    imageWidth: 1200,
+    imageHeight: 1400,
+    specialties: ["Ortopedia e traumatologia"],
+    summary: "Medico ortopedico in servizio presso ASST Valtellina e Alto Lario, collabora con l’équipe FisioSalute per le visite ortopediche.",
+    notice: "Per informazioni sul professionista e per prenotare una visita contattare la segreteria FisioSalute: la convenzione in essere con ASST non consente di pubblicizzare il nome del medico.",
+    education: ["Medico ortopedico", "ASST Valtellina e Alto Lario"],
+    expertise: [],
+    serviceLinks: [
+      { label: "Area Ortopedia", href: "/servizi/area/ortopedia/" },
+      { label: "Contatta la segreteria", href: "/#contatti" },
+    ],
+    href: "/equipe-medica/#ortopedico-yg",
+  },
+  {
+    slug: "ortopedico-mb",
+    name: "Dott. M. B.",
+    role: "Ortopedico ASST Valtellina e Alto Lario",
+    image: "/images/medical-ortopedico-mb.webp",
+    imageWidth: 1179,
+    imageHeight: 1376,
+    specialties: ["Ortopedia e traumatologia", "Chirurgia protesica", "Chirurgia della mano"],
+    summary: "Medico ortopedico in servizio presso ASST Valtellina e Alto Lario. In ospedale si occupa di chirurgia protesica di anca e ginocchio, artroscopia del ginocchio, chirurgia della mano e traumatologia.",
+    notice: "Per informazioni sul professionista e per prenotare una visita contattare la segreteria FisioSalute: la convenzione in essere con ASST non consente di pubblicizzare il nome del medico.",
+    education: ["Medico ortopedico", "ASST Valtellina e Alto Lario"],
+    expertise: [
+      "Chirurgia protesica di ginocchio e anca",
+      "Artroscopia del ginocchio",
+      "Chirurgia della mano: tunnel carpale, dito a scatto, tenosinovite di De Quervain, morbo di Dupuytren",
+      "Traumatologia in generale",
+    ],
+    serviceLinks: [
+      { label: "Area Ortopedia", href: "/servizi/area/ortopedia/" },
+      { label: "Contatta la segreteria", href: "/#contatti" },
+    ],
+    href: "/equipe-medica/#ortopedico-mb",
   },
   {
     slug: "alberta-paiusco",

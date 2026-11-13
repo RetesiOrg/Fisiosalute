@@ -5,8 +5,7 @@ export const physiotherapistTags = [
 ];
 export const doctorTags = [
   "Medici", "Elio Basso Narducci (otorino-direttore sanitario)",
-  "Alberto Giuffrida (ortopedico)", "Yuri Giangiacomo Gazzoli (ortopedico)",
-  "Gregorio Baldini (fisiatra)", "Matteo Broggi (ortopedico)",
+  "Alberto Giuffrida (ortopedico)", "Gregorio Baldini (fisiatra)",
   "Alberta Paiusco (urologa)",
 ];
 export const dietitianTags = ["Dietista", "Pedrolini Elisa"];
